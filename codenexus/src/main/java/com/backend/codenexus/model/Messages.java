@@ -2,7 +2,6 @@ package com.backend.codenexus.model;
 import lombok.*;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Messages {
 
@@ -11,5 +10,6 @@ public class Messages {
     private long recipientId;
     private boolean read;
     private boolean sent;
+    private String header;
     private String message;
 }

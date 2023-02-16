@@ -1,5 +1,4 @@
 package com.backend.codenexus.entity;
-import com.backend.codenexus.model.Messages;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,5 +20,19 @@ public class MessagesEntity {
     @JoinColumn(name = "user_id")
     private MessagesEntity userId;
 
-    
+    @Column(name = "recipientId")
+    private long recipientId;
+
+    @Column(name = "read")
+    private boolean read;
+
+    @Column(name = "sent")
+    private boolean sent;
+
+    @Column(name = "header")
+    private String header;
+
+    @Column(name = "body")
+    private String message;
+
 }

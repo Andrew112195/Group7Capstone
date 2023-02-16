@@ -20,11 +20,12 @@ public class UserCourseEntity {
     @ManyToOne
     @JoinColumn(name = "course_id")
     private CourseEntity courseId;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity userId;
 
-
+    
     @Column(name="progress")
     private float progress;
 }
