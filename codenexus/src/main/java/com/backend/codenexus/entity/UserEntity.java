@@ -3,14 +3,18 @@ package com.backend.codenexus.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.relational.core.mapping.Table;
-
+import java.util.ArrayList;
 
 @AllArgsConstructor
 @Data
 @Entity
 @Table(name = "user")
 @NoArgsConstructor
+
 public class UserEntity {
+
+    @OneToMany(mappedBy = "userId")
+    ArrayList <MessagesEntity> userMessages;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

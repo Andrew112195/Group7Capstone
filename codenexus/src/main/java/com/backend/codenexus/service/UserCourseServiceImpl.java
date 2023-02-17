@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserCourseServiceImpl implements UserCourseService {
     final static Logger LOG = LoggerFactory.getLogger(UserCourseServiceImpl.class);
+    
     @Autowired
     UserCourseDao userCourseDao;
 

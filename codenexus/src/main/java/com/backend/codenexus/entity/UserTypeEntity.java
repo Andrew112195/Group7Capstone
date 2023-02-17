@@ -9,6 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name="user_type")
 @Entity
+
 public class UserTypeEntity {
 
     @Id

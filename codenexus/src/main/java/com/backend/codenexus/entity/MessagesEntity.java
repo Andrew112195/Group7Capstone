@@ -8,6 +8,7 @@ import lombok.*;
 @Entity
 @Table(name = "messsage")
 
+
 public class MessagesEntity {
     
 
@@ -18,9 +19,9 @@ public class MessagesEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private MessagesEntity userId;
+    private UserEntity userId;
 
-    @Column(name = "recipientId")
+    @Column(name = "recipient_id")
     private long recipientId;
 
     @Column(name = "read")
