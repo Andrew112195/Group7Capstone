@@ -8,8 +8,8 @@ import lombok.Data;
 @lombok.NoArgsConstructor
 @lombok.AllArgsConstructor
 @Entity
-@Table(name="questions")
-public class QuestionsEntity {
+@Table(name="task")
+public class TaskEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,10 @@ public class QuestionsEntity {
 
     @ManyToOne
     @JoinColumn(name = "module_id")
-    private ModuleEntity module;
+    private ModuleEntity moduleId;
 
     @Column(name = "question")
     private String question;
-    @OneToOne(mappedBy = "question")
-    private AnswerEntity answer;
 
     @Column(name = "difficulty")
     private Difficulty difficulty;

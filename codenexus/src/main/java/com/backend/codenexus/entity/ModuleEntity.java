@@ -27,7 +27,7 @@ public class ModuleEntity {
 
     /*One Module to many questions*/
     @OneToMany(mappedBy = "module")
-    private List<QuestionsEntity> questions;
+    private List<TaskEntity> tasks;
 
     @Column(name = "name")
     private String name;

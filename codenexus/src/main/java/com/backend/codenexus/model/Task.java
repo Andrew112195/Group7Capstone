@@ -3,7 +3,7 @@ package com.backend.codenexus.model;
 @lombok.Data
 @lombok.NoArgsConstructor
 @lombok.AllArgsConstructor
-public class Questions {
+public class Task {
 
     private int id;
     private String question;

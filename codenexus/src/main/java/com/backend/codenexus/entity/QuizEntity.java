@@ -18,11 +18,11 @@ public class QuizEntity {
     private long id;
 
     @OneToOne
-    @JoinColumn(name = "module id")
+    @JoinColumn(name = "module_id")
     private long moduleId;
 
     @ManyToOne
-    @JoinColumn(name = "question id")
+    @JoinColumn(name = "question_id")
     private long questionId;
 
     @Column(name = "passed")

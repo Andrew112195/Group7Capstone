@@ -3,6 +3,7 @@ import lombok.*;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Messages {
 
     public long id;

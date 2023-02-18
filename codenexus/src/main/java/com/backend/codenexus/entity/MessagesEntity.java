@@ -14,7 +14,7 @@ public class MessagesEntity {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "id")
+    //@Column(name = "id")
     private long id;
 
     @ManyToOne
