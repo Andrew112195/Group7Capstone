@@ -17,9 +17,8 @@ public class MessagesServiceImpl implements MessagesService {
     @Autowired
     MessageDao messageDao;
 
-
     @Override
-    public List<Messages> getSentMessages(Long user_id){
+    public List<Messages> getSentMessages(Long user_id) {
         List<Messages> msgList = new ArrayList<Messages>();
         List<MessagesEntity> messagesEntity = messageDao.findAllSentByUserId(user_id);
         BeanUtils.copyProperties(messagesEntity, msgList);
