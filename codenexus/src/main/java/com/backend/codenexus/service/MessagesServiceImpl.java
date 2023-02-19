@@ -10,7 +10,6 @@ import com.backend.codenexus.dao.*;
 import com.backend.codenexus.entity.*;
 import com.backend.codenexus.model.*;
 
-
 @Service
 public class MessagesServiceImpl implements MessagesService {
     final static Logger Log = LoggerFactory.getLogger(MessagesServiceImpl.class);
@@ -19,20 +18,20 @@ public class MessagesServiceImpl implements MessagesService {
     MessageDao messageDao;
 
     @Override
-    public List<Messages> getMessages(Long userId){
+    public List<Messages> getMessages(Long userId) {
         List<Messages> msgList = new ArrayList<Messages>();
-        List <MessagesEntity> messagesEntity = messageDao.findAllByUserId(userId);
+        List<MessagesEntity> messagesEntity = messageDao.findAllByUserId(userId);
         BeanUtils.copyProperties(messagesEntity, msgList);
         return msgList;
     }
 
     @Override
-    public void saveMessage(Messages message){
+    public void saveMessage(Messages message) {
 
-    MessagesEntity messagesEntity = new MessagesEntity();
-    
-    BeanUtils.copyProperties(message, messagesEntity);
+        MessagesEntity messagesEntity = new MessagesEntity();
 
-    messageDao.saveAndFlush(messagesEntity);
+        BeanUtils.copyProperties(message, messagesEntity);
+
+        messageDao.saveAndFlush(messagesEntity);
     }
 }

@@ -1,7 +1,9 @@
 package com.backend.codenexus.model;
+
 import lombok.Data;
 
 @lombok.AllArgsConstructor
+@lombok.NoArgsConstructor
 @Data
 public class User {
     private long id;
