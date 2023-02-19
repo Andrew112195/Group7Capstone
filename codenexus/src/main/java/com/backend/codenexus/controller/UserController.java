@@ -23,7 +23,7 @@ public class UserController {
         userService.register(user);
     }
 
-    @PutMapping("/login")
+    @PostMapping("/login")
     public User getUserCourse(User user) {
         return userService.login(user);
     }
