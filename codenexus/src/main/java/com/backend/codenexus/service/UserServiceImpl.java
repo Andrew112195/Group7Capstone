@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
         BeanUtils.copyProperties(checkUser, returnUser);
         if (checkUser.getPassword().equals(user.getPassword()))
             return returnUser;
-        return null;
+        return user;
     }
 
     @Override
