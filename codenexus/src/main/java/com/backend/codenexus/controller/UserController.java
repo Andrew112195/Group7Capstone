@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public User getUserCourse(User user) {
+    public User getUserCourse(@RequestBody User user) {
         return userService.login(user);
     }
 
