@@ -21,15 +21,14 @@ public class QuizEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "module_id")
-    private long moduleId;
+    private ModuleEntity moduleId;
 
-    @ManyToOne
-    @JoinColumn(name = "question_id")
-    private long questionId;
+    @Column(name = "question_id")
+    private Long questionId;
 
     @Column(name = "passed")
     private boolean passed;
