@@ -19,17 +19,17 @@ public class MessagesServiceImpl implements MessagesService {
 
 
     @Override
-    public List<Messages> getSentMessages(Long userId){
+    public List<Messages> getSentMessages(Long user_id){
         List<Messages> msgList = new ArrayList<Messages>();
-        List<MessagesEntity> messagesEntity = messageDao.findAllSentByUserId(userId);
+        List<MessagesEntity> messagesEntity = messageDao.findAllSentByUserId(user_id);
         BeanUtils.copyProperties(messagesEntity, msgList);
         return msgList;
     }
 
     @Override
-    public List<Messages> getMessages(Long userId) {
+    public List<Messages> getMessages(Long user_id) {
         List<Messages> msgList = new ArrayList<Messages>();
-        List<MessagesEntity> messagesEntity = messageDao.findAllByUserId(userId);
+        List<MessagesEntity> messagesEntity = messageDao.findAllByUserId(user_id);
         BeanUtils.copyProperties(messagesEntity, msgList);
         return msgList;
     }
