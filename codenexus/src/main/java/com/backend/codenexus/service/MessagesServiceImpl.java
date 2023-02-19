@@ -17,6 +17,15 @@ public class MessagesServiceImpl implements MessagesService {
     @Autowired
     MessageDao messageDao;
 
+
+    @Override
+    public List<Messages> getSentMessages(Long userId){
+        List<Messages> msgList = new ArrayList<Messages>();
+        List<MessagesEntity> messagesEntity = messageDao.findAllSentByUserId(userId);
+        BeanUtils.copyProperties(messagesEntity, msgList);
+        return msgList;
+    }
+
     @Override
     public List<Messages> getMessages(Long userId) {
         List<Messages> msgList = new ArrayList<Messages>();
@@ -27,9 +36,7 @@ public class MessagesServiceImpl implements MessagesService {
 
     @Override
     public void saveMessage(Messages message) {
-
         MessagesEntity messagesEntity = new MessagesEntity();
-
         BeanUtils.copyProperties(message, messagesEntity);
 
         messageDao.saveAndFlush(messagesEntity);

@@ -20,7 +20,7 @@ public class ModuleEntity {
 
     /* Many modules in one course */
     @ManyToOne
-    @JoinColumn(name = "course_id")
+    @JoinColumn(name = "courseId")
     private CourseEntity courseId;
 
     /* One Module to many questions */

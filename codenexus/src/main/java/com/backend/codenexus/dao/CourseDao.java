@@ -12,6 +12,13 @@ import java.util.List;
 @Repository
 public interface CourseDao extends JpaRepository<CourseEntity,Long> {
 
-    @Query(value = "SELECT * FROM course WHERE user_id = ?1", nativeQuery = true)
-    List<CourseEntity> findAllUserID();
+    @Query(value = "SELECT * FROM Course WHERE user_id = ?1 SORT BY is_completed", nativeQuery = true)
+    List<CourseEntity> findAllByUserId();
+
+    @Query(value = "SELECT * FROM Course WHERE user_id = ?1 and is_completed = true", nativeQuery = true)
+    List<CourseEntity> findAllCompletedByUserId();
+
+    @Query(value = "SELECT * FROM Course WHERE user_id = ?1 and is_completed = false", nativeQuery = true)
+    List<CourseEntity> findAllIncompletedByUserId();
+
 }

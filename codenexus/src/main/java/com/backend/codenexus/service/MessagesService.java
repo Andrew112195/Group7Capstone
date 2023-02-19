@@ -9,6 +9,10 @@ public interface MessagesService {
 
     List <Messages> getMessages(Long user_id);
 
+    List <Messages> getSentMessages(Long user_id);
+
     void saveMessage(Messages message);
+
+
     
 }

@@ -10,8 +10,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MessageDao extends JpaRepository<MessagesEntity, Long> {
 
-    @Query(value = "SELECT * FROM Messages = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM Messages WHERE recipient_id = userId SORT BY read", nativeQuery = true)
     List<MessagesEntity> findAllByUserId(Long userId);
 
+    @Query(value = "SELECT * FROM Messages = ?1 WHERE sent = true", nativeQuery = true)
+    List<MessagesEntity> findAllSentByUserId(Long userId);
 
 }
