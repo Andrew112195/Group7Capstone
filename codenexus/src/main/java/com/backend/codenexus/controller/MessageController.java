@@ -21,8 +21,8 @@ public class MessageController {
     @Autowired
     MessagesService messagesService;
 
-    @GetMapping("/sent")
-    public List<Message> getSentMessages(@RequestBody Long user_id) {
+    @GetMapping("/sent/{user_id}")
+    public List<Message> getSentMessages(@PathVariable Long user_id) {
         return messagesService.getSentMessages(user_id);
     }
 
@@ -31,6 +31,10 @@ public class MessageController {
         return messagesService.getMessages(user_id);
     }
 
+    @GetMapping("/inbox/read_message/{message_id}")
+    public Message readMessage(@PathVariable Long message_id){
+        return messagesService.readMessage(message_id);
+    }
     @PostMapping("/save")
     public void saveMessages(@RequestBody Message message) {
         messagesService.saveMessage(message);

@@ -12,6 +12,8 @@ public interface MessagesService {
     
     List<Message> getSentMessages(Long user_id);
 
+    Message readMessage(Long message_id);
+
     Message saveMessage(Message message);
 
 }

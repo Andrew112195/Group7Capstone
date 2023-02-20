@@ -15,7 +15,10 @@ public interface MessageDao extends JpaRepository<MessagesEntity, Long> {
     @Query(value = "SELECT * FROM messages_entity WHERE recipient_id = ?1", nativeQuery = true)
     List<MessagesEntity> findAllByUserId(Long userId);
 
-    @Query(value = "SELECT * FROM messages_entity = ?1 WHERE sent = true", nativeQuery = true)
+    @Query(value = "SELECT * FROM messages_entity WHERE id = ?1", nativeQuery = true)
+    MessagesEntity findByMessageId(Long messageId);
+
+    @Query(value = "SELECT * FROM messages_entity WHERE user_id = ?1", nativeQuery = true)
     List<MessagesEntity> findAllSentByUserId(Long userId);
 
 }
