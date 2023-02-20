@@ -6,12 +6,12 @@ import com.backend.codenexus.model.*;
 
 public interface CourseService {
     
-    List <Course> getCourseListFromUser(Long course_id);
+    List <Course> getCourseListFromUser(Long courseId);
 
     List <Course> getCourseList();
 
-    List <Course> getStudentCompletedCourses();
+    List <Course> getStudentCompletedCourses(Long user_id);
 
-    List <Course> getStudentIncompleteCourses();
+    List <Course> getStudentIncompleteCourses(Long user_id);
 
 }

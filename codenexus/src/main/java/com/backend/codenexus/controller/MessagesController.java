@@ -1,6 +1,6 @@
 package com.backend.codenexus.controller;
 
-import com.backend.codenexus.model.User;
+import com.backend.codenexus.model.Messages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.backend.codenexus.service.UserService;
@@ -8,7 +8,7 @@ import com.backend.codenexus.service.UserService;
 @CrossOrigin
 @RestController
 @RequestMapping("user")
-public class UserController {
+public class MessagesController {
 
     /*
      * @TODO
@@ -19,8 +19,8 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/register")
-    public void register(@RequestBody User user) {
-        userService.register(user);
+    public void register(@RequestBody Long user_id) {
+        userService.getSentMessages(user_id);
     }
 
     @PostMapping("/login")

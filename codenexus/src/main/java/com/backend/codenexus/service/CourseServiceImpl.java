@@ -17,9 +17,9 @@ public class CourseServiceImpl implements CourseService {
     CourseDao courseDao;
 
     @Override
-    public List<Course> getCourseListFromUser(Long course_id){
+    public List<Course> getCourseListFromUser(Long user_id){
         List<Course> course = new ArrayList<Course>();
-        List<CourseEntity> courseEntity = courseDao.findAllByUserId();
+        List<CourseEntity> courseEntity = courseDao.findAllByUserId(user_id);
         BeanUtils.copyProperties(courseEntity,course);
         return course;
     }
@@ -33,17 +33,17 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<Course> getStudentCompletedCourses(){
+    public List<Course> getStudentCompletedCourses(Long user_id){
         List<Course> courseList = new ArrayList<Course>();
-        List <CourseEntity> courseEntity = courseDao.findAllCompletedByUserId();
+        List <CourseEntity> courseEntity = courseDao.findAllCompletedByUserId(user_id);
         BeanUtils.copyProperties(courseEntity, courseList);
         return courseList;
     }
 
     @Override
-    public List<Course> getStudentIncompleteCourses(){
+    public List<Course> getStudentIncompleteCourses(Long user_id){
         List<Course> courseList = new ArrayList<Course>();
-        List <CourseEntity> courseEntity = courseDao.findAllIncompletedByUserId();
+        List <CourseEntity> courseEntity = courseDao.findAllIncompletedByUserId(user_id);
         BeanUtils.copyProperties(courseEntity, courseList);
         return courseList;
     }

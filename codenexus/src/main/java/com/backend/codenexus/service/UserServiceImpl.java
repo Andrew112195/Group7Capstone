@@ -30,9 +30,8 @@ public class UserServiceImpl implements UserService {
         UserEntity checkUser = userDao.findByUsername(username);
         User returnUser = new User();
         BeanUtils.copyProperties(checkUser, returnUser);
-        if (checkUser.getPassword().equals(user.getPassword()))
-            return returnUser;
-        return user;
+
+        return returnUser;
     }
 
     @Override

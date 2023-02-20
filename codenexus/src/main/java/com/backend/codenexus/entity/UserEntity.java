@@ -13,13 +13,12 @@ import java.util.ArrayList;
 
 public class UserEntity {
 
-    @OneToMany(mappedBy = "userId")
-    ArrayList <MessagesEntity> userMessages;
+    // @OneToMany(mappedBy = "user_id")
+    // ArrayList<MessagesEntity> userMessages;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     @ManyToOne
     @JoinColumn(name = "user_type_id")
@@ -28,16 +27,16 @@ public class UserEntity {
     @Column(name = "first_name")
     private String firstname;
 
-   @Column(name = "last_name")
+    @Column(name = "last_name")
     private String lastname;
 
-    @Column(name= "username")
+    @Column(name = "username")
     private String username;
 
-   @Column(name = "password")
+    @Column(name = "password")
     private String password;
 
-   @Column(name="messages")
+    @Column(name = "messages")
     private String messages;
 
 }
