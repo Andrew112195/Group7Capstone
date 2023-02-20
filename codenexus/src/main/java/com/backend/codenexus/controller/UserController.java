@@ -29,8 +29,8 @@ public class UserController {
 
         model.addAttribute("user", userService.login(user));
 
-        return "login.jsp";
-        // return userService.login(user);
+       return "login.jsp";
+        //return userService.login(user);
     }
 
 }

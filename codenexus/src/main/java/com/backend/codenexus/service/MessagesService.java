@@ -8,9 +8,9 @@ import com.backend.codenexus.model.*;
 public interface MessagesService {
 
     List<Message> getMessages(Long user_id);
-
+    
     List<Message> getSentMessages(Long user_id);
 
-    void saveMessage(Message message);
+    Message saveMessage(Message message);
 
 }
