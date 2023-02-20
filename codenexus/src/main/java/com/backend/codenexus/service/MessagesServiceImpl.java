@@ -18,26 +18,45 @@ public class MessagesServiceImpl implements MessagesService {
     MessageDao messageDao;
 
     @Override
-    public List<Messages> getSentMessages(Long user_id) {
-        List<Messages> msgList = new ArrayList<Messages>();
-        List<MessagesEntity> messagesEntity = messageDao.findAllSentByUserId(user_id);
-        BeanUtils.copyProperties(messagesEntity, msgList);
-        return msgList;
-    }
-
-    @Override
-    public List<Messages> getMessages(Long user_id) {
-        List<Messages> msgList = new ArrayList<Messages>();
+    public List<Message> getMessages(Long user_id) {
         List<MessagesEntity> messagesEntity = messageDao.findAllByUserId(user_id);
-        BeanUtils.copyProperties(messagesEntity, msgList);
+        List<Message> msgList = new ArrayList<Message>();
+        for (MessagesEntity source: messagesEntity ) {
+            Message target = new Message();
+            BeanUtils.copyProperties(source , target);
+            msgList.add(target);
+         }
         return msgList;
     }
 
     @Override
-    public void saveMessage(Messages message) {
+    public List<Message> getSentMessages(Long user_id) {
+        List<MessagesEntity> messagesEntity = messageDao.findAllSentByUserId(user_id);
+        List<Message> msgList = new ArrayList<Message>();
+        for (MessagesEntity source: messagesEntity ) {
+            Message target = new Message();
+            BeanUtils.copyProperties(source , target);
+            msgList.add(target);
+         }
+        return msgList;
+    }
+
+    @Override
+    public Message readMessage(Long message_id){
+        MessagesEntity source = messageDao.findByMessageId(message_id);
+        source.setRead(true);
+        messageDao.saveAndFlush(source);    //saves read reciept
+        Message target = new Message();
+        BeanUtils.copyProperties(source, target);        
+        return target;
+    }
+
+    @Override
+    public Message saveMessage(Message message) {
         MessagesEntity messagesEntity = new MessagesEntity();
         BeanUtils.copyProperties(message, messagesEntity);
 
         messageDao.saveAndFlush(messagesEntity);
+        return null;
     }
 }

@@ -1,28 +1,29 @@
 package com.backend.codenexus.entity;
+
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "messsage")
-
+@Table(name = "message")
 
 public class MessagesEntity {
-    
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    //@Column(name = "id")
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @Column(name = "id")
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity userId;
 
-    @Column(name = "recipient_id")
-    private long recipientId;
+    @ManyToOne
+    @JoinColumn(name = "recipient_id")
+    private UserEntity recipientId;
 
     @Column(name = "read")
     private boolean read;

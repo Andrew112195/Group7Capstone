@@ -24,6 +24,7 @@ public class CourseEntity {
 
     @Column(name = "price")
     private double price;
+    
     @Column(name="is_complete")
     private boolean isCompleted;
 

@@ -2,6 +2,7 @@ package com.backend.codenexus.controller;
 
 import com.backend.codenexus.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.backend.codenexus.service.UserService;
 
@@ -23,9 +24,13 @@ public class UserController {
         userService.register(user);
     }
 
-    @PostMapping("/login")
-    public User getUserCourse(@RequestBody User user) {
-        return userService.login(user);
+    @GetMapping("/login")
+    public String getUserCourse(@ModelAttribute("user") User user, Model model) {
+
+        model.addAttribute("user", userService.login(user));
+
+       return "login.jsp";
+        //return userService.login(user);
     }
 
 }
