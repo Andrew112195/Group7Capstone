@@ -21,8 +21,9 @@ public class MessagesEntity {
     @JoinColumn(name = "user_id")
     private UserEntity userId;
 
-    @Column(name = "recipient_id")
-    private Long recipientId;
+    @ManyToOne
+    @JoinColumn(name = "recipient_id")
+    private UserEntity recipientId;
 
     @Column(name = "read")
     private boolean read;

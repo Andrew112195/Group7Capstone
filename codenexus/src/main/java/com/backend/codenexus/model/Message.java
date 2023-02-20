@@ -10,7 +10,7 @@ public class Message {
 
     private Long id;
     private UserEntity userId;
-    private Long recipientId;
+    private UserEntity recipientId;
     private boolean read;
     private boolean sent;
     private String header;
