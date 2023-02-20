@@ -3,7 +3,9 @@ package com.backend.codenexus.controller;
 import com.backend.codenexus.model.Messages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.backend.codenexus.service.UserService;
+import com.backend.codenexus.service.MessagesService;
+
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -16,16 +18,21 @@ public class MessagesController {
      * userCourse to the database.
      */
     @Autowired
-    UserService userService;
+    MessagesService messagesService;
 
-    @PostMapping("/register")
-    public void register(@RequestBody Long user_id) {
-        userService.getSentMessages(user_id);
+    @GetMapping("/sent")
+    public List<Message> getSentMessages(@RequestBody Long user_id) {
+        return messagesService.getSentMessages(user_id);
     }
 
-    @PostMapping("/login")
-    public User getUserCourse(@RequestBody User user) {
-        return userService.login(user);
+    @GetMapping("/inbox/{user_id}")
+    public List<Message> getMessages(@PathVariable Long user_id) {
+        return messagesService.getMessages(user_id);
+    }
+
+    @PostMapping("/save")
+    public void saveMessages(Message message) {
+        messagesService.saveMessage(message);
     }
 
 }
