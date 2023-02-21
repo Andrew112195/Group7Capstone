@@ -12,7 +12,8 @@ import com.backend.codenexus.model.*;
 
 @Service
 public class CourseServiceImpl implements CourseService {
-    
+    final static Logger Log = LoggerFactory.getLogger(CourseServiceImpl.class);
+
     @Autowired
     CourseDao courseDao;
 

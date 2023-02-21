@@ -3,7 +3,7 @@ package com.backend.codenexus.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.relational.core.mapping.Table;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 @AllArgsConstructor
 @Data

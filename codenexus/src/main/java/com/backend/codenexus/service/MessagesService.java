@@ -1,9 +1,7 @@
 package com.backend.codenexus.service;
 
 import java.util.List;
-import java.util.ArrayList;
 
-import com.backend.codenexus.entity.UserEntity;
 import com.backend.codenexus.model.*;
 
 public interface MessagesService {

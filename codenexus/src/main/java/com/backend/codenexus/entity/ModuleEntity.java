@@ -2,7 +2,7 @@ package com.backend.codenexus.entity;
 
 import java.util.List;
 import com.backend.codenexus.model.Difficulty;
-import com.backend.codenexus.model.Module;
+//import com.backend.codenexus.model.Module;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,10 +23,13 @@ public class ModuleEntity {
     @JoinColumn(name = "courseId")
     private CourseEntity courseId;
 
-    /* One Module to many questions */
+    /* One Module to many tasks */
     @OneToMany(mappedBy = "moduleId")
     private List<TaskEntity> tasks;
 
+    private void addTaskToModule(TaskEntity taskEntity){
+        this.tasks.add(taskEntity);
+    }
     @Column(name = "name")
     private String name;
 

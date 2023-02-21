@@ -1,9 +1,9 @@
 package com.backend.codenexus.entity;
 import jakarta.persistence.*;
 import lombok.*;
-import com.backend.codenexus.model.Course;
+//import com.backend.codenexus.model.Course;
 
-import java.util.Set;
+//import java.util.Set;
 
 
 @Data
