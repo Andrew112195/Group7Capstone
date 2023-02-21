@@ -2,5 +2,6 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "liveshare.allowGuestDebugControl": true,
     "liveshare.allowGuestTaskControl": true,
-    "liveshare.notebooks.allowGuestExecuteCells": true
+    "liveshare.notebooks.allowGuestExecuteCells": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
