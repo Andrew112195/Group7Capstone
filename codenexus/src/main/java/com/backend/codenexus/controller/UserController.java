@@ -2,13 +2,15 @@ package com.backend.codenexus.controller;
 
 import com.backend.codenexus.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.backend.codenexus.service.UserService;
 
 @CrossOrigin
-@RestController
-@RequestMapping("user")
+@Controller
+@RequestMapping("/user")
 public class UserController {
 
     /*
@@ -19,9 +21,10 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/register")
-    public void register(@RequestBody User user) {
-        userService.register(user);
+    @GetMapping("/index")
+    public String register(ModelMap model) {
+        //userService.register(user);
+        return "index";
     }
 
     @GetMapping("/login")
