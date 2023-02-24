@@ -8,9 +8,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.backend.codenexus.service.UserService;
 
-@CrossOrigin
+
 @Controller
-@RequestMapping("/user")
+@RequestMapping("")
 public class UserController {
 
     /*
@@ -21,7 +21,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/index")
+    @GetMapping("index")
     public String register(ModelMap model) {
         //userService.register(user);
         return "index";
