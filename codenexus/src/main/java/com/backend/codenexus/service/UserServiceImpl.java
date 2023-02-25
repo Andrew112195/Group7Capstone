@@ -9,7 +9,7 @@ import com.backend.codenexus.dao.*;
 import com.backend.codenexus.entity.*;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class  UserServiceImpl implements UserService {
 
     @Autowired
     UserDao userDao;

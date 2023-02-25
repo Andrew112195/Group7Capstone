@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!-- <%@ page contentType="text/html;charset=UTF-8" language="java" %> -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isErrorPage="true" %>
 
@@ -25,10 +25,9 @@
         <div>
             <h2>Welcome to Coding Nexus!</h2>
         </div>
-		
         <div class="login_card">
             <!-- TO DO: Action needs to be updated to POST form data to DB -->
-            <form:form action="" method="post" modelAttribute="login">
+            <form:form action="loginprocess.jsp" method="post" modelAttribute="login">
             
                 <div class="form-group">
                     <form:label path="email">email: </form:label>
