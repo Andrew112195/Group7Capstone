@@ -23,7 +23,7 @@
 	<div class="center_container">
 		<!-- TO DO: Gotta add .img bellow when design comes back from art team -->
         <div>
-            <h2>Welcome to Coding Nexus!</h2>
+            <h2>Welcome to A Coding Nexus!</h2>
         </div>
         <div class="login_card">
             <!-- TO DO: Action needs to be updated to POST form data to DB -->

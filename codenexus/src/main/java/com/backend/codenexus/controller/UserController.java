@@ -10,6 +10,7 @@ import com.backend.codenexus.service.UserService;
 
 
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     /*
@@ -20,7 +21,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String register(@ModelAttribute("user") User user, Model model) {
       /*   userService.register(user); */
         return "index";
