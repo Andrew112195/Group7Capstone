@@ -8,7 +8,7 @@
     </title>
 </head>
 <%
-out.print();
+out.print("hello");
 %>
 <body>
   <div data-pym-src='https://www.jdoodle.com/plugin' data-language="java"

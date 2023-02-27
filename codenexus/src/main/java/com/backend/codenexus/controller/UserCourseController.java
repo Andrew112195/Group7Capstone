@@ -16,12 +16,12 @@ public class UserCourseController {
     @Autowired
     UserCourseService courseService;
 
-    @PostMapping("/addcourse")
+    @PostMapping("addcourse")
     public void addCourse(@RequestBody UserCourse userCourse) {
         courseService.addNewCourseToUser(userCourse);
     }
 
-    @GetMapping("/get-course/{id}")
+    @GetMapping("get-course/{id}")
     public UserCourse getUserCourse(@PathVariable Long id) {
         return courseService.getCourse(id);
     }

@@ -10,7 +10,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("")
+@RequestMapping("inbox")
 public class MessageController {
 
     /*
@@ -21,22 +21,22 @@ public class MessageController {
     @Autowired
     MessagesService messagesService;
 
-    @GetMapping("/sent/{user_id}")
+    @GetMapping("sent/{user_id}")
     public String getSentMessages(@PathVariable Long user_id) {
         List<Message> messagesSent = messagesService.getSentMessages(user_id);
         return "messageSent";
     }
 
-    @GetMapping("/inbox/{user_id}")
+    @GetMapping("inbox/{user_id}")
     public List<Message> getMessages(@PathVariable Long user_id) {
         return messagesService.getMessages(user_id);
     }
 
-    @GetMapping("/inbox/read_message/{message_id}")
+    @GetMapping("inbox/read_message/{message_id}")
     public Message readMessage(@PathVariable Long message_id){
         return messagesService.readMessage(message_id);
     }
-    @PostMapping("/save")
+    @PostMapping("save")
     public void saveMessages(@RequestBody Message message) {
         messagesService.saveMessage(message);
     }

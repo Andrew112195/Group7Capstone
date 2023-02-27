@@ -19,7 +19,6 @@
         <a href="#">Pricing</a>
         <a href="#">Help</a>
     </div>
-
 	<div class="center_container">
 		<!-- TO DO: Gotta add .img bellow when design comes back from art team -->
         <div>
