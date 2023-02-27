@@ -26,12 +26,17 @@ public class  UserServiceImpl implements UserService {
     @Override
     public User login(User user) {
         String username = user.getUsername();
+        String password = user.getPassword();
         // this returns the found user
         UserEntity checkUser = userDao.findByUsername(username);
         User returnUser = new User();
-        BeanUtils.copyProperties(checkUser, returnUser);
-
-        return returnUser;
+        if(password == checkUser.getPassword()){
+            BeanUtils.copyProperties(checkUser, returnUser);
+            return returnUser;
+        }
+        else{
+            return null;
+        }
     }
 
     @Override

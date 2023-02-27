@@ -1,0 +1,4 @@
+<form action="/reg">
+
+
+</form>

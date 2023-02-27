@@ -22,21 +22,35 @@ public class UserController {
     UserService userService;
 
     @GetMapping("index")
-    public String register(@ModelAttribute("user") User user, Model model) {
+    public String index() {
       /*   userService.register(user); */
         return "index";
     }
+    @GetMapping("register")
+    public String registration(){
 
+        return "register";
+    }
+    @PostMapping("register.process")
+    public String registerProcess(@RequestBody User user){
+        userService.register(user);
+        return "index";
+    }
+    @PostMapping("login.process")
+    public String getUserCourse(@ModelAttribute("user") User user, Model model) {    
+       User checkUser = userService.login(user);
+       if(checkUser != null){
+        return "ide";
+       }else{
+        //redirect
+        return "login";
+       }
+
+    }
     @GetMapping("login")
-    public String getUserCourse(@ModelAttribute("user") User user, Model model) {
+    public String loginProcess(){
 
-       model.addAttribute("user", userService.login(user));
-
-       return "login";
-        //return userService.login(user);
-
-
-
+        return "login";
     }
     @GetMapping("ide")
     public String ideLoader(){
