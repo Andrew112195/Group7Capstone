@@ -12,4 +12,6 @@ public class Task {
     private String category;
     private String explanation;
     private String questionType;
+
+    private boolean complete;
 }

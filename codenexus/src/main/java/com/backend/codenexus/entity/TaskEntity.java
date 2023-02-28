@@ -35,5 +35,8 @@ public class TaskEntity {
     @Column(name = "question_type")
     private String questionType;
 
+    @Column(name = "complete")
+    private boolean complete;
+
 
 }
