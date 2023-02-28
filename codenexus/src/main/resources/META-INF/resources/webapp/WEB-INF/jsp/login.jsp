@@ -1,23 +1,19 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page isErrorPage="true" %>
 
-<hr/>
+<html>
 
-<h3>Login Form</h3>
-<%
-String profile_msg=(String)request.getAttribute("profile_msg");
-if(profile_msg!=null){
-out.print(profile_msg);
-}
-String login_msg=(String)request.getAttribute("login_msg");
-if(login_msg!=null){
-out.print(login_msg);
-}
- %>
- <br/>
-<form action="loginprocss.jsp" method="post">
-Email:<input type="text" name="email"/><br/><br/>
-Password:<input type="password" name="password"/><br/><br/>
-<input type="submit" value="login"/>
-</form>
+<head>
+    <title>Login Page</title>
+</head>
+
+<body>
+    <h2>${successfulRegistration}</h2>
+    <form method="POST" action="/user/login-process">
+        <input type="text" name="username" placeholder="User Name"  required/> <br>
+        <br>
+        <input type="password" name="password" placeholder="Password"  required/> <br>
+        <br>
+        <button>Submit</button>
+    </form><p style="color:red;">${invalidLogin}</p>
+    <a href="/user/register">Don't already have an account? Sign up now!</a>
+</body>
+</html>

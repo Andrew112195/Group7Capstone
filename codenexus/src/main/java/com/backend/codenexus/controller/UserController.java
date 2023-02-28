@@ -31,19 +31,29 @@ public class UserController {
 
         return "register";
     }
-    @PostMapping("register.process")
-    public String registerProcess(@RequestBody User user){
-        userService.register(user);
-        return "index";
+    @PostMapping("register-process")
+    public String registerProcess(ModelMap modelMap, User user){
+        if(userService.register(user)) {
+            modelMap.put("successfulRegistration", "Thank you for your registration!! " + user.getFirstname());
+            return "login";
+        }
+        else{
+            modelMap.put("registrationError", "User name exists already, please try again");
+            return "register";
+        }
     }
-    @PostMapping("login.process")
-    public String getUserCourse(@ModelAttribute("user") User user, Model model) {    
+    @PostMapping("login-process")
+    //@RequestMapping
+    public String login(ModelMap modelMap, User user) {
        User checkUser = userService.login(user);
        if(checkUser != null){
-        return "ide";
-       }else{
+           modelMap.put("welcomeMessage", "Welcome " + checkUser.getFirstname());
+           return "index";
+       }
+       else{
         //redirect
-        return "login";
+           modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
+           return "login";
        }
 
     }

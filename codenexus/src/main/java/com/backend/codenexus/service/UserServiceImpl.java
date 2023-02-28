@@ -2,6 +2,7 @@ package com.backend.codenexus.service;
 
 import com.backend.codenexus.model.User;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -15,26 +16,30 @@ public class  UserServiceImpl implements UserService {
     UserDao userDao;
 
     @Override
-    public User register(User user) {
+    public boolean register(User user) {
         /* use the userDao to create logic of data to populate */
-        UserEntity userEntity = new UserEntity();
-        BeanUtils.copyProperties(user, userEntity);
-        userDao.saveAndFlush(userEntity);
-        return null;
+        //searches for existing username
+        if (!userDao.existsByUsername(user.getUsername())) {
+            UserEntity userEntity = new UserEntity();
+            BeanUtils.copyProperties(user, userEntity);
+            userDao.saveAndFlush(userEntity);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
     public User login(User user) {
-        String username = user.getUsername();
-        String password = user.getPassword();
-        // this returns the found user
-        UserEntity checkUser = userDao.findByUsername(username);
-        User returnUser = new User();
-        if(password == checkUser.getPassword()){
+        // catches null pointer exception on false return
+        try {
+            UserEntity checkUser = userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+            User returnUser = new User();
             BeanUtils.copyProperties(checkUser, returnUser);
             return returnUser;
         }
-        else{
+        catch(Exception e){
             return null;
         }
     }

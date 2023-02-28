@@ -26,7 +26,7 @@
         </div>
         <div class="login_card">
             <!-- TO DO: Action needs to be updated to POST form data to DB -->
-            <form:form action="loginprocess.jsp" method="post" modelAttribute="login">
+            <form:form action="loginprocess" method="post" modelAttribute="login">
             
                 <div class="form-group">
                     <form:label path="email">email: </form:label>
@@ -36,8 +36,9 @@
                 </div>
                 
                 <!-- TO DO: Must set the link to reference appropriate endpoints -->
-                <a href="#">Don't already have an account? Sign up now!</a>
-            
+                <a href="/user/register">Don't already have an account? Sign up now!</a>
+
+            </form><p style="color:green;">${welcomeMessage}</p>
             </form:form>
         </div>
 		
