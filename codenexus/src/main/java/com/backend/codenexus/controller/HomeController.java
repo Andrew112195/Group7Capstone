@@ -23,6 +23,14 @@ public class HomeController {
     @GetMapping("pricing")
     public String getPricing(){
 
-        return "pricing";
+        return "pricing1";
     }
+
+    @GetMapping("contact")
+    public String getContact(){
+
+        return "contact";
+    }
+
+
 }

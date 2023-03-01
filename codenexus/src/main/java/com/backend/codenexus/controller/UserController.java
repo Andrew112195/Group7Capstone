@@ -45,7 +45,7 @@ public class UserController {
        User checkUser = userService.login(user);
        if(checkUser != null){
            modelMap.put("welcomeMessage", "Welcome " + checkUser.getFirstname());
-           return "index";
+           return "studentDashboard";
        }
        else{
         //redirect
