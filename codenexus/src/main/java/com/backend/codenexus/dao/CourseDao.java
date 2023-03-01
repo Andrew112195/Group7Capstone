@@ -1,4 +1,4 @@
-package com.backend.codenexus.dao;
+/*package com.backend.codenexus.dao;
 
 import com.backend.codenexus.entity.CourseEntity;
 import com.backend.codenexus.entity.ModuleEntity;
@@ -25,3 +25,4 @@ public interface CourseDao extends JpaRepository<CourseEntity,Long> {
     @Query(value = "SELECT * FROM module_entity WHERE course_id = ?1")
     List<ModuleEntity> findAllModulesByCourseId(Long course_id);
 }
+*/
