@@ -1,5 +1,6 @@
-<!-- <%@ page contentType="text/html;charset=UTF-8" language="java" %> -->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- "form import crashing page, without it cannot bring up the inputs in for the form" -->
 <%@ page isErrorPage="true" %>
 
 <!DOCTYPE html>
@@ -13,32 +14,31 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <!-- TO DO: Must set the link to reference appropriate endpoints -->
     <div class="link_bar">
-        <a href="#">About us</a>
-        <a href="#">Pricing</a>
-        <a href="#">Help</a>
+        <a href="/aboutUs">About us</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/help">Help</a>
     </div>
+
 	<div class="center_container">
-		<!-- TO DO: Gotta add .img bellow when design comes back from art team -->
         <div>
-            <h2>Welcome to A Coding Nexus!</h2>
+            <h2>Welcome to Coding Nexus!!!</h2>
         </div>
         <div class="login_card">
-            <!-- TO DO: Action needs to be updated to POST form data to DB -->
-            <form:form action="loginprocess" method="post" modelAttribute="login">
+            <form:form action="loginprocess.jsp" method="post" modelAttribute="login">
             
                 <div class="form-group">
-                    <form:label path="email">email: </form:label>
+                     <form:label path="email">Email: </form:label>
                     <form:errors path="email" class="error"/>
-                    <form:input path="email" type="email" class="form-control"/>
+                    <form:input path="email" type="email" class=""/>
+                    <form:label path="password">Password: </form:label>
+                    <form:errors path="password" class="error"/>
+                    <form:input path="password" type="password" class=""/>
                     <input type="submit" value="Login" class="submit_button"/>
                 </div>
                 
-                <!-- TO DO: Must set the link to reference appropriate endpoints -->
-                <a href="/user/register">Don't already have an account? Sign up now!</a>
-
-            </form><p style="color:green;">${welcomeMessage}</p>
+                <a href="/registerStudent">Don't already have an account? Sign up now!</a>
+            
             </form:form>
         </div>
 		
