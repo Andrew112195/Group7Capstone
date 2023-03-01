@@ -45,8 +45,8 @@ public class  UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(User user) {
-
-        return null;
+    public boolean updateUser(User user) {
+        
+        return false;
     }
 }

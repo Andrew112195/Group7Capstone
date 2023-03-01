@@ -3,7 +3,6 @@ package com.backend.codenexus.controller;
 import com.backend.codenexus.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.backend.codenexus.service.UserService;
@@ -23,7 +22,6 @@ public class UserController {
 
     @GetMapping("index")
     public String index() {
-      /*   userService.register(user); */
         return "index";
     }
     @GetMapping("register")
@@ -43,7 +41,6 @@ public class UserController {
         }
     }
     @PostMapping("login-process")
-    //@RequestMapping
     public String login(ModelMap modelMap, User user) {
        User checkUser = userService.login(user);
        if(checkUser != null){
@@ -64,6 +61,7 @@ public class UserController {
     }
     @GetMapping("ide")
     public String ideLoader(){
+
         return "onlineIDE";
     }
 }

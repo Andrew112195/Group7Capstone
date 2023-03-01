@@ -30,6 +30,6 @@ public class QuizEntity {
     @Column(name = "question_id")
     private Long questionId;
 
-    @Column(name = "passed")
-    private boolean passed;
+    @Column(name = "complete")
+    private boolean complete;
 }

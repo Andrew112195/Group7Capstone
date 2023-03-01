@@ -2,7 +2,8 @@ package com.backend.codenexus.service;
 
 import java.util.*;
 
-import com.backend.codenexus.model.*;
+import com.backend.codenexus.model.Course;
+import com.backend.codenexus.model.Module;
 
 public interface CourseService {
     
@@ -13,5 +14,7 @@ public interface CourseService {
     List <Course> getStudentCompletedCourses(Long user_id);
 
     List <Course> getStudentIncompleteCourses(Long user_id);
+
+    List <Module> getCourseModules(Long course_id);
 
 }

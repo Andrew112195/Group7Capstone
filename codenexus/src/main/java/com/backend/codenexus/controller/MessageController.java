@@ -22,9 +22,9 @@ public class MessageController {
     MessagesService messagesService;
 
     @GetMapping("sent/{user_id}")
-    public String getSentMessages(@PathVariable Long user_id) {
+    public List<Message> getSentMessages(@PathVariable Long user_id) {
         List<Message> messagesSent = messagesService.getSentMessages(user_id);
-        return "messageSent";
+        return messagesSent;
     }
 
     @GetMapping("inbox/{user_id}")

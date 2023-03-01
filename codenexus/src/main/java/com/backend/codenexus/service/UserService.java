@@ -11,5 +11,7 @@ public interface UserService {
 
     User login(User user);
 
-    User updateUser(User user);
+    boolean updateUser(User user);
+
+    
 }

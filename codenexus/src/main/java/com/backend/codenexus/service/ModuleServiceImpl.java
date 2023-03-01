@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.backend.codenexus.dao.*;
 import com.backend.codenexus.entity.*;
 import com.backend.codenexus.model.*;
-import com.backend.codenexus.model.Module;
 
 @Service
 public class ModuleServiceImpl implements ModuleService {
@@ -19,21 +18,45 @@ public class ModuleServiceImpl implements ModuleService {
 
     @Autowired
     ModuleDao moduleDao;
-    TaskEntity taskDao;
+    TaskDao taskDao;
+    QuizDao quizDao;
+
 
     @Override
-    public void completeTask() {
+    public Task getTask(Long task_id) {
+        Task task = new Task();
+        TaskEntity taskEntity = moduleDao.findTaskById(task_id);
+        BeanUtils.copyProperties(taskEntity,task);
+        return task;
     }
 
     @Override
-    public void createTask(Task task) {
+    public Quiz getQuiz(Long quiz_id) {
+        Quiz quiz = new Quiz();
+        QuizEntity quizEntity = quizDao.findByQuizId(quiz_id);
+        BeanUtils.copyProperties(quizEntity,quiz);
+        return quiz;
+    }
+    @Override
+    public void completeTask(Long task_id) {
+        Task task = getTask(task_id);
+        task.setComplete(true);
         TaskEntity taskEntity = new TaskEntity();
-        BeanUtils.copyProperties(task, taskEntity);
-        ModuleEntity moduleEntity = new ModuleEntity();
+        BeanUtils.copyProperties(task,taskEntity);
+        taskDao.saveAndFlush(taskEntity);
     }
 
     @Override
-    public List<Task> getTasks(Long module_id) {
+    public void completeQuiz(Long quiz_id) {
+        Quiz quiz = getQuiz(quiz_id);
+        quiz.setComplete(true);
+        QuizEntity quizEntity = new QuizEntity();
+        BeanUtils.copyProperties(quiz,quizEntity);
+        quizDao.saveAndFlush(quizEntity);
+    }
+
+    @Override
+    public List<Task> getModuleTasks(Long module_id) {
         List<TaskEntity> taskEntity = moduleDao.findTasksByModuleId(module_id);
         List<Task> taskList = new ArrayList();
         for (TaskEntity source: taskEntity ) {
@@ -41,20 +64,27 @@ public class ModuleServiceImpl implements ModuleService {
             BeanUtils.copyProperties(source , target);
             taskList.add(target);
          }
-        return null;
+        return taskList;
     }
-
     @Override
-    public void addTaskToModule(Long task_id) {
-        Task task = new Task();
+    public Quiz getModuleQuiz(Long module_id){
+        QuizEntity quizEntity = moduleDao.findQuizById(module_id);
+        Quiz quiz = new Quiz();
+        BeanUtils.copyProperties(quizEntity,quiz);
+        return quiz;
+    }
+    @Override
+    public void addTaskToModule(Task task) {
         TaskEntity taskEntity = new TaskEntity();
-        
+        BeanUtils.copyProperties(task,taskEntity);
+        taskDao.saveAndFlush(taskEntity);
     }
 
     @Override
-    public void addQuizToModule(Long quiz_id) {
-        ModuleEntity moduleEntity = new ModuleEntity();
-        
+    public void addQuizToModule(Quiz quiz) {
+        QuizEntity quizEntity = new QuizEntity();
+        BeanUtils.copyProperties(quiz,quizEntity);
+        quizDao.saveAndFlush(quizEntity);
     }
 
 

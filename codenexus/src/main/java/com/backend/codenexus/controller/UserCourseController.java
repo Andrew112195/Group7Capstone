@@ -6,7 +6,7 @@ import com.backend.codenexus.service.UserCourseService;
 
 @CrossOrigin
 @RestController
-@RequestMapping("course")
+@RequestMapping("user/course")
 public class UserCourseController {
 
     /*

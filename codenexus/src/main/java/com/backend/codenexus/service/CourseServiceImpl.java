@@ -1,14 +1,16 @@
 package com.backend.codenexus.service;
 
 import java.util.*;
+
+import com.backend.codenexus.entity.*;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.*;
 import com.backend.codenexus.dao.*;
-import com.backend.codenexus.entity.*;
-import com.backend.codenexus.model.*;
+import com.backend.codenexus.model.Course;
+import com.backend.codenexus.model.Module;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -17,19 +19,28 @@ public class CourseServiceImpl implements CourseService {
     @Autowired
     CourseDao courseDao;
 
+
     @Override
     public List<Course> getCourseListFromUser(Long user_id){
-        List<Course> course = new ArrayList<Course>();
+        List<Course> courseList = new ArrayList<Course>();
         List<CourseEntity> courseEntity = courseDao.findAllByUserId(user_id);
-        BeanUtils.copyProperties(courseEntity,course);
-        return course;
+        for (CourseEntity source: courseEntity ) {
+            Course target = new Course();
+            BeanUtils.copyProperties(source , target);
+            courseList.add(target);
+        }
+        return courseList;
     }
 
     @Override
     public List<Course> getCourseList(){
         List <Course> courseList = new ArrayList<Course>();
         List <CourseEntity> courseEntity = courseDao.findAll();
-        BeanUtils.copyProperties(courseEntity, courseList);
+        for (CourseEntity source: courseEntity ) {
+            Course target = new Course();
+            BeanUtils.copyProperties(source , target);
+            courseList.add(target);
+        }
         return courseList;
     }
 
@@ -37,7 +48,11 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> getStudentCompletedCourses(Long user_id){
         List<Course> courseList = new ArrayList<Course>();
         List <CourseEntity> courseEntity = courseDao.findAllCompletedByUserId(user_id);
-        BeanUtils.copyProperties(courseEntity, courseList);
+        for (CourseEntity source: courseEntity ) {
+            Course target = new Course();
+            BeanUtils.copyProperties(source , target);
+            courseList.add(target);
+        }
         return courseList;
     }
 
@@ -45,7 +60,24 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> getStudentIncompleteCourses(Long user_id){
         List<Course> courseList = new ArrayList<Course>();
         List <CourseEntity> courseEntity = courseDao.findAllIncompletedByUserId(user_id);
-        BeanUtils.copyProperties(courseEntity, courseList);
+        for (CourseEntity source: courseEntity ) {
+            Course target = new Course();
+            BeanUtils.copyProperties(source , target);
+            courseList.add(target);
+        }
         return courseList;
     }
+    @Override
+    public List<Module> getCourseModules(Long course_id){
+        List<Module> courseModules = new ArrayList<Module>();
+        List<ModuleEntity> moduleEntity = courseDao.findAllModulesByCourseId(course_id);
+        for (ModuleEntity source: moduleEntity ) {
+            Module target = new Module();
+            BeanUtils.copyProperties(source , target);
+            courseModules.add(target);
+        }
+        return courseModules;
+    }
+
+
 }

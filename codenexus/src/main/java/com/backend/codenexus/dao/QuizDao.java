@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface QuizDao  extends JpaRepository<QuizEntity, Long> {
     
-    @Query(value = "SELECT * FROM Quiz WHERE module_id = ?1", nativeQuery = true)
-    QuizEntity findByModuleId(Long moduleId);
+    @Query(value = "SELECT * FROM quiz_entity WHERE quiz_id = ?1", nativeQuery = true)
+    QuizEntity findByQuizId(Long quiz_id);
 }
