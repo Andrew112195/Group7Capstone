@@ -1,3 +1,4 @@
+/*
 package com.backend.codenexus.model;
 import lombok.Data;
 
@@ -10,3 +11,4 @@ public class UserType {
     private USER_TYPE userType;
     private long userId;
 }
+*/

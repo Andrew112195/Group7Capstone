@@ -18,17 +18,19 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_type_id")
-    private UserTypeEntity userTypeId;
+    @Column(name = "user_type_id")
+    private long userTypeId;
 
     @Column(name = "first_name")
     private String firstname;
 
     @Column(name = "last_name")
     private String lastname;
+
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "username")
     private String username;

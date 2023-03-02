@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="#"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<a class="navbar-brand" href="/user/index"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item">
@@ -25,7 +25,7 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="/home/login">Log in</a>
+						<a class="nav-link" href="/user/login">Log in</a>
 					</li>
 				</ul>
 			</div>
@@ -65,6 +65,7 @@
                     </form>
                     
                     <p style="color:red;">${invalidLogin}</p>
+                    <p style="color:green;">${successfulRegistration}</p>
                 </div>
                 <div class="col-sm-6 hide-on-mobile">
                     <div id="demo" class="carousel slide" data-ride="carousel">

@@ -1,4 +1,4 @@
-/*package com.backend.codenexus.service;
+package com.backend.codenexus.service;
 
 import java.util.*;
 
@@ -18,4 +18,3 @@ public interface CourseService {
     List <Module> getCourseModules(Long course_id);
 
 }
-*/

@@ -1,4 +1,4 @@
-/*package com.backend.codenexus.dao;
+package com.backend.codenexus.dao;
 
 import com.backend.codenexus.entity.CourseEntity;
 import com.backend.codenexus.entity.ModuleEntity;
@@ -22,7 +22,6 @@ public interface CourseDao extends JpaRepository<CourseEntity,Long> {
     @Query(value = "SELECT * FROM course_entity WHERE user_id = ?1 and is_completed = false", nativeQuery = true)
     List<CourseEntity> findAllIncompletedByUserId(Long user_id);
 
-    @Query(value = "SELECT * FROM module_entity WHERE course_id = ?1")
+    @Query(value = "SELECT * FROM module_entity WHERE course_id = ?1", nativeQuery = true)
     List<ModuleEntity> findAllModulesByCourseId(Long course_id);
 }
-*/

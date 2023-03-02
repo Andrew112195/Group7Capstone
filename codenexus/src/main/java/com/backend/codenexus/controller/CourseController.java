@@ -1,4 +1,4 @@
-/*package com.backend.codenexus.controller;
+package com.backend.codenexus.controller;
 
 import com.backend.codenexus.model.Course;
 import com.backend.codenexus.service.CourseService;
@@ -24,4 +24,4 @@ public class CourseController {
 
 
     
-}*/
+}

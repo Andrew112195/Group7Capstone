@@ -6,8 +6,31 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
  <body>
-    <br><br>
-    <h3>Welcome, Peter</h3>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	 <div class="container">
+		 <a class="navbar-brand" href="/user/index"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+		 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				 <li class="nav-item">
+					 <a class="nav-link" href="/home/pricing">Pricing</a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link" href="/home/aboutus">About us</a>
+				 </li>
+				 <li class="nav-item">
+					 <a class="nav-link" href="/home/pricing">Contact</a>
+				 </li>
+
+				 <li class="nav-item">
+					 <a class="nav-link" href="/user/login">Log in</a>
+				 </li>
+			 </ul>
+		 </div>
+	 </div>
+ </nav>
+    <br><br><br><br><br>
+    <h3>${welcomeMessage}</h3>
+
 	<!-- portfolio strats -->
 	<section class="portfolio section-padding" id="portfolio">
 		<div class="container">
@@ -52,7 +75,7 @@
 	<!-- footer starts -->
 	<footer class="bg-dark p-2 text-center">
 		<div class="container">
-			<p class="text-white">All Right Reserved By Nexus</p>
+			<p class="text-white">All Right Reserved By Code Nexus</p>
 		</div>
 	</footer>
 	<!-- footer ends -->

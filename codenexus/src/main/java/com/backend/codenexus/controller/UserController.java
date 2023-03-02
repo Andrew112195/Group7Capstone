@@ -24,6 +24,7 @@ public class UserController {
     public String index() {
         return "index";
     }
+
     @GetMapping("register")
     public String registration(){
 
@@ -42,17 +43,23 @@ public class UserController {
     }
     @PostMapping("login-process")
     public String login(ModelMap modelMap, User user) {
-       User checkUser = userService.login(user);
-       if(checkUser != null){
-           modelMap.put("welcomeMessage", "Welcome " + checkUser.getFirstname());
-           return "studentDashboard";
+       user = userService.login(user);
+       if(user != null) {
+           modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
+           if (user.getUserTypeId() == 3) {
+               return "adminDashboard";
+           } else if (user.getUserTypeId() == 2) {
+               return "instructorDashboard";
+           } else if (user.getUserTypeId() == 1) {
+               return "studentDashboard";
+           }
        }
        else{
         //redirect
            modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
            return "login";
        }
-
+        return null;
     }
     @GetMapping("login")
     public String loginProcess(){

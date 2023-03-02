@@ -7,9 +7,10 @@ import lombok.Data;
 @Data
 public class User {
     private long id;
-    private UserType userTypeId;
+    private long userTypeId;
     private String firstname;
     private String lastname;
+    private String email;
     private String username;
     private String password;
     private String messages;
