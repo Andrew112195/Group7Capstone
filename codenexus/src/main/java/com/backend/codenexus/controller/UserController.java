@@ -1,4 +1,4 @@
-package com.backend.codenexus.controller;
+/*package com.backend.codenexus.controller;
 
 import com.backend.codenexus.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,7 @@ import com.backend.codenexus.service.UserService;
 @RequestMapping("user")
 public class UserController {
 
-    /*
-     * @TODO
-     * Gonna try to add a user and a course to see if that will work with adding
-     * userCourse to the database.
-     */
+    
     @Autowired
     UserService userService;
 
@@ -71,4 +67,4 @@ public class UserController {
 
         return "onlineIDE";
     }
-}
+}*/
