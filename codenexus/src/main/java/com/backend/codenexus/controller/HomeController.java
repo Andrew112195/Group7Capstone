@@ -16,6 +16,7 @@ import com.backend.codenexus.service.*;
 
 @Controller
 @RequestMapping("/")
+@SessionAttributes("user-id")
 public class HomeController {
 
     @Autowired
@@ -57,6 +58,7 @@ public class HomeController {
        user = userService.login(user);
        if(user != null) {
            modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
+           modelMap.put("user-id", user.getId());
            if (user.getUserTypeId() == 3) {
                return "adminDashboard";
            } else if (user.getUserTypeId() == 2) {
@@ -65,12 +67,9 @@ public class HomeController {
                return "studentDashboard";
            }
        }
-       else{
         //redirect
-           modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
-           return "login";
-       }
-        return null;
+        modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
+        return "login";
     }
 
 
@@ -86,10 +85,9 @@ public class HomeController {
             modelMap.put("successfulRegistration", "Thank you for your registration!! " + user.getFirstname());
             return "login";
         }
-        else{
-            modelMap.put("registrationError", "User name exists already, please try again");
-            return "register";
-        }
+        
+        modelMap.put("registrationError", "User name exists already, please try again");
+        return "register";
     }
 
     @GetMapping("ide")
@@ -101,14 +99,19 @@ public class HomeController {
     @GetMapping("student-courses")
     public String displayCourses(ModelMap modelMap, User user){
         List<Course> currentList = courseService.getCourseListFromUser(user.getId());
-        for (Course current: currentList){
-            modelMap.addAttribute(current.getTitle(), current);
-            List<Module> currentModules = courseService.getCourseModules(current.getId());
-            for (Module currentMod: currentModules){
-                modelMap.addAttribute(currentMod.getName(), currentMod);
-            }
-        }
+    
+        modelMap.addAttribute("courses", currentList);
+            
         return "studentDashboard";
+    }
+
+    @GetMapping("student-courses/{course-id}")
+    public String displayCourseModules(ModelMap modelMap, Long courseId){
+        List<Module> currentModules = courseService.getCourseModules(courseId);
+
+        modelMap.addAttribute("modules", currentModules);
+        
+        return "studentCourseView";
     }
 
 }

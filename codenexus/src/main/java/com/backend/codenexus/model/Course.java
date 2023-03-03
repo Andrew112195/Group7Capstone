@@ -6,7 +6,7 @@ import lombok.Data;
 @lombok.NoArgsConstructor
 public class Course {
 
-    private long id;
+    private Long id;
     private String title;
     private String description;
     private boolean isCompleted;
