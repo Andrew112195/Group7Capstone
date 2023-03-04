@@ -11,4 +11,5 @@ public class Course {
     private String description;
     private boolean isCompleted;
     private boolean preRequisites;
+    private Long userId;
 }

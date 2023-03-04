@@ -2,6 +2,7 @@ package com.backend.codenexus.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -31,8 +32,8 @@ public class CourseEntity {
     @Column(name = "pre_requisites")
     private boolean preRequisites;
 
-    @OneToMany(mappedBy = "courseId")
-    private Set<UserCourseEntity> userCourses;
+    @Column(name = "user_id")
+    private Long userId;
 
     /*
     * One Course can have many modules

@@ -60,6 +60,7 @@
 						</div>
 					</div>
 				</div>
+				<div>${courses}</div>
                 <div class="col-6 col-md-6 col-lg-4">
 					<div class="card text-light text-center bg-white pb-2">
 						<div class="card-body text-dark">
