@@ -39,7 +39,7 @@ public class HomeController {
     @GetMapping("pricing")
     public String getPricing(){
 
-        return "pricing1";
+        return "pricing";
     }
 
     @GetMapping("contact")
