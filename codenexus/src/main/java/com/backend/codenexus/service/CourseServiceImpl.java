@@ -20,17 +20,17 @@ public class CourseServiceImpl implements CourseService {
     CourseDao courseDao;
 
 
-    @Override
-    public List<Course> getCourseListFromUser(Long user_id){
-        List<Course> courseList = new ArrayList<Course>();
-        List<CourseEntity> courseEntity = courseDao.findAllByUserId(user_id);
-        for (CourseEntity source: courseEntity ) {
-            Course target = new Course();
-            BeanUtils.copyProperties(source , target);
-            courseList.add(target);
-        }
-        return courseList;
-    }
+
+//    public List<Course> getCourseList(){
+//        List<Course> courseList = new ArrayList<Course>();
+//        List<CourseEntity> courseEntity = courseDao.findAll();
+//        for (CourseEntity source: courseEntity ) {
+//            Course target = new Course();
+//            BeanUtils.copyProperties(source , target);
+//            courseList.add(target);
+//        }
+//        return courseList;
+//    }
 
     @Override
     public List<Course> getCourseList(){

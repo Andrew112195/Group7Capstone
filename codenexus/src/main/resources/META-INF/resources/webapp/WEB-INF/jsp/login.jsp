@@ -50,6 +50,7 @@
                     <form method="POST" action="/user/login-process" class="login-form" >
                         <div class="form-group"> 
                             <input type="text" name="username" class="form-control" placeholder=" UserName" required/>
+
                         </div>
                         <div class="form-group">
                             <input type="Password" name="password" class="form-control" placeholder="Password" required/>
