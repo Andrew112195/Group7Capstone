@@ -1,4 +1,3 @@
-/*
 package com.backend.codenexus.entity;
 import lombok.*;
 import jakarta.persistence.*;
@@ -22,10 +21,10 @@ public class UserTypeEntity {
     private String typeName;
 
 
-    */
 /*A bunch of users under one user type Example Jay and Bob are Admins..........
-    * Tim and robin are Students*//*
+    * Tim and robin are Students*/
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(targetEntity = UserEntity.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_type_id",referencedColumnName = "id")
     private List<UserEntity> users;
-}*/
+}

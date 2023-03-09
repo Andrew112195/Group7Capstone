@@ -1,11 +1,15 @@
 package com.backend.codenexus.controller;
 
+import com.backend.codenexus.model.Course;
 import com.backend.codenexus.model.User;
+import com.backend.codenexus.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.backend.codenexus.service.UserService;
+import javax.servlet.http.*;
+import java.util.List;
 
 
 @Controller
@@ -19,6 +23,13 @@ public class UserController {
      */
     @Autowired
     UserService userService;
+
+    @Autowired
+    CourseService courseService;
+
+
+
+
 
     @GetMapping("index")
     public String index() {
@@ -44,14 +55,20 @@ public class UserController {
     @PostMapping("login-process")
     public String login(ModelMap modelMap, User user) {
        user = userService.login(user);
+
        if(user != null) {
+           long userId = user.getId();
            modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
+            modelMap.addAttribute("userId", userId);
            if (user.getUserTypeId() == 3) {
+
                return "adminDashboard";
            } else if (user.getUserTypeId() == 2) {
-               return "instructorDashboard";
+
+               return "redirect:/user/students";
            } else if (user.getUserTypeId() == 1) {
-               return "studentDashboard";
+
+               return "redirect:/course/get-courses";
            }
        }
        else{
@@ -71,4 +88,12 @@ public class UserController {
 
         return "onlineIDE";
     }
+    @GetMapping("students")
+    public String getStudents(ModelMap modelMap){
+
+        modelMap.put("students", userService.getAllStudents());
+
+        return "instructorDashboard";
+    }
+
 }

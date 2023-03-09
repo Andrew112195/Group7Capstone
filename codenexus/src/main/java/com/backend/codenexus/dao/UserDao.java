@@ -9,6 +9,8 @@ import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 //Data Access Object
 @EnableJpaRepositories
 @Repository
@@ -16,7 +18,7 @@ public interface UserDao extends JpaRepository<UserEntity, Long> {
     @Query("select (count(u) > 0) from UserEntity u where u.username = ?1")
     boolean existsByUsername(@NonNull String username);
 
-    @Query(value = "SELECT * FROM user_entity WHERE user_id = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM user_entity WHERE id = ?1", nativeQuery = true)
     UserEntity findById(long user_id);
 
     @Query(value = "SELECT * FROM user_entity WHERE username = ?1", nativeQuery = true)
@@ -24,4 +26,5 @@ public interface UserDao extends JpaRepository<UserEntity, Long> {
 
     @Query(value = "SELECT * FROM user_entity WHERE username = ?1 AND password = ?2", nativeQuery = true)
     UserEntity findByUsernameAndPassword(String username,String password);
+    List<UserEntity> findAllByUserTypeId(long userTypeId);
 }

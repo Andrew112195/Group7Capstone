@@ -2,7 +2,10 @@ package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 import org.springframework.data.relational.core.mapping.Table;
+
+import java.util.List;
 //import java.util.ArrayList;
 
 @AllArgsConstructor
@@ -18,10 +21,13 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "user_type_id")
     private long userTypeId;
+    @Column(name="cohort_id")
+    private long cohortId;
+
 
     @Column(name = "first_name")
     private String firstname;
@@ -40,5 +46,8 @@ public class UserEntity {
 
     @Column(name = "messages")
     private String messages;
+
+    @OneToMany(mappedBy="user")
+    private List<UserCourseEntity> userCourse;
 
 }
