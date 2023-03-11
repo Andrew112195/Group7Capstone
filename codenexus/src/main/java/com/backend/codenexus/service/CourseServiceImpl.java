@@ -67,17 +67,17 @@ public class CourseServiceImpl implements CourseService {
         }
         return courseList;
     }
-    @Override
-    public List<Module> getCourseModules(Long course_id){
-        List<Module> courseModules = new ArrayList<Module>();
-        List<ModuleEntity> moduleEntity = courseDao.findAllModulesByCourseId(course_id);
-        for (ModuleEntity source: moduleEntity ) {
-            Module target = new Module();
-            BeanUtils.copyProperties(source , target);
-            courseModules.add(target);
-        }
-        return courseModules;
-    }
+//    @Override
+//    public List<Module> getCourseModules(Long course_id){
+//        List<Module> courseModules = new ArrayList<Module>();
+//        List<ModuleEntity> moduleEntity = courseDao.findAllModulesByCourseId(course_id);
+//        for (ModuleEntity source: moduleEntity ) {
+//            Module target = new Module();
+//            BeanUtils.copyProperties(source , target);
+//            courseModules.add(target);
+//        }
+//        return courseModules;
+//    }
 
 
 }

@@ -1,14 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
-    <%
 
-
-
-%>
 <head>
     <title>Instructor's Dashboard</title>
     <meta charset="utf-8">
@@ -75,20 +71,20 @@
 
             <tbody>
 
-            <c:forEach items="${students}" var="student">
+            th:each items="${students}" var="student">
                 <tr>
-                    <td>${student.firstname}"</td>
+                    <td></td>
                     <td>
-                        <button type="submit" class="btn btn-primary" onclick="addUserCourse(student.id)">
+                        <button type="submit" class="btn btn-primary" >
                             AddStudentToCourse
                         </button>
-                        <c:set var="userId" value="${student.id}"/>
+                        <c:set var="studentId" value="${student.id}"
                         <c:set var="studentName" value="${student.firstname}"/>
                         <input type="hidden" name="courseId" value="${studentId}"/>
                         <input type="hidden" name="courseName" value="${studentName}"/>
                     </td>
                 </tr>
-            </c:forEach>
+            </>
             </tbody>
         </table>
     </form>

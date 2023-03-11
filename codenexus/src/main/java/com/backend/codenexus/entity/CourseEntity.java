@@ -1,8 +1,10 @@
 package com.backend.codenexus.entity;
+
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -34,9 +36,13 @@ public class CourseEntity {
     @OneToMany(mappedBy = "course")
     private List<UserCourseEntity> userCourses;
 
-    /*
-    * One Course can have many modules
-    * */
-//    @OneToMany(mappedBy = "courseId")
-//    private Set<ModuleEntity> modules;
+
+    @JoinColumn(name = "quiz_id")
+    @OneToOne(mappedBy = "courseQ")
+    private QuizEntity quiz;
+
+    @OneToMany(mappedBy = "course")
+    private Set<TaskEntity> tasks;
+
+
 }

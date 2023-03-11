@@ -5,8 +5,8 @@ public enum Difficulty {
     MEDIUM,
     HARD;
 
-    @Override
-    public String toString() {
-        return name().toLowerCase();
-    }
+
+
+
+
 }

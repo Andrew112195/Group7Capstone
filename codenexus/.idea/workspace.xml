@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/aboutUs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/instructorDashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login-process.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/onlineIDE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/pricing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/UserCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/UserCourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/QuizDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/QuizDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/TaskDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/CourseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/CourseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/ModuleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/ModuleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/QuizEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/QuizEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/TaskEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/model/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/model/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/ModuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/TaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserCourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserCourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/resources/webapp/WEB-INF/jsp/instructorDashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/resources/webapp/WEB-INF/jsp/instructorDashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/style_about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/style_about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/resources/webapp/WEB-INF/jsp/instructorDashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/resources/webapp/WEB-INF/jsp/instructorDashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/UserCourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/UserCourseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/QuizEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/QuizEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/Difficulty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/Difficulty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/ModuleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/TaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/TaskServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserCourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserCourseServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_about.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/CSS/style_about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.backend.codenexus.CodenexusApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.backend.codenexus.CodenexusApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.backend.codenexus.CodenexusApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.backend.codenexus.CodenexusApplicationTests.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MLs63uws64kcnk6j4I48ZhrbwM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Downloads/jar_files/jakarta.xml.bind-api-3.0.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e93659008ce16bed60bce1792d2811ac&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Spring Boot.CodenexusApplication">
+    <configuration name="Difficulty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.model.Difficulty" />
+      <module name="codenexus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.backend.codenexus.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserCourseServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.service.UserCourseServiceImpl" />
+      <module name="codenexus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.backend.codenexus.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodenexusApplication | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/CodenexusApplication.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="studentDashboard.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/codenexus/templates/studentDashboard.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodenexusApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="codenexus" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.backend.codenexus.CodenexusApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Difficulty" />
+        <item itemvalue="JavaScript Debug.studentDashboard.html" />
+        <item itemvalue="Application.UserCourseServiceImpl" />
+        <item itemvalue="HTTP Request.CodenexusApplication | #1" />
+        <item itemvalue="HTTP Request.CodenexusApplication | #1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="" />
+      <created>1677558020621</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677558020621</updated>
+      <workItem from="1677558022134" duration="568000" />
+      <workItem from="1677586018113" duration="148000" />
+      <workItem from="1677638010995" duration="4453000" />
+      <workItem from="1677643619675" duration="387000" />
+      <workItem from="1677645596791" duration="1377000" />
+      <workItem from="1677721897428" duration="1648000" />
+      <workItem from="1677726604591" duration="1273000" />
+      <workItem from="1677802556497" duration="18366000" />
+      <workItem from="1677930253899" duration="21743000" />
+      <workItem from="1677957920303" duration="4771000" />
+      <workItem from="1678007786755" duration="6888000" />
+      <workItem from="1678023872263" duration="3557000" />
+      <workItem from="1678070417361" duration="907000" />
+      <workItem from="1678107212676" duration="14151000" />
+      <workItem from="1678189072859" duration="21236000" />
+      <workItem from="1678239833004" duration="7006000" />
+      <workItem from="1678279619202" duration="2409000" />
+      <workItem from="1678314890616" duration="2279000" />
+      <workItem from="1678327140580" duration="2695000" />
+      <workItem from="1678331783269" duration="109000" />
+      <workItem from="1678372367328" duration="15952000" />
+      <workItem from="1678392211689" duration="174000" />
+      <workItem from="1678392402737" duration="996000" />
+      <workItem from="1678393426231" duration="21298000" />
+      <workItem from="1678455010154" duration="415000" />
+      <workItem from="1678455507762" duration="21031000" />
+      <workItem from="1678542184571" duration="282000" />
+      <workItem from="1678542544744" duration="6050000" />
+    </task>
+    <task id="LOCAL-00001" summary="added cohort and I">
+      <created>1678330170701</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678330170701</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added cohort and I" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cohort and I" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

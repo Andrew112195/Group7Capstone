@@ -13,7 +13,10 @@ com\backend\codenexus\entity\SubscriptionEntity.class
 com\backend\codenexus\service\UserCourseService.class
 com\backend\codenexus\controller\UserCourseController.class
 com\backend\codenexus\dao\UserDao.class
+<<<<<<< HEAD
 com\backend\codenexus\controller\MainController.class
+=======
+>>>>>>> main
 com\backend\codenexus\entity\BillingEntity.class
 com\backend\codenexus\entity\UserTypeEntity.class
 com\backend\codenexus\entity\AccountInfoEntity.class
@@ -28,12 +31,22 @@ com\backend\codenexus\aop\LoggingAop.class
 com\backend\codenexus\service\ModuleServiceImpl.class
 com\backend\codenexus\service\QuizServiceImpl.class
 com\backend\codenexus\model\Module.class
+<<<<<<< HEAD
+=======
+com\backend\codenexus\controller\HomeController.class
+>>>>>>> main
 com\backend\codenexus\entity\TaskEntity.class
 com\backend\codenexus\service\UserCourseServiceImpl.class
 com\backend\codenexus\model\Billing.class
 com\backend\codenexus\model\Task.class
 com\backend\codenexus\model\Subscription.class
+<<<<<<< HEAD
 com\backend\codenexus\model\Cohort.class
+=======
+com\backend\codenexus\controller\UserController.class
+com\backend\codenexus\model\Cohort.class
+com\backend\codenexus\controller\CourseController.class
+>>>>>>> main
 com\backend\codenexus\entity\CohortEntity.class
 com\backend\codenexus\service\CourseService.class
 com\backend\codenexus\model\Message.class
@@ -43,13 +56,24 @@ com\backend\codenexus\entity\MessagesEntity.class
 com\backend\codenexus\model\UserCourse.class
 com\backend\codenexus\service\QuizService.class
 com\backend\codenexus\entity\UserCourseEntity.class
+<<<<<<< HEAD
+=======
+com\backend\codenexus\controller\ModuleController.class
+>>>>>>> main
 com\backend\codenexus\model\Quiz.class
 com\backend\codenexus\service\UserServiceImpl.class
 com\backend\codenexus\service\MessagesService.class
 com\backend\codenexus\dao\UserCourseDao.class
 com\backend\codenexus\dao\QuizDao.class
+<<<<<<< HEAD
 com\backend\codenexus\entity\CourseEntity.class
 com\backend\codenexus\service\CourseServiceImpl.class
+=======
+com\backend\codenexus\controller\TaskController.class
+com\backend\codenexus\entity\CourseEntity.class
+com\backend\codenexus\service\CourseServiceImpl.class
+com\backend\codenexus\controller\QuizController.class
+>>>>>>> main
 com\backend\codenexus\CodenexusApplication.class
 com\backend\codenexus\entity\QuizEntity.class
 com\backend\codenexus\entity\UserEntity.class
