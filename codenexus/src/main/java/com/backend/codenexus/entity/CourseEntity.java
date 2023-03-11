@@ -32,12 +32,12 @@ public class CourseEntity {
     @Column(name = "pre_requisites")
     private boolean preRequisites;
 
-    @Column(name = "user_id")
-    private Long userId;
+    @OneToMany(mappedBy = "course")
+    private List<UserCourseEntity> userCourses;
 
     /*
     * One Course can have many modules
     * */
-    @OneToMany(mappedBy = "courseId")
-    private Set<ModuleEntity> modules;
+//    @OneToMany(mappedBy = "courseId")
+//    private Set<ModuleEntity> modules;
 }
