@@ -2,7 +2,6 @@ package com.backend.codenexus.service;
 
 import com.backend.codenexus.model.User;
 
-import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

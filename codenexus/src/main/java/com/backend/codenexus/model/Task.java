@@ -8,7 +8,7 @@ public class Task {
     private int id;
     private String question;
     private Long answerId;
-    private Difficulty difficulty;
+    private enums.Difficulty difficulty;
     private String category;
     private String explanation;
     private String questionType;

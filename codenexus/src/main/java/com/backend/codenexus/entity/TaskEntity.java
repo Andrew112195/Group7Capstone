@@ -1,7 +1,8 @@
 package com.backend.codenexus.entity;
 
 import com.backend.codenexus.entity.CourseEntity;
-import com.backend.codenexus.model.Difficulty;
+import com.backend.codenexus.model.enums;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -42,20 +43,20 @@ public class TaskEntity {
     @Column(name = "complete")
     private boolean complete;
 
-    public Difficulty getDifficulty() {
+    public enums.Difficulty getDifficulty() {
         switch (difficultyLevel) {
             case 1:
-                return Difficulty.EASY;
+                return enums.Difficulty.EASY;
             case 2:
-                return Difficulty.MEDIUM;
+                return enums.Difficulty.MEDIUM;
             case 3:
-                return Difficulty.HARD;
+                return enums.Difficulty.HARD;
             default:
                 throw new IllegalArgumentException("Invalid difficulty level: " + difficultyLevel);
         }
     }
 
-    public void setDifficulty(Difficulty difficulty) {
+    public void setDifficulty(enums.Difficulty difficulty) {
         switch (difficulty) {
             case EASY:
                 difficultyLevel = 1;

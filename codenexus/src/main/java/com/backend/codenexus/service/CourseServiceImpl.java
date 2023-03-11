@@ -2,12 +2,13 @@ package com.backend.codenexus.service;
 
 import java.util.*;
 
-import com.backend.codenexus.entity.*;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.slf4j.*;
+
+import com.backend.codenexus.entity.*;
 import com.backend.codenexus.dao.*;
 import com.backend.codenexus.model.Course;
 import com.backend.codenexus.model.Module;
@@ -18,19 +19,6 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     CourseDao courseDao;
-
-
-
-//    public List<Course> getCourseList(){
-//        List<Course> courseList = new ArrayList<Course>();
-//        List<CourseEntity> courseEntity = courseDao.findAll();
-//        for (CourseEntity source: courseEntity ) {
-//            Course target = new Course();
-//            BeanUtils.copyProperties(source , target);
-//            courseList.add(target);
-//        }
-//        return courseList;
-//    }
 
     @Override
     public List<Course> getCourseList(){
@@ -67,6 +55,7 @@ public class CourseServiceImpl implements CourseService {
         }
         return courseList;
     }
+    
 //    @Override
 //    public List<Module> getCourseModules(Long course_id){
 //        List<Module> courseModules = new ArrayList<Module>();

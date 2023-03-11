@@ -16,7 +16,7 @@ public class Module {
     private Task[] archive;
     private String name;
     private String description;
-    private Difficulty difficulty;
+    private enums.Difficulty difficulty;
     private boolean preReq;
     private boolean moduleComplete;
 }

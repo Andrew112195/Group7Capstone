@@ -25,9 +25,9 @@ public class UserEntity {
 
     @Column(name = "user_type_id")
     private Long userTypeId;
+
     @Column(name="cohort_id")
     private Long cohortId;
-
 
     @Column(name = "first_name")
     private String firstname;

@@ -36,7 +36,6 @@ public class CourseEntity {
     @OneToMany(mappedBy = "course")
     private List<UserCourseEntity> userCourses;
 
-
     @JoinColumn(name = "quiz_id")
     @OneToOne(mappedBy = "courseQ")
     private QuizEntity quiz;

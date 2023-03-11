@@ -7,6 +7,6 @@ import lombok.Data;
 public class UserType {
 
     private Long id;
-    private USER_TYPE userType;
+    private enums.USER_TYPE userType;
     private Long userId;
 }
