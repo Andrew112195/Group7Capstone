@@ -6,8 +6,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Quiz {
-    private long id;
-    private long moduleId;
-    private long questionId;
+    private Long id;
+    private Long moduleId;
+    private Long questionId;
     private boolean complete;
 }

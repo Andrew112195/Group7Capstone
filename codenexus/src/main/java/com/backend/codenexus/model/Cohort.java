@@ -8,5 +8,5 @@ import lombok.Data;
 public class Cohort {
     private Long id;
     private String name;
-    private long userTypeId;
+    private Long userTypeId;
 }

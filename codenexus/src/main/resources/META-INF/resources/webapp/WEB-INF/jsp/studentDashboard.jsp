@@ -84,7 +84,7 @@
 <%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>--%>
 <%--</body>--%>
 <%--</html>--%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -125,7 +125,7 @@
 
 <div class="container-fluid mt-3">
 	<h2>Available Courses</h2>
-	<form method="GET" action="${pageContext.request.contextPath}/course/get-courses" class="view-courses">
+	<form method="GET" action="/get-courses" class="view-courses">
 		<table class="table">
 			<thead>
 			<tr>

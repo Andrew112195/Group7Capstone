@@ -12,7 +12,7 @@ public class BillingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @OneToOne(mappedBy = "billing")
     private PaymentInfoEntity paymentInfo;

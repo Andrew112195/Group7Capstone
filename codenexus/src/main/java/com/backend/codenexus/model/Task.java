@@ -7,7 +7,7 @@ public class Task {
 
     private int id;
     private String question;
-    private long answerId;
+    private Long answerId;
     private Difficulty difficulty;
     private String category;
     private String explanation;

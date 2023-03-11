@@ -6,7 +6,7 @@ import lombok.Data;
 @lombok.NoArgsConstructor
 public class UserType {
 
-    private long id;
+    private Long id;
     private USER_TYPE userType;
-    private long userId;
+    private Long userId;
 }

@@ -11,7 +11,7 @@ public class SubscriptionPlanEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @OneToOne(mappedBy ="plan")
     private SubscriptionEntity subscription;

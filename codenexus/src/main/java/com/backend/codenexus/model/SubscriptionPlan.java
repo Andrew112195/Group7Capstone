@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubscriptionPlan {
 
-    private long id;
+    private Long id;
     private String planName;
     private String planDescription;
     private String planPrice;

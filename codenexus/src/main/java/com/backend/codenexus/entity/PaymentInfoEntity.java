@@ -12,7 +12,7 @@ public class PaymentInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "billing_id")

@@ -19,7 +19,7 @@ public class CohortEntity {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(targetEntity = UserEntity.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "cohort_id",referencedColumnName = "id")
-    private List<UserEntity> users;
+//    @OneToMany(targetEntity = UserEntity.class,cascade = CascadeType.ALL)
+//    @JoinColumn(name = "cohort_id",referencedColumnName = "id")
+//    private List<UserEntity> users;
 }

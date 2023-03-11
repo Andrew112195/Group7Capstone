@@ -16,7 +16,7 @@ public class ModuleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     /* Many modules in one course */
     @ManyToOne

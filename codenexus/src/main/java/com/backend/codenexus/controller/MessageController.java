@@ -1,6 +1,5 @@
 package com.backend.codenexus.controller;
 
-import com.backend.codenexus.entity.UserEntity;
 import com.backend.codenexus.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

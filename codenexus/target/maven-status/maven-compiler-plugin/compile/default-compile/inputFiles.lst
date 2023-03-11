@@ -9,6 +9,7 @@ c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\c
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\entity\CourseEntity.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\model\Quiz.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\dao\CourseDao.java
+c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\controller\MainController.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\entity\UserCourseEntity.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\CodenexusApplication.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\controller\MessageController.java
@@ -28,15 +29,16 @@ c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\c
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\service\CourseServiceImpl.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\entity\ModuleEntity.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\service\UserCourseServiceImpl.java
+c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\model\Cohort.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\service\UserService.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\service\MessagesService.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\service\UserCourseService.java
+c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\entity\CohortEntity.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\entity\QuizEntity.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\model\Message.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\entity\MessagesEntity.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\entity\BillingEntity.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\model\SubscriptionPlan.java
-c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\controller\HomeController.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\model\Subscription.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\controller\UserCourseController.java
 c:\Users\Mttbe\Documents\Group7Capstone\Group7Capstone\codenexus\src\main\java\com\backend\codenexus\service\MessagesServiceImpl.java

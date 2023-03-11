@@ -6,8 +6,8 @@ import lombok.Data;
 @lombok.AllArgsConstructor
 public class AccountInfo {
 
-    private long id;
-    private long userId;
+    private Long id;
+    private Long userId;
     private String firstName;
     private String lastName;
     private String email;

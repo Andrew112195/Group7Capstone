@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Subscription {
-    private long id;
-    private long userId;
-    private long planId;
+    private Long id;
+    private Long userId;
+    private Long planId;
     private Date startDate;
     private Date endDate;
     private boolean active;

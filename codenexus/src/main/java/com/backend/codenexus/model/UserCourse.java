@@ -5,7 +5,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserCourse {
-    private long id;
+    private Long id;
     private Course course;
     private User user;
     private float progress;

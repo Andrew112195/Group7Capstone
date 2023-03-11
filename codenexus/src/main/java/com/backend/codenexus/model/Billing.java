@@ -6,8 +6,8 @@ import lombok.*;
 @NoArgsConstructor
 public class Billing {
 
-    private long id;
-    private long user_id;
+    private Long id;
+    private Long user_id;
     private String firstName;
     private String lastName;
     private String address;

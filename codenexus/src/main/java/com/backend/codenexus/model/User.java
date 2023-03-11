@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class User {
     private Long id;
-    private long userTypeId;
-    private long cohortId;
+    private Long userTypeId;
+    private Long cohortId;
     private String firstname;
     private String lastname;
     private String email;
