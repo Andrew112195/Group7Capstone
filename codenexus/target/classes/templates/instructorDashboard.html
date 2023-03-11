@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -20,7 +17,7 @@
         courseId: courseId,
         progress: 0,
       }
-      fetch(`/user/addcourse/${userId}/${courseId}`, {
+      fetch(`/addcourse/${userId}/${courseId}`, {
         method: 'POST',
         body: JSON.stringify(userCourse),
 

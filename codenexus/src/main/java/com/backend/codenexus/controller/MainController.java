@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.backend.codenexus.model.*;
 import com.backend.codenexus.service.CourseService;
+import com.backend.codenexus.service.UserCourseService;
 import com.backend.codenexus.service.UserService;
 
 
@@ -24,6 +25,8 @@ public class MainController {
     UserService userService;
     @Autowired
     CourseService courseService;
+    @Autowired
+    UserCourseService userCourseService;
 
     @GetMapping("index")
     public String index() {
@@ -54,38 +57,59 @@ public class MainController {
         return "login";
     }
 
-    @GetMapping(value="get-courses", produces=MediaType.ALL_VALUE)
-    public String getCourses(ModelMap modelMap) {
-        List<Course> courses = courseService.getCourseList();
+    @PostMapping("addcourse/{userId}/{courseId}")
+    public String addUserCourse(@PathVariable("userId")long userId,@PathVariable("courseId") long courseId) {
 
-        modelMap.addAttribute("courses", courses);
-        return "studentDashboard"; // return the name of the JSP page where the courses will be displayed
+        userCourseService.addNewCourseToUser(userId,courseId);
+
+        return "redirect:/students";
     }
 
     @GetMapping("students")
     public String getStudents(ModelMap modelMap){
 
         modelMap.put("students", userService.getAllStudents());
+        modelMap.addAttribute("courses", courseService.getCourseList());
 
         return "instructorDashboard";
+    }
+
+    @GetMapping(value="get-userCourses/{id}",produces = MediaType.ALL_VALUE)
+    public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.addAttribute("userCourses",userCourseService.getCourse(id));
+
+        return "studentDashboard";
     }
 
     @PostMapping("login-process")
     public String login(ModelMap modelMap, User user) {
        user = userService.login(user);
-       if(user != null) {
-           modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
-           if (user.getUserTypeId() == 3) {
-                return "adminDashboard";
-           } else if (user.getUserTypeId() == 2) {
-                return "redirect:students";
-           } else if (user.getUserTypeId() == 1) {
-                return "redirect:get-courses";
-           }
-       }
-        //redirect
-        modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
-        return "login";
+
+        try {
+            if(user != null) {
+                long userId = user.getId();
+                modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
+                 modelMap.addAttribute("userId", userId);
+                if (user.getUserTypeId() == 3) {
+
+                    return "adminDashboard";
+                } else if (user.getUserTypeId() == 2) {
+
+                    return "redirect:/students";
+                } else if (user.getUserTypeId() == 1) {
+                        userId = user.getId();
+                    return "redirect:/get-userCourses/"+userId;
+                }
+            }
+            
+             //redirect
+            modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
+            return "login";
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

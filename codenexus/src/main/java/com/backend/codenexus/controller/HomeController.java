@@ -1,4 +1,4 @@
-package com.backend.codenexus.controller;
+/*package com.backend.codenexus.controller;
 
 
 import java.util.List;
@@ -98,7 +98,7 @@ public class HomeController {
 
         return "onlineIDE";
     }
-/* 
+
     @GetMapping("student-courses")
     public String displayCourses(ModelMap modelMap, User user){
         List<Course> currentList = courseService.getCourseListFromUser(user.getId());
@@ -115,6 +115,6 @@ public class HomeController {
         modelMap.addAttribute("modules", currentModules);
         
         return "studentCourseView";
-    }*/
+    }
 
-}
+}*/
