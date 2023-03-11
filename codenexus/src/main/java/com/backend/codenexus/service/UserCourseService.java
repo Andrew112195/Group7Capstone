@@ -2,11 +2,13 @@ package com.backend.codenexus.service;
 
 import com.backend.codenexus.model.UserCourse;
 
+import java.util.List;
+
 public interface UserCourseService {
 
-    UserCourse getCourse(Long user_id);
+    List<UserCourse> getCourse(Long user_id);
 
-    void addNewCourseToUser(UserCourse course);
+    void addNewCourseToUser(long user_id, long course_id);
 
 
 }

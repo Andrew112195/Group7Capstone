@@ -6,8 +6,9 @@ import lombok.Data;
 @lombok.NoArgsConstructor
 @Data
 public class User {
-    private long id;
+    private Long id;
     private long userTypeId;
+    private long cohortId;
     private String firstname;
     private String lastname;
     private String email;

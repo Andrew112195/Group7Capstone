@@ -1,4 +1,3 @@
-/*
 package com.backend.codenexus.model;
 
 public enum USER_TYPE {
@@ -10,4 +9,4 @@ public enum USER_TYPE {
     public String toString() {
         return name().toLowerCase();
     }
-}*/
+}

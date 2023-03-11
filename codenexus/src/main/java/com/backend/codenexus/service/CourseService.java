@@ -7,7 +7,6 @@ import com.backend.codenexus.model.Module;
 
 public interface CourseService {
     
-    List <Course> getCourseListFromUser(Long courseId);
 
     List <Course> getCourseList();
 

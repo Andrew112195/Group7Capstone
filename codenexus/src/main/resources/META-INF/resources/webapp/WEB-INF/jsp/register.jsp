@@ -53,6 +53,14 @@
                             <br>
                         </div>
                         <div class="form-group">
+                            <select name="cohortId" id="cohortId" class="form-select" aria-label="Default select example">
+                                <option value=1>Cohort A</option>
+                                <option value=2>Cohort B</option>
+                                <option value=3>Cohort C</option>
+                            </select>
+                            <br>
+                        </div>
+                        <div class="form-group">
                             <input type="text" class="form-control" placeholder=" Name" id="firstname" name="firstname" required/>
                         </div>
                          <div class="form-group">
