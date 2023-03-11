@@ -1,8 +1,11 @@
 package com.backend.codenexus.entity;
 
+import com.backend.codenexus.entity.CourseEntity;
 import com.backend.codenexus.model.Difficulty;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
@@ -16,15 +19,16 @@ public class TaskEntity {
     @Column(name = "id")
     private long id;
 
+    /*We are in the task class*/
     @ManyToOne
-    @JoinColumn(name = "module_id")
-    private ModuleEntity moduleId;
+    @JoinColumn(name = "course_id")
+    private CourseEntity course;
 
     @Column(name = "problem")
-    private String[] problem;
+    private String Question;
 
-    @Column(name = "difficulty")
-    private Difficulty difficulty;
+    @Column(name = "difficulty_level")
+    private int difficultyLevel;
 
     @Column(name = "category")
     private String category;
@@ -38,5 +42,32 @@ public class TaskEntity {
     @Column(name = "complete")
     private boolean complete;
 
+    public Difficulty getDifficulty() {
+        switch (difficultyLevel) {
+            case 1:
+                return Difficulty.EASY;
+            case 2:
+                return Difficulty.MEDIUM;
+            case 3:
+                return Difficulty.HARD;
+            default:
+                throw new IllegalArgumentException("Invalid difficulty level: " + difficultyLevel);
+        }
+    }
 
+    public void setDifficulty(Difficulty difficulty) {
+        switch (difficulty) {
+            case EASY:
+                difficultyLevel = 1;
+                break;
+            case MEDIUM:
+                difficultyLevel = 2;
+                break;
+            case HARD:
+                difficultyLevel = 3;
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid difficulty level: " + difficulty);
+        }
+    }
 }

@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskDao extends JpaRepository<TaskEntity, Long>{
     
-    @Query(value = "SELECT * FROM task_entity WHERE module_id = ?1 SORT BY difficulty", nativeQuery = true)
-    List<TaskEntity> findAllByModuleId(Long moduleId);
+    @Query(value = "SELECT * FROM task WHERE course_id = ?1 ORDER BY difficulty_level ASC ", nativeQuery = true)
+    List<TaskEntity> findAllByCourseId(Long courseId);
 
 
 }

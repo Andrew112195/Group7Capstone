@@ -3,17 +3,22 @@ package com.backend.codenexus.controller;
 import com.backend.codenexus.model.Course;
 import com.backend.codenexus.model.User;
 import com.backend.codenexus.service.CourseService;
+import com.backend.codenexus.service.UserCourseService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.backend.codenexus.service.UserService;
-import javax.servlet.http.*;
+
 import java.util.List;
 
 
 @Controller
 @RequestMapping("user")
+@SessionAttributes("user")
 public class UserController {
 
     /*
@@ -23,11 +28,13 @@ public class UserController {
      */
     @Autowired
     UserService userService;
+    @Autowired
+    UserCourseService userCourseService;
 
     @Autowired
     CourseService courseService;
 
-
+    public final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 
 
@@ -42,7 +49,7 @@ public class UserController {
         return "register";
     }
     @PostMapping("register-process")
-    public String registerProcess(ModelMap modelMap, User user){
+    public String registerProcess(ModelMap modelMap,User user){
         if(userService.register(user)) {
             modelMap.put("successfulRegistration", "Thank you for your registration!! " + user.getFirstname());
             return "login";
@@ -56,26 +63,31 @@ public class UserController {
     public String login(ModelMap modelMap, User user) {
        user = userService.login(user);
 
-       if(user != null) {
-           long userId = user.getId();
-           modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
-            modelMap.addAttribute("userId", userId);
-           if (user.getUserTypeId() == 3) {
+        try {
+            if(user != null) {
+                long userId = user.getId();
+                modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
+                 modelMap.addAttribute("userId", userId);
+                if (user.getUserTypeId() == 3) {
 
-               return "adminDashboard";
-           } else if (user.getUserTypeId() == 2) {
+                    return "adminDashboard";
+                } else if (user.getUserTypeId() == 2) {
 
-               return "redirect:/user/students";
-           } else if (user.getUserTypeId() == 1) {
-
-               return "redirect:/course/get-courses";
-           }
-       }
-       else{
-        //redirect
-           modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
-           return "login";
-       }
+                    return "redirect:/user/students";
+                } else if (user.getUserTypeId() == 1) {
+                        userId = user.getId();
+                    return "redirect:/user/get-userCourses/"+userId;
+                }
+            }
+            else{
+             //redirect
+                modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
+                return "login";
+            }
+            modelMap.addAttribute("user", user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
     @GetMapping("login")
@@ -91,9 +103,27 @@ public class UserController {
     @GetMapping("students")
     public String getStudents(ModelMap modelMap){
 
-        modelMap.put("students", userService.getAllStudents());
+        try {
+            modelMap.put("students", userService.getAllStudents());
+            List<Course> courses = courseService.getCourseList();
+            modelMap.put("courses", courses);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return "instructorDashboard";
     }
+
+    @GetMapping(value="get-userCourses/{id}",produces = MediaType.ALL_VALUE)
+    public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
+        logger.info(" user courses controller to get all user courses");
+        modelMap.addAttribute("userCourses",userCourseService.getCourse(id));
+
+        return "studentDashboard";
+    }
+
+
+
+
 
 }

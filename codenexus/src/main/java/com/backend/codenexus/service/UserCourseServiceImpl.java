@@ -28,31 +28,30 @@ public class UserCourseServiceImpl implements UserCourseService {
     @Autowired
     UserDao userDao;
 
+
     @Override
     public List<UserCourse> getCourse(Long user_id) {
+        LOG.info("UserCourseServiceImpl getCourse");
+/* Course should return course that user is enrolled in*/
+        List<UserCourseEntity> userCourses = userCourseDao.findByUserId(user_id);
+        /*get the course ID and use it to find the course and set it under user course entity*/
+        ;
+        List<UserCourse> userCoursesList = userCourses.stream().map(userCourseEntity -> {
+            UserEntity userEntity = userDao.findById(user_id).orElseThrow();
+            User user = new User();
+            BeanUtils.copyProperties(userEntity, user);
+            UserCourse userCourse = new UserCourse();
+            Optional<CourseEntity> foundCourse =courseDao.findById(userCourseEntity.getCourse().getId());
+            userCourseEntity.setCourse(foundCourse.get());
+            Course course = new Course();
+            BeanUtils.copyProperties(userCourseEntity.getCourse(), course);
+            BeanUtils.copyProperties(userCourseEntity, userCourse);
+            userCourse.setCourse(course);
+            userCourse.setUser(user);
+            return userCourse;
+        }).toList();
 
-        userCourseDao.findByUserId(user_id);
- //       if(userEnt.isPresent()) {
-//            UserEntity userEntity = userEnt.get();
-//            User user = new User();
-//            List<UserCourseEntity> userCourseEntities = userEnt.get().getUserCourse();
-//
-//            BeanUtils.copyProperties(userEntity,user);
-//            System.out.println(user);
-//
-//            List <UserCourse> userCourse = userCourseEntities.stream().map(userCourseEntity1 -> {
-//                UserCourse userCourse1 = new UserCourse();
-//                BeanUtils.copyProperties(userCourseEntity1,userCourse1);
-//                userCourse1.setUser(user);
-//                System.out.println(user);
-//                return userCourse1;
-//            }).toList();
-
-            //return userCourse;
- //       }
-//        List <UserCourseEntity> userCourseEntity = userCourseDao.findByUserId(user_id);
-
-        return null;
+        return userCoursesList;
     }
 
     @Override
@@ -69,4 +68,6 @@ public class UserCourseServiceImpl implements UserCourseService {
         }
 
     }
+
+
 }

@@ -14,6 +14,6 @@ public interface CourseService {
 
     List <Course> getStudentIncompleteCourses(Long user_id);
 
-    List <Module> getCourseModules(Long course_id);
+    //List <Module> getCourseModules(Long course_id);
 
 }
