@@ -22,6 +22,10 @@ import java.util.List;
 public class UserController {
 
     
+     * @TODO
+     * Gonna try to add a user and a course to see if that will work with adding
+     * userCourse to the database.
+     
     @Autowired
     UserService userService;
     @Autowired
