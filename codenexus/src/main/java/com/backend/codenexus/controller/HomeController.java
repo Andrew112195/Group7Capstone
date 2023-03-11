@@ -65,8 +65,8 @@ public class HomeController {
            } else if (user.getUserTypeId() == 2) {
                return "instructorDashboard";
            } else if (user.getUserTypeId() == 1) {
-                List<Course> currentList = courseService.getCourseListFromUser(user.getId());
-                modelMap.addAttribute("courses", currentList);
+//                List<Course> currentList = courseService.getCourseListFromUser(user.getId());
+//                modelMap.addAttribute("courses", currentList);
                 return "studentDashboard";
            }
        }
