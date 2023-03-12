@@ -8,12 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import com.backend.codenexus.model.*;
+import com.backend.codenexus.entity.*;
 import com.backend.codenexus.service.*;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes
+@SessionAttributes("currentUser")
 @CrossOrigin
 public class MainController {
 
@@ -22,11 +22,9 @@ public class MainController {
     @Autowired
     CourseService courseService;
     @Autowired
-    UserCourseService userCourseService;
-    @Autowired
     MessagesService messagesService;
 
-    //Get Mapping methods
+    //Get Mapping methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     @GetMapping("index")
     public String index() {
@@ -68,8 +66,8 @@ public class MainController {
 
     @GetMapping(value="get-userCourses/{id}",produces = MediaType.ALL_VALUE)
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
-        modelMap.addAttribute("userCourses", userCourseService.getCourse(id));
-
+        modelMap.addAttribute("userCourses", courseService.getCourse(id));
+    
         return "studentDashboard";
     }
 
@@ -80,7 +78,7 @@ public class MainController {
 
     @GetMapping("sent/{user_id}")
     public String getSentMessages(@PathVariable Long user_id) {
-        List<Message> messagesSent = messagesService.getSentMessages(user_id);
+        List<MessagesEntity> messagesSent = messagesService.getSentMessages(user_id);
         return null;
     }
 
@@ -94,14 +92,15 @@ public class MainController {
         return null;
     }
 
-    //Post Mapping Methods
+    //Post Mapping Methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     @PostMapping("login-process")
-    public String login(ModelMap modelMap, User user) {
+    public String login(ModelMap modelMap, UserEntity user) {
         user = userService.login(user);
         try {
             if(user != null) {
                 modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
+                modelMap.addAttribute("currentUser", user);
                 if (user.getUserTypeId() == 3) {
                     return "adminDashboard";
                 } else if (user.getUserTypeId() == 2) {
@@ -110,11 +109,9 @@ public class MainController {
                     return "redirect:/get-userCourses/"+user.getId();
                 }
             }
-            
-             //redirect
+            //redirect
             modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
             return "login";
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -122,7 +119,7 @@ public class MainController {
     }
 
     @PostMapping("register-process")
-    public String registerProcess(ModelMap modelMap, User user){
+    public String registerProcess(ModelMap modelMap, UserEntity user){
         if(userService.register(user)) {
             modelMap.put("successfulRegistration", "Thank you for your registration!! " + user.getFirstname());
             return "login";
@@ -133,13 +130,13 @@ public class MainController {
 
     @PostMapping("addcourse/{userId}/{courseId}")
     public String addUserCourse(@PathVariable("userId")long userId,@PathVariable("courseId") long courseId) {
-        userCourseService.addNewCourseToUser(userId,courseId);
+        courseService.addNewCourseToUser(userId,courseId);
 
         return "redirect:/students";
     }
 
     @PostMapping("save")
-    public String saveMessages(@RequestBody Message message) {
+    public String saveMessages(@RequestBody MessagesEntity message) {
         messagesService.saveMessage(message);
         return "redirect:";
     }

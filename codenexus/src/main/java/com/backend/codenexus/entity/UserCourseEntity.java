@@ -1,12 +1,10 @@
 package com.backend.codenexus.entity;
-import com.fasterxml.jackson.annotation.JsonInclude;
+
 import jakarta.persistence.*;
+
 import lombok.*;
+
 import org.hibernate.annotations.Cascade;
-//import com.backend.codenexus.model.Course;
-
-//import java.util.Set;
-
 
 @Data
 @AllArgsConstructor
@@ -16,7 +14,7 @@ import org.hibernate.annotations.Cascade;
 public class UserCourseEntity {
 
     @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -24,12 +22,14 @@ public class UserCourseEntity {
     @JoinColumn(name = "course_id")
     private CourseEntity course;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private UserEntity user;
-
     
+    @Column(name="cohort")
+    private String cohort;
+
     @Column(name="progress")
     private float progress;
 }

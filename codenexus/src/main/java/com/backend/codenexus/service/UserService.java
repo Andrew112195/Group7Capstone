@@ -1,20 +1,20 @@
 package com.backend.codenexus.service;
 
-
-import com.backend.codenexus.model.User;
 import org.springframework.stereotype.Service;
+
+import com.backend.codenexus.entity.UserEntity;
 
 import java.util.List;
 
 @Service
 public interface UserService {
 
-    boolean register(User user);
+    boolean register(UserEntity user);
 
-    User login(User user);
+    UserEntity login(UserEntity user);
 
-    boolean updateUser(User user);
-    List<User> getAllStudents();
+    boolean updateUser(UserEntity user);
+    List<UserEntity> getAllStudents();
 
 
 }

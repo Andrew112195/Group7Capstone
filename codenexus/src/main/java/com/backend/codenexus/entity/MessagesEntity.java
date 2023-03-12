@@ -1,15 +1,16 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
+
 import lombok.*;
+
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "message")
-
+@Table(name = "messages")
 public class MessagesEntity {
 
     @Id

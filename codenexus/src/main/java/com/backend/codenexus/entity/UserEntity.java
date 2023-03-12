@@ -1,19 +1,18 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
+
 import lombok.*;
-import org.hibernate.annotations.Cascade;
+
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.List;
-//import java.util.ArrayList;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "user")
-@NoArgsConstructor
-
 public class UserEntity {
 
     // @OneToMany(mappedBy = "user_id")

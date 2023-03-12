@@ -2,16 +2,16 @@ package com.backend.codenexus.service;
 
 import java.util.List;
 
-import com.backend.codenexus.model.*;
+import com.backend.codenexus.entity.MessagesEntity;
 
 public interface MessagesService {
 
-    List<Message> getMessages(Long user_id);
+    List<MessagesEntity> getMessages(Long user_id);
     
-    List<Message> getSentMessages(Long user_id);
+    List<MessagesEntity> getSentMessages(Long user_id);
 
-    Message readMessage(Long message_id);
+    MessagesEntity readMessage(Long message_id);
 
-    Message saveMessage(Message message);
+    MessagesEntity saveMessage(MessagesEntity message);
 
 }
