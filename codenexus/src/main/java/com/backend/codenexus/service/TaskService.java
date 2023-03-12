@@ -1,13 +1,13 @@
 package com.backend.codenexus.service;
 
-import com.backend.codenexus.model.*;
+import com.backend.codenexus.entity.*;
 
 import java.util.List;
 
 public interface TaskService {
 
-    List<Task> findAllTasksByCourseId(Long courseId);
+    List<TaskEntity> findAllTasksByCourseId(Long courseId);
 
-    void updateTaskToComplete(Task task);
+    void updateTaskToComplete(TaskEntity task);
 
 }

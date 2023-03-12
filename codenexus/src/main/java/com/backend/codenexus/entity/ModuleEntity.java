@@ -1,8 +1,7 @@
-/*package com.backend.codenexus.entity;
+package com.backend.codenexus.entity;
 
 import java.util.List;
 import com.backend.codenexus.model.enums.Difficulty;
-import com.backend.codenexus.model.Module;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,13 +17,13 @@ public class ModuleEntity {
     @Column(name = "id")
     private long id;
 
-    /* Many modules in one course 
+    /* Many modules in one course */
     @ManyToOne
-    @JoinColumn(name = "courseId")
+    @JoinColumn(name = "course_id")
     private CourseEntity courseId;
 
-    /* One Module to many tasks 
-    @OneToMany(mappedBy = "moduleId")
+    /* One Module to many tasks  */
+    @OneToMany
     private List<TaskEntity> tasks;
 
     private void addTaskToModule(TaskEntity taskEntity){
@@ -45,4 +44,3 @@ public class ModuleEntity {
     @Column(name = "module_complete")
     private boolean moduleComplete;
 }
-*/
