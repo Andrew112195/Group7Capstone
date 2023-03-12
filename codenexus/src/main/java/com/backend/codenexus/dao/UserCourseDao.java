@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface UserCourseDao extends JpaRepository<UserCourseEntity, Long> {
 
-    @Query(value = "SELECT * FROM user_course  us WHERE user_id =?1",nativeQuery=true)
+    @Query(value = "SELECT * FROM user_course WHERE user_id =?1",nativeQuery=true)
     List<UserCourseEntity> findByUserId(Long userId);
 
 }

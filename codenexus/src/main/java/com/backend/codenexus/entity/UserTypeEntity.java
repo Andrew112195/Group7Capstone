@@ -20,11 +20,4 @@ public class UserTypeEntity {
     @Column(name = "type_name")
     private String typeName;
 
-
-/*A bunch of users under one user type Example Jay and Bob are Admins..........
-    * Tim and robin are Students*/
-
-//    @OneToMany(targetEntity = UserEntity.class,cascade = CascadeType.ALL)
-//    @JoinColumn(name = "user_type_id",referencedColumnName = "id")
-//    private List<UserEntity> users;
 }

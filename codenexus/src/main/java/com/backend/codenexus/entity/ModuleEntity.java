@@ -24,6 +24,7 @@ public class ModuleEntity {
 
     /* One Module to many tasks  */
     @OneToMany
+    @JoinColumn(name = "module_id")
     private List<TaskEntity> tasks;
 
     private void addTaskToModule(TaskEntity taskEntity){

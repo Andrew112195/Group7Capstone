@@ -13,7 +13,7 @@ import com.backend.codenexus.service.*;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes("currentUser")
+@SessionAttributes
 @CrossOrigin
 public class MainController {
 
@@ -64,10 +64,24 @@ public class MainController {
         return "instructorDashboard";
     }
 
-    @GetMapping(value="get-userCourses/{id}",produces = MediaType.ALL_VALUE)
+    @GetMapping("get-userCourses/{id}")
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
         modelMap.addAttribute("userCourses", courseService.getCourse(id));
-    
+
+        return "studentDashboard";
+    }
+
+    @GetMapping("get-courseModules/{id}")
+    public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
+
+        return "studentDashboard";
+    }
+
+    @GetMapping("get-moduleTasks/{id}")
+    public String getModuleTasks(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.addAttribute("courseModules", courseService.findAllTasksByModuleId(id));
+
         return "studentDashboard";
     }
 
@@ -100,7 +114,6 @@ public class MainController {
         try {
             if(user != null) {
                 modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
-                modelMap.addAttribute("currentUser", user);
                 if (user.getUserTypeId() == 3) {
                     return "adminDashboard";
                 } else if (user.getUserTypeId() == 2) {

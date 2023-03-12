@@ -27,10 +27,11 @@ public class CourseEntity {
     private double price;
 
     @OneToMany
+    @JoinColumn(name = "course_id")
     private List<UserCourseEntity> userCourses;
 
     @OneToMany
+    @JoinColumn(name = "course_id")
     private List<ModuleEntity> modules;
-
 
 }

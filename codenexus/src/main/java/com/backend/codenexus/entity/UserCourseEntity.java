@@ -18,11 +18,10 @@ public class UserCourseEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn(name = "course_id")
     private CourseEntity course;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private UserEntity user;

@@ -21,6 +21,12 @@ public class CourseServiceImpl implements CourseService {
     UserCourseDao userCourseDao;
     @Autowired
     UserDao userDao;
+    @Autowired
+    ModuleDao moduleDao;
+    @Autowired
+    TaskDao taskDao;
+    @Autowired
+    QuizDao quizDao;
 
     @Override
     public List<CourseEntity> getCourseList(){
@@ -42,18 +48,6 @@ public class CourseServiceImpl implements CourseService {
         
         return courseEntity;
     }
-    
-    /*@Override
-    public List<Module> getCourseModules(Long course_id){
-        List<Module> courseModules = new ArrayList<Module>();
-        List<ModuleEntity> moduleEntity = courseDao.findAllModulesByCourseId(course_id);
-        for (ModuleEntity source: moduleEntity ) {
-            Module target = new Module();
-            BeanUtils.copyProperties(source , target);
-            courseModules.add(target);
-        }
-        return courseModules;
-    }*/
 
     @Override
     public List<UserCourseEntity> getCourse(Long user_id) {
@@ -75,7 +69,75 @@ public class CourseServiceImpl implements CourseService {
         } catch (Exception e) {
             e.getStackTrace();
         }
-
     }
 
+    @Override
+    public List<ModuleEntity> getCourseModules(Long course_id){
+        List<ModuleEntity> moduleEntity = courseDao.findAllModulesByCourseId(course_id);
+        
+        return moduleEntity;
+    }
+
+    @Override
+    public TaskEntity getTask(Long task_id) {
+        TaskEntity taskEntity = moduleDao.findTaskById(task_id);
+        return taskEntity;
+    }
+
+    @Override
+    public QuizEntity getQuiz(Long quiz_id) {
+        QuizEntity quizEntity = quizDao.findByQuizId(quiz_id);
+        return quizEntity;
+    }
+
+    @Override
+    public void completeTask(Long task_id) {
+        TaskEntity taskEntity = getTask(task_id);
+        taskEntity.setComplete(true);
+        taskDao.saveAndFlush(taskEntity);
+    }
+
+    @Override
+    public void completeQuiz(Long quiz_id) {
+        QuizEntity quizEntity = getQuiz(quiz_id);
+        quizEntity.setComplete(true);
+        quizDao.saveAndFlush(quizEntity);
+    }
+
+    @Override
+    public List<TaskEntity> getModuleTasks(Long module_id) {
+        List<TaskEntity> taskEntity = moduleDao.findTasksByModuleId(module_id);
+
+        return taskEntity;
+    }
+
+    @Override
+    public QuizEntity getModuleQuiz(Long module_id){
+        QuizEntity quizEntity = moduleDao.findQuizById(module_id);
+        return quizEntity;
+    }
+
+    @Override
+    public void addTaskToModule(TaskEntity task) {
+        TaskEntity taskEntity = new TaskEntity();
+        taskDao.saveAndFlush(taskEntity);
+    }
+
+    @Override
+    public void addQuizToModule(QuizEntity quiz) {
+        QuizEntity quizEntity = new QuizEntity();
+        quizDao.saveAndFlush(quizEntity);
+    }
+
+    @Override
+    public List<TaskEntity> findAllTasksByModuleId(Long moduleId) {
+        List<TaskEntity> taskEntityList = taskDao.findAllByModuleId(moduleId);
+        
+        return taskEntityList;
+    }
+
+    @Override
+    public void updateTaskToComplete(TaskEntity task) {
+
+    }
 }
