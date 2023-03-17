@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.backend.codenexus.entity.CourseEntity;
 import com.backend.codenexus.entity.UserCourseEntity;
+import com.backend.codenexus.entity.UserEntity;
 
 //import com.backend.codenexus.model.Course;
 //import com.backend.codenexus.model.Module;
@@ -20,8 +21,11 @@ public interface CourseService {
 
     //List <Module> getCourseModules(Long course_id);
 
-    List<UserCourseEntity> getCourse(Long user_id);
+    List<UserCourseEntity> getCourses(Long user_id);
 
+    public List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse);
+
+    public List<UserCourseEntity> getAllClassmates(Long user_id);
     void addNewCourseToUser(long user_id, long course_id);
 
 }

@@ -2,9 +2,13 @@ package com.backend.codenexus.controller;
 
 import java.util.List;
 
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +17,7 @@ import com.backend.codenexus.service.*;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes("currentUser")
+@SessionAttributes("user")
 @CrossOrigin
 public class MainController {
 
@@ -27,8 +31,25 @@ public class MainController {
     //Get Mapping methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     @GetMapping("index")
-    public String index() {
+    public String index(ModelMap modelMap) {
+        if(modelMap.containsKey("user")){
+            return "redirect:/dashboard";
+        }
         return "index";
+    }
+    @GetMapping("dashboard")
+        public String getDashboard( ModelMap modelMap) {
+        UserEntity user = (UserEntity) modelMap.get("user");
+        if (user.getUserTypeId() == 3) {
+            return "adminDashboard";
+        } else if (user.getUserTypeId() == 2) {
+            return "redirect:/students";
+        } else if (user.getUserTypeId() == 1) {
+            return "redirect:/get-userCourses/" + user.getId();
+        }
+        else{
+            return "redirect:/index";
+        }
     }
 
     @GetMapping("aboutus")
@@ -66,7 +87,7 @@ public class MainController {
 
     @GetMapping(value="get-userCourses/{id}",produces = MediaType.ALL_VALUE)
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
-        modelMap.addAttribute("userCourses", courseService.getCourse(id));
+        modelMap.addAttribute("userCourses", courseService.getCourses(id));
     
         return "studentDashboard";
     }
@@ -82,9 +103,23 @@ public class MainController {
         return null;
     }
 
+    @GetMapping("inbox")
+    public String inbox(ModelMap modelMap){
+        if(modelMap.containsKey("user")){
+            return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId();
+        }
+        else{
+            return "login";
+        }
+    }
     @GetMapping("inbox/{user_id}")
-    public String getMessages(@PathVariable Long user_id) {
-        return null;
+    public String getMessages(@PathVariable Long user_id, ModelMap modelMap) {
+        List<UserCourseEntity> crs = courseService.getAllClassmates(user_id);
+       // modelMap.addAttribute("userCourse", courseService.getCourses(user_id));
+        MessagesEntity messageForm = new MessagesEntity();
+        modelMap.addAttribute("messageForm",messageForm);
+        modelMap.addAttribute("peerList", crs);
+        return "inbox";
     }
 
     @GetMapping("inbox/read_message/{message_id}")
@@ -92,6 +127,10 @@ public class MainController {
         return null;
     }
 
+    @GetMapping  ("getClassmates")
+    public void getClassmateList(ModelMap modelMap, UserCourseEntity userCourse){
+        modelMap.put("userList", courseService.getAllClassmates(userCourse.getId()));
+    }
     //Post Mapping Methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     @PostMapping("login-process")
@@ -100,16 +139,9 @@ public class MainController {
         try {
             if(user != null) {
                 modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
-                modelMap.addAttribute("currentUser", user);
-                if (user.getUserTypeId() == 3) {
-                    return "adminDashboard";
-                } else if (user.getUserTypeId() == 2) {
-                    return "redirect:/students";
-                } else if (user.getUserTypeId() == 1) {
-                    return "redirect:/get-userCourses/"+user.getId();
-                }
+                modelMap.addAttribute("user", user);
+                return "redirect:/dashboard";
             }
-            //redirect
             modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
             return "login";
         } catch (Exception e) {
@@ -134,10 +166,12 @@ public class MainController {
 
         return "redirect:/students";
     }
+    //consumes = {"application/json", "application/xml", "multipart/form-data"}
 
-    @PostMapping("save")
-    public String saveMessages(@RequestBody MessagesEntity message) {
+    @PostMapping(value = "saveMessage")
+    public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message,   ModelMap modelMap) {
+        message.setUser(((UserEntity) modelMap.get("user")));
         messagesService.saveMessage(message);
-        return "redirect:";
+        return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
     }
 }

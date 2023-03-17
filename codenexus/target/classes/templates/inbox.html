@@ -15,26 +15,22 @@
     <!-- Fixed top bar-menu -->
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/user/index"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="/index"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-
-            <div class="col-sm-2">
-                <select class="form-control">
-                    <option value="course">Courses</option>
-                    <option value="sent">COT4100</option>
-                    <option value="drafts">CEN2245</option>
-                </select>
+                <div class="col-sm-2">
+                    <select class="form-control">
+                        <option value="Course">Courses</option>
+                        <option value="sent">COT4100</option>
+                    </select>
             </div>
-            <div class="col-sm-2">
-                <select class="form-control">
-                    <option value="inbox">Inbox</option>
-                    <option value="sent">Sent</option>
-                    <option value="drafts">Drafts</option>
-                </select>
-            </div>
-
+                <div class="col-sm-2">
+                    <select class="form-control">
+                        <option value="inbox">Inbox</option>
+                        <option value="sent">Sent</option>
+                    </select>
+                </div>
         </div>
-    </div>
+        </div>
 
 
 
@@ -56,29 +52,36 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient">Recipient:</label>
-                            <input type="email" class="form-control" id="recipient">
+                    <form method="POST" th:object="${messageForm}" th:action="@{/saveMessage}" class="messagePostForm" >
+                        <div class="form-group blu-margin">
+                            <select class="form-control" th:field="${messageForm.recipientId}">
+                                <option value="0">Select Recipient</option>
+                                <option th:each="peer : ${peerList}" th:value="${peer.user.id}"
+                                        th:text="${peer.user.firstname} + ' ' +  ${peer.user.lastname} + ' From: ' + ${peer.course.title} "/>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject:</label>
-                            <input type="text" class="form-control" id="subject">
+                            <label for="header">Subject:</label>
+                            <input type="text" class="form-control" th:field="*{header}" id="header" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message:</label>
-                            <textarea class="form-control" id="message" rows="5"></textarea>
+                            <textarea class="form-control" th:field="*{message}" id="message" rows="5" required></textarea>
                         </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-block">Send</button>
+                    </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send</button>
-                </div>
             </div>
         </div>
     </div>
+</div>
+
+
 
     <br><br>
     <div class="row">
@@ -88,9 +91,9 @@
                 <br><br>
                 <ul class="list-group vertical-scrollable">
                     <li class="list-group-item">
-                        <a href="#">
+                        <a href="/dashboard">
                             <span class="me-2">&#127968
-                                Dashboard
+                                Dashboard</span>
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -100,7 +103,7 @@
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">
+                        <a href="/inbox/{user.id}">
                             <span class="me-2">&#128231;</span>
                             Inbox
                         </a>
@@ -122,7 +125,7 @@
                         <h5 class="mb-1">List group item heading</h5>
                         <small>3 days ago</small>
                     </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                    <p class="mb-1">Donec id elit wererwernon mi porta gravida at eget metus. Maecenas sed diam eget risus
                         varius blandit.</p>
                     <small>Donec id elit non mi porta.</small>
                 </a>

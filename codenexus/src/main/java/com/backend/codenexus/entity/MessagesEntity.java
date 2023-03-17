@@ -20,17 +20,13 @@ public class MessagesEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private UserEntity userId;
-
+    private UserEntity user;
     @ManyToOne
     @JoinColumn(name = "recipient_id")
     private UserEntity recipientId;
 
     @Column(name = "read")
-    private boolean read;
-
-    @Column(name = "sent")
-    private boolean sent;
+    private boolean read = false;
 
     @Column(name = "header")
     private String header;
@@ -38,4 +34,6 @@ public class MessagesEntity {
     @Column(name = "body")
     private String message;
 
+    @Column(name = "announcement")
+    private boolean isAnnouncement = false;
 }

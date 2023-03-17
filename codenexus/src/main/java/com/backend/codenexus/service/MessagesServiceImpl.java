@@ -35,7 +35,7 @@ public class MessagesServiceImpl implements MessagesService {
     public MessagesEntity readMessage(Long message_id){
         MessagesEntity source = messageDao.findByMessageId(message_id);
         source.setRead(true);
-        messageDao.saveAndFlush(source);    //saves read reciept
+        messageDao.saveAndFlush(source);
               
         return source;
     }
