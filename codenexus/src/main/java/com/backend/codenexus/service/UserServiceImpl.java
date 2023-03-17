@@ -33,6 +33,7 @@ public class  UserServiceImpl implements UserService {
         
     }
     @Override
+    @Transactional
     public UserEntity updateUser(UserEntity user){
 
         return userDao.updateUser(user.getId());

@@ -58,7 +58,7 @@
                         <div class="form-group blu-margin">
                             <select class="form-control" th:field="${messageForm.recipientId}">
                                 <option value="0">Select Recipient</option>
-                                <option th:each="peer : ${peerList}" th:value="${peer.user.id}"
+                                <option th:each="peer : ${user.userCourse}" th:value="${peer.user.id}"
                                         th:text="${peer.user.firstname} + ' ' +  ${peer.user.lastname} + ' From: ' + ${peer.course.title} "/>
                             </select>
                         </div>
@@ -122,8 +122,9 @@
             <div class="list-group" style="max-height: 700px; overflow-y: auto;">
                 <form method="GET"  th:action="@{/getMessage}" class="messageGetForm" >
                     <div class="form-group blu-margin">
-                        <option th:each="i : ${user.messages}"
-                                th:text="'From: '  + ${i.user} + ${i.header} + ' ' +  ${i.message} "/>
+                        <div th.text="${userMessages.messages}" div/>
+                        <option th:each="i : ${userMessage.messages}"
+                                th:text="'From: '  + ${i.user.firstname} + ${i.header} + ' ' +  ${i.message} "/>
                     </div>
                 </form>
             </div>

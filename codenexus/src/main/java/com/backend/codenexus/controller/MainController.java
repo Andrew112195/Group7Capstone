@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +31,11 @@ public class MainController {
 
     //Get Mapping methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+    @ModelAttribute("user")
+    public UserEntity getUserUserEntity() {
+        return new UserEntity();
+
+    }
     @GetMapping("index")
     public String index(ModelMap modelMap) {
         if(modelMap.containsKey("user")){
@@ -115,9 +119,11 @@ public class MainController {
         }
     }
 
+    @Transactional
     @GetMapping("inbox/{user_id}")
-    public String getMessages(@PathVariable Long user_id, ModelMap modelMap, @ModelAttribute("user") UserEntity user) {
+    public String getMessages(@PathVariable Long user_id, ModelMap modelMap) {
         userService.updateUser((UserEntity) modelMap.get("user"));
+        modelMap.addAttribute("userMessage", modelMap.get("user"));
         MessagesEntity messageForm = new MessagesEntity();
         modelMap.addAttribute("messageForm",messageForm);
         modelMap.addAttribute("peerList", courseService.getAllClassmates(user_id));

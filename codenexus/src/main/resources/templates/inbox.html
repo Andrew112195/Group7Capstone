@@ -122,8 +122,9 @@
             <div class="list-group" style="max-height: 700px; overflow-y: auto;">
                 <form method="GET"  th:action="@{/getMessage}" class="messageGetForm" >
                     <div class="form-group blu-margin">
-                        <option th:each="i : ${user.messages}"
-                                th:text="'From: '  + ${i.user} + ${i.header} + ' ' +  ${i.message} "/>
+                        <div th.text="${userMessages.messages}" div/>
+                        <option th:each="i : ${userMessage.messages}"
+                                th:text="'From: '  + ${i.user.firstname} + ${i.header} + ' ' +  ${i.message} "/>
                     </div>
                 </form>
             </div>
