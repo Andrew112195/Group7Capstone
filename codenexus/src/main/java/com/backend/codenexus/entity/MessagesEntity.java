@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import lombok.*;
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
@@ -18,10 +19,12 @@ public class MessagesEntity {
     // @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
-    @ManyToOne
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recipient_id")
     private UserEntity recipientId;
 

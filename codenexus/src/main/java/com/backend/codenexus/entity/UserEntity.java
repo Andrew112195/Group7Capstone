@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import lombok.*;
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.ArrayList;
@@ -47,16 +48,22 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy="user")
-    @Column(name = "sentMessages")
+    @OneToMany(mappedBy = "user",
+            orphanRemoval = true,
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
     private List<MessagesEntity> sentMessages;
 
-    @OneToMany(mappedBy="recipientId")
-    @Column(name = "messages")
+    @OneToMany(mappedBy = "recipientId",
+            orphanRemoval = true,
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
     private List<MessagesEntity> messages;
 
-    @OneToMany(mappedBy="user")
-    @Column(name = "userCourses")
+    @OneToMany(mappedBy = "user",
+            orphanRemoval = true,
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
     private List<UserCourseEntity> userCourse;
 
 }

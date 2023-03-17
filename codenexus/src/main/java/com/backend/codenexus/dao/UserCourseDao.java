@@ -21,7 +21,7 @@ public interface UserCourseDao extends JpaRepository<UserCourseEntity, Long> {
             "JOIN uc ON ue WHERE uc.course_id = ?1 AND uc.user_id = ue.id AND uc.user_id != ?2", nativeQuery = true)
         List<UserCourseEntity> findUsersInSameCourse(Long course_id, Long User_id);
 
-    @Query(value = "SELECT distinct uc FROM UserCourseEntity uc, UserEntity ue WHERE uc.user.id != ?1")
+    @Query(value = "SELECT uc FROM UserCourseEntity uc, UserEntity ue WHERE uc.user.id != ?1")
     List<UserCourseEntity> findClassmates(Long user_id);
 
 

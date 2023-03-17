@@ -5,9 +5,11 @@ import java.util.List;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -112,13 +114,13 @@ public class MainController {
             return "login";
         }
     }
+
     @GetMapping("inbox/{user_id}")
-    public String getMessages(@PathVariable Long user_id, ModelMap modelMap) {
-        List<UserCourseEntity> crs = courseService.getAllClassmates(user_id);
-       // modelMap.addAttribute("userCourse", courseService.getCourses(user_id));
+    public String getMessages(@PathVariable Long user_id, ModelMap modelMap, @ModelAttribute("user") UserEntity user) {
+        userService.updateUser((UserEntity) modelMap.get("user"));
         MessagesEntity messageForm = new MessagesEntity();
         modelMap.addAttribute("messageForm",messageForm);
-        modelMap.addAttribute("peerList", crs);
+        modelMap.addAttribute("peerList", courseService.getAllClassmates(user_id));
         return "inbox";
     }
 
@@ -139,9 +141,11 @@ public class MainController {
         try {
             if(user != null) {
                 modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
+                userService.updateUser(user);
                 modelMap.addAttribute("user", user);
                 return "redirect:/dashboard";
             }
+
             modelMap.put("invalidLogin", "Incorrect user name or password, please try again");
             return "login";
         } catch (Exception e) {
