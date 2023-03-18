@@ -27,10 +27,12 @@ public class CourseEntity {
     @Column(name = "price")
     private double price;
 
+    @ToString.Exclude
     @OneToMany
     @JoinColumn(name = "course_id")
     private List<UserCourseEntity> userCourses;
 
+    @ToString.Exclude
     @OneToMany
     @JoinColumn(name = "course_id")
     private List<ModuleEntity> modules;

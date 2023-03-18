@@ -17,6 +17,8 @@ public class  UserServiceImpl implements UserService {
     @Autowired
     UserDao userDao;
 
+    @Autowired
+    UserCourseDao userCourseDao;
     @Override
     public boolean register(UserEntity user) {
         /* use the userDao to create logic of data to populate */
@@ -35,7 +37,7 @@ public class  UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserEntity updateUser(UserEntity user){
-
+        userCourseDao.updateAllCourses();
         return userDao.updateUser(user.getId());
     }
     @Override
@@ -49,6 +51,7 @@ public class  UserServiceImpl implements UserService {
             return null;
         }
     }
+
 
 
     @Override

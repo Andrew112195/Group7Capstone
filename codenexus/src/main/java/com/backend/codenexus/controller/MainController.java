@@ -144,8 +144,9 @@ public class MainController {
         return "inbox";
     }
 
-    @GetMapping("inbox/read_message/{message_id}")
+    @GetMapping("read_message/{message_id}")
     public String readMessage(@PathVariable Long message_id){
+        messagesService.readMessage(message_id);
         return null;
     }
 

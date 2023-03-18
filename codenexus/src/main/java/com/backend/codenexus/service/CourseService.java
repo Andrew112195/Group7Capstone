@@ -9,6 +9,8 @@ import com.backend.codenexus.entity.*;
 //import com.backend.codenexus.model.UserCourse;
 
 public interface CourseService {
+
+    UserCourseEntity updateCourses(UserCourseEntity uc);
     
     List <CourseEntity> getCourseList();
 

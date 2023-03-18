@@ -33,8 +33,9 @@
 
 <div class="container-fluid mt-3">
     <h2>Available Courses</h2>
-    <form th:action="@{/get-courseModules}" method="GET" class="view-courses">
+    <form th:action="@{/get-courseModules/} + ${user.id}" method="GET" class="view-courses">
         <table class="table">
+
             <thead>
             <tr>
                 <th>Course Name</th>

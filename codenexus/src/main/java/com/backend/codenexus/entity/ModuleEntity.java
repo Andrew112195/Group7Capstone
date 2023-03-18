@@ -15,14 +15,16 @@ public class ModuleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     /* Many modules in one course */
+    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "course_id")
     private CourseEntity courseId;
 
     /* One Module to many tasks  */
+    @ToString.Exclude
     @OneToMany
     @JoinColumn(name = "module_id")
     private List<TaskEntity> tasks;

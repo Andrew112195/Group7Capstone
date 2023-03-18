@@ -119,18 +119,18 @@
         </div>
         <div class="col-md-4 bg-white t3xt-black ">
             <br><br>
-            <div class="list-group" style="max-height: 700px; overflow-y: auto;">
-                <form method="GET"  th:action="@{/getMessage}" class="messageGetForm" >
-                    <div class="form-group blu-margin">
-                        <div th.text="${userMessages.messages}" div/>
-                        <option th:each="i : ${userMessage.messages}"
-                                th:text="'From: '  + ${i.user.firstname} + ${i.header} + ' ' +  ${i.message} "/>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-        <div class="col-md-5 text-black">
+            <body>
+ <form th:action="@{/getMessages}" method="get">
+     <div th:each="message : ${user.messages}">
+         <div th:class="${message.read} ? 'message read' : 'message unread'" >
+             <h3 th:text="${message.header}"></h3>
+             <p th:text="${message.message}"></p>
+             <p th:text="'From: ' + ${message.user.firstname}"></p>
+             <a th:href="@{/getMessage/{id}(id=${message.id})}" class="message-link"></a>
+         </div>
+     </div>
+ </form>
+ <div class="col-md-5 text-black">
             <br><br>
             <div class="email-content">
 

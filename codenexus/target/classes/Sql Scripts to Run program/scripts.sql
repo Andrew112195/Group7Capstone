@@ -29,3 +29,6 @@ INSERT into messages_entity(read, header, announcement, body, recipient_id, user
 INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '995', '996');
 INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '999', '995');
 INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '999', '994');
+INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'Loop', 'Do the loop', 'false');
+INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'for loop', 'for the loop', 'false');
+INSERT INTO module(course_id, name, description, module_complete) VALUES(2, 'attributes', 'values and stuff', 'false');
