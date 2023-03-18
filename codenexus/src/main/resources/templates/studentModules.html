@@ -31,21 +31,21 @@
 </nav>
 
 <div class="container-fluid mt-3">
-    <h2>Available Courses</h2>
-    <form th:action="@{/get-courseModules}" method="GET" class="view-courses">
+    <h2>Available Modules</h2>
+    <form th:action="@{/get-courseModules}" method="GET" class="view-course-module">
         <table class="table">
             <thead>
             <tr>
-                <th>Course Name</th>
+                <th>Module Name</th>
                 <th>Action</th>
             </tr>
             </thead>
 
             <tbody>
 
-            <th:block th:each="userCourse : ${userCourses}">
+            <th:block th:each="courseModule : ${courseModules}">
                 <tr>
-                    <td th:text="${userCourse.Course.title}"></td>
+                    <td th:text="${courseModule.getTitle()}"></td>
                     <td>
                         <button type="submit" class="btn btn-primary">
                             Choose Course

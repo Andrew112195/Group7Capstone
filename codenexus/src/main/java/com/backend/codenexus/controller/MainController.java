@@ -75,12 +75,12 @@ public class MainController {
     public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
         modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
 
-        return "studentDashboard";
+        return "studentModules";
     }
 
     @GetMapping("get-moduleTasks/{id}")
     public String getModuleTasks(@PathVariable Long id, ModelMap modelMap) {
-        modelMap.addAttribute("courseModules", courseService.findAllTasksByModuleId(id));
+        modelMap.addAttribute("moduleTasks", courseService.findAllTasksByModuleId(id));
 
         return "studentDashboard";
     }

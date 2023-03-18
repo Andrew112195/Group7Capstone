@@ -40,6 +40,5 @@ public interface CourseService {
 
     List<TaskEntity> findAllTasksByModuleId(Long courseId);
 
-    void updateTaskToComplete(TaskEntity task);
 
 }
