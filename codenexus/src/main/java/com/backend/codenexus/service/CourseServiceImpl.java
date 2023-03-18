@@ -139,6 +139,17 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public List<UserCourseEntity> getAllClassmates(Long user_id){
+        List<UserCourseEntity> classMates = userCourseDao.findClassmates(user_id);
+        return classMates;
+    }
+    @Override
+    public List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse){
+        List<UserCourseEntity> userList = userCourseDao.findUsersInSameCourse(userCourse.getCourse().getId(), userCourse.getUser().getId());
+        return userList;
+    }
+
+    @Override
     public void addQuizToModule(QuizEntity quiz) {
         QuizEntity quizEntity = new QuizEntity();
         quizDao.saveAndFlush(quizEntity);

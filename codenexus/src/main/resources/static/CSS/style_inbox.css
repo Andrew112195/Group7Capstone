@@ -1,0 +1,39 @@
+.body {
+
+    margin-left: 20px;
+
+}
+.header {  padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+     }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-light .navbar-brand {
+	color: #000;
+	font-size: 25px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.col-sm-2{
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#emailButtons{
+
+  padding-left: 10px;
+  padding-right: 10px;
+}

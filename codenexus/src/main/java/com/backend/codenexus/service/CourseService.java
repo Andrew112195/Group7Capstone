@@ -20,6 +20,7 @@ public interface CourseService {
 
     List<UserCourseEntity> getCourse(Long user_id);
 
+    public List<UserCourseEntity> getAllClassmates(Long user_id);
     void addNewCourseToUser(long user_id, long course_id);
 
     TaskEntity getTask(Long task_id);
@@ -31,6 +32,8 @@ public interface CourseService {
     void completeQuiz(Long quiz_id);
 
     List<TaskEntity> getModuleTasks(Long module_id);
+
+    List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse);
 
     QuizEntity getModuleQuiz(Long module_id);
 

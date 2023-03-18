@@ -6,10 +6,12 @@ import org.springframework.stereotype.Service;
 
 import com.backend.codenexus.dao.*;
 import com.backend.codenexus.entity.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class  UserServiceImpl implements UserService {
 
     @Autowired
@@ -30,13 +32,17 @@ public class  UserServiceImpl implements UserService {
         return false;
         
     }
+    @Override
+    @Transactional
+    public UserEntity updateUser(UserEntity user){
 
+        return userDao.updateUser(user.getId());
+    }
     @Override
     public UserEntity login(UserEntity user) {
         // catches null pointer exception on false return
         try {
             UserEntity checkUser = userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
-            
             return checkUser;
         }
         catch(Exception e){
@@ -44,12 +50,6 @@ public class  UserServiceImpl implements UserService {
         }
     }
 
-
-    @Override
-    public boolean updateUser(UserEntity user) {
-        
-        return false;
-    }
 
     @Override
     public List<UserEntity> getAllStudents() {

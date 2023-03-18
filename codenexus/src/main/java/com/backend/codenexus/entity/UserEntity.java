@@ -1,18 +1,21 @@
 package com.backend.codenexus.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.*;
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "user_entity")
 public class UserEntity {
 
     // @OneToMany(mappedBy = "user_id")
@@ -23,10 +26,12 @@ public class UserEntity {
     private Long id;
 
     @Column(name = "user_type_id")
-    private Long userTypeId;
+    private long userTypeId;
 
+/*
     @Column(name="cohort_id")
-    private Long cohortId;
+    private long cohortId;
+*/
 
     @Column(name = "first_name")
     private String firstname;
@@ -43,10 +48,22 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "messages")
-    private String messages;
+    @OneToMany(mappedBy = "user",
+            orphanRemoval = true,
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private List<MessagesEntity> sentMessages;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy = "recipientId",
+            orphanRemoval = true,
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private List<MessagesEntity> messages;
+
+    @OneToMany(mappedBy = "user",
+            orphanRemoval = true,
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
     private List<UserCourseEntity> userCourse;
 
 }

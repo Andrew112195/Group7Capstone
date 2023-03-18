@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import lombok.*;
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
@@ -18,19 +19,17 @@ public class MessagesEntity {
     // @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private UserEntity userId;
-
-    @ManyToOne
+    private UserEntity user;
+    @ToString.Exclude
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recipient_id")
     private UserEntity recipientId;
 
     @Column(name = "read")
-    private boolean read;
-
-    @Column(name = "sent")
-    private boolean sent;
+    private boolean read = false;
 
     @Column(name = "header")
     private String header;
@@ -38,4 +37,6 @@ public class MessagesEntity {
     @Column(name = "body")
     private String message;
 
+    @Column(name = "announcement")
+    private boolean isAnnouncement = false;
 }

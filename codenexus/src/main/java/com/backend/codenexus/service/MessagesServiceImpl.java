@@ -10,18 +10,21 @@ import org.springframework.stereotype.Service;
 
 import com.backend.codenexus.dao.*;
 import com.backend.codenexus.entity.*;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class MessagesServiceImpl implements MessagesService {
     final static Logger Log = LoggerFactory.getLogger(MessagesServiceImpl.class);
 
     @Autowired
     MessageDao messageDao;
-
+    UserDao userDao;
     @Override
-    public List<MessagesEntity> getMessages(Long user_id) {
-        List<MessagesEntity> messagesEntity = messageDao.findAllByUserId(user_id);
-        return messagesEntity;
+    public UserEntity getMessages(UserEntity user) {
+        //List<MessagesEntity> messagesEntity = messageDao.findAllByUserId(user_id);
+        //return messagesEntity;
+        return messageDao.findAllByUserId(user.getId());
     }
 
     @Override
@@ -35,7 +38,7 @@ public class MessagesServiceImpl implements MessagesService {
     public MessagesEntity readMessage(Long message_id){
         MessagesEntity source = messageDao.findByMessageId(message_id);
         source.setRead(true);
-        messageDao.saveAndFlush(source);    //saves read reciept
+        messageDao.saveAndFlush(source);
               
         return source;
     }
