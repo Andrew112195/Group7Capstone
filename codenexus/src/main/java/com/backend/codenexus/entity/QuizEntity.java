@@ -14,7 +14,7 @@ public class QuizEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    @ToString.Exclude
     @OneToOne(targetEntity = CourseEntity.class,cascade = CascadeType.ALL)
     private CourseEntity courseQ;
 

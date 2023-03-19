@@ -4,9 +4,7 @@ import com.backend.codenexus.model.enums;
 
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
@@ -22,6 +20,8 @@ public class TaskEntity {
 
     /*We are in the task class*/
     @ManyToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "module_id")
     private ModuleEntity module;
 
