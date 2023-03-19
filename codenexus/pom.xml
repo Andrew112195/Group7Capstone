@@ -50,6 +50,7 @@
 			<artifactId>lombok</artifactId>
 				<optional>true</optional>
 		</dependency>
+		
 		<!-- BOOTSTRAP DEPENDENCIES -->
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -75,6 +76,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+	
+   <dependency>
+     <groupId>org.elasticsearch</groupId>
+     <artifactId>elasticsearch</artifactId>
+     <version>7.3.0</version>
+   </dependency>
 	</dependencies>
 
 	<build>

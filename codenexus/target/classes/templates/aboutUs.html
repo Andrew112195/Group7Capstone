@@ -4,48 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <title>About US</title>
-  <link rel="stylesheet" href="/CSS/style_about.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="/CSS/style_index.css">    
+  <div th:replace ="header :: myheader"></div>
 </head>
 <body>
+<br><br>
+<div class="container">
+  <br>
+  <section class="py-3">
+    <h3>Our Team</h3>
+    <p>Nexus is a company founded by a group of enthusiastic developers with a shared passion for programming. The inspiration behind the creation of Nexus was to provide a more stimulating and captivating way for the children to learn to code. The headquarters of Nexus is located in Miami, Florida.</p>
+  </section>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="/index"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/pricing">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutus">About us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Log in</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<br><br><br>
-<div class="aboutus-section">
-  <div class="container">
+  <section class="py-3">
     <div class="row">
-      <div class="col-md-12 col-sm-6 col-xs-12">
-        <div class="aboutus">
-          <h2 class="aboutus-title">About Us</h2>
-          <p class="aboutus-text">Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in.</p>
-          <p class="aboutus-text">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem</p>
-          <a class="aboutus-more" href="#">read more</a>
-        </div>
+      <div class="col-md-6">
+        <h3>Upbringing Tomorrow's Talent</h3>
+        <p class="text-justify">Our mission is to empower the next generation of innovators by providing engaging and accessible coding education to kids of all backgrounds. We believe that every child deserves the opportunity to develop critical thinking skills and fluency in computer science, regardless of their age, gender, or socioeconomic status.  </p>
+        <p>By delivering high-quality e-learning courses and personalized coaching, we aim to create a supportive and inclusive community that fosters a love for technology and inspires our students to become confident creators of their own futures.</p>
+        <p>We believe that learning should be fun and engaging, and we are passionate about creating an environment that fosters creativity and exploration. Our curriculum is designed to be accessible to all children, regardless of their prior experience with coding. We believe that every child has the potential to be a great coder, and we work tirelessly to unlock that potential.
+        </p>
+      </div>    
+      <div class="col-md-6">
+        <img src="/img/programming_kids.jpg" alt="Picture of kids coding" class="img-fluid">
       </div>
-
     </div>
-  </div>
+  </section>
+
+ <br><br>
+  <section class="py-3"> 
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/img/programming.jpg" alt="Picture of kids coding" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <h3>Education in programming is essential for economic development.</h3>
+        <p class="text-justify">Education in programming for kids is a critical component of our modern economy. As technology continues to shape the world we live in, programming skills have become increasingly vital to success in the workplace. By providing children with an early introduction to programming, we can help them develop the skills and knowledge needed to thrive in a digital economy. </p>
+        <p class="text-justify">Programming education is not just about preparing kids for future job opportunities, it is also about fostering an entrepreneurial mindset. By teaching children to think creatively and solve problems using technology, we can encourage them to become innovative thinkers and problem solvers. In a world where innovation and agility are key to success, programming education can help kids develop the skills they need to thrive. </p>
+        <p class="text-justify">Moreover, programming education can be a powerful tool for promoting digital literacy. As our society becomes increasingly digitized, it is important that all members of our community have a basic understanding of how technology works. By teaching kids to code, we can help them develop the digital literacy skills they need to navigate a complex digital world.</p>
+       
+      </div>
+    </div>
+  </section> 
 </div>
+<!-- footer starts -->
+<div th:replace ="footer :: myfooter"></div> 
+<!-- footer ends -->
 </body>
 </html>
