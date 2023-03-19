@@ -100,7 +100,7 @@ public class MainController {
 
     @GetMapping("get-courseModules/{id}")
     public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
-        modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
+        //modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
 
         return "studentModules";
     }

@@ -19,13 +19,15 @@ public class ModuleEntity {
 
     /* Many modules in one course */
     @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne
     @JoinColumn(name = "course_id")
     private CourseEntity courseId;
 
     /* One Module to many tasks  */
     @ToString.Exclude
-    @OneToMany
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "module_id")
     private List<TaskEntity> tasks;
 
@@ -41,8 +43,9 @@ public class ModuleEntity {
     @Column(name = "difficulty")
     private Difficulty difficulty;
 
-    @Column(name = "pre_req")
-    private boolean preReq;
+/*    @Column(name = "pre_req")
+    private boolean preReq;*/
+
 
     @Column(name = "module_complete")
     private boolean moduleComplete;

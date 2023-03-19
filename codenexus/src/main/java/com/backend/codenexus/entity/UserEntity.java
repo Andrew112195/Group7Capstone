@@ -7,6 +7,7 @@ import lombok.*;
 
 import org.hibernate.annotations.Cascade;
 import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,21 +49,25 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "user",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<MessagesEntity> sentMessages;
-
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "recipientId",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<MessagesEntity> messages;
-
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "user",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<UserCourseEntity> userCourse;
 

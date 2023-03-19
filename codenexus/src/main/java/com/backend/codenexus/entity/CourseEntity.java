@@ -28,12 +28,14 @@ public class CourseEntity {
     private double price;
 
     @ToString.Exclude
-    @OneToMany
+    @EqualsAndHashCode.Exclude
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
-    private List<UserCourseEntity> userCourses;
+    private UserCourseEntity userCourse;
 
     @ToString.Exclude
-    @OneToMany
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     private List<ModuleEntity> modules;
 
