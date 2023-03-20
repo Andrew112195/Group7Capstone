@@ -1,9 +1,7 @@
 package com.backend.codenexus.entity;
 
 import com.backend.codenexus.model.enums;
-
 import jakarta.persistence.*;
-
 import lombok.*;
 
 @Data

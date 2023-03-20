@@ -1,12 +1,11 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
-import java.util.Date;
 import lombok.*;
-
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.relational.core.mapping.Table;
+
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -17,23 +16,23 @@ public class MessagesEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id")
     private Long id;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
+    @ManyToOne
+    @JoinColumn(name = "sender")
+    private UserEntity sender;
+
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "recipient_id")
-    private UserEntity recipientId;
+    @ManyToOne
+    @JoinColumn(name = "recipient")
+    private UserEntity recipient;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column//(nullable = false)
+    @Column
     private Date timeSent;
 
     @PrePersist
@@ -45,6 +44,7 @@ public class MessagesEntity {
 
     @Column(name = "header")
     private String header;
+
 
     @Column(name = "body")
     private String message;

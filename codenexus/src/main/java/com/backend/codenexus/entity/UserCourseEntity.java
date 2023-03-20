@@ -1,9 +1,7 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
-
 import lombok.*;
-
 import org.hibernate.annotations.Cascade;
 
 @Data
@@ -26,7 +24,7 @@ public class UserCourseEntity {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @ManyToOne (fetch = FetchType.EAGER)
+    @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private UserEntity user;

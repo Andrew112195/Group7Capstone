@@ -1,8 +1,9 @@
 package com.backend.codenexus.entity;
-import lombok.*;
-import jakarta.persistence.*;
 
-import java.util.List;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

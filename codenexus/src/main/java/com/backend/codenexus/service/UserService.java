@@ -1,8 +1,7 @@
 package com.backend.codenexus.service;
 
-import org.springframework.stereotype.Service;
-
 import com.backend.codenexus.entity.UserEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

@@ -1,9 +1,10 @@
 package com.backend.codenexus.entity;
 
-import java.util.List;
 import com.backend.codenexus.model.enums.Difficulty;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor

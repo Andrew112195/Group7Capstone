@@ -1,20 +1,18 @@
 package com.backend.codenexus.controller;
 
-import java.util.List;
-
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
-import org.hibernate.Hibernate;
+import com.backend.codenexus.entity.MessagesEntity;
+import com.backend.codenexus.entity.UserCourseEntity;
+import com.backend.codenexus.entity.UserEntity;
+import com.backend.codenexus.service.CourseService;
+import com.backend.codenexus.service.MessagesService;
+import com.backend.codenexus.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import com.backend.codenexus.entity.*;
-import com.backend.codenexus.service.*;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -162,7 +160,6 @@ public class MainController {
         try {
             if(user != null) {
                 modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
-                userService.updateUser(user);
                 modelMap.addAttribute("user", user);
                 return "redirect:/dashboard";
             }
@@ -194,8 +191,8 @@ public class MainController {
     //consumes = {"application/json", "application/xml", "multipart/form-data"}
 
     @PostMapping(value = "saveMessage")
-    public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message,   ModelMap modelMap) {
-        message.setUser(((UserEntity) modelMap.get("user")));
+    public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message, ModelMap modelMap) {
+        message.setSender((UserEntity) modelMap.get("user"));
         messagesService.saveMessage(message);
         return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
     }

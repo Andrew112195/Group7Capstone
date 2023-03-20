@@ -1,7 +1,11 @@
 package com.backend.codenexus.entity;
 //import com.backend.codenexus.model.SubscriptionPlan;
+
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 @Data

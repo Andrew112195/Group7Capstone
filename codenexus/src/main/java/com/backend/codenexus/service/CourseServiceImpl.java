@@ -1,15 +1,13 @@
 package com.backend.codenexus.service;
 
-import java.util.*;
-
+import com.backend.codenexus.dao.*;
+import com.backend.codenexus.entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.backend.codenexus.entity.*;
-import com.backend.codenexus.dao.*;
+import java.util.List;
 
 @Service
 public class CourseServiceImpl implements CourseService {

@@ -1,11 +1,11 @@
 package com.backend.codenexus.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.backend.codenexus.dao.UserCourseDao;
+import com.backend.codenexus.dao.UserDao;
+import com.backend.codenexus.entity.UserEntity;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.backend.codenexus.dao.*;
-import com.backend.codenexus.entity.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -37,7 +37,6 @@ public class  UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserEntity updateUser(UserEntity user){
-        userCourseDao.updateAllCourses();
         return userDao.updateUser(user.getId());
     }
     @Override

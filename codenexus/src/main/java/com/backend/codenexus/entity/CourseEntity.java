@@ -1,7 +1,6 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
 import lombok.*;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public class CourseEntity {
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne
     @JoinColumn(name = "course_id")
     private UserCourseEntity userCourse;
 
