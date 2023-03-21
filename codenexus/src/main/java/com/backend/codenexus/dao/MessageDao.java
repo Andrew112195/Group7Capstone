@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 @EnableJpaRepositories
-@Repository
+
 public interface MessageDao extends JpaRepository<MessagesEntity, Long> {
 
     @Query(value = "SELECT * FROM messages_entity WHERE recipient_id = ?1", nativeQuery = true)

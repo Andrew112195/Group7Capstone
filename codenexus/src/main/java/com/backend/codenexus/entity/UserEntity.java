@@ -44,6 +44,9 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "resetpasswordToken", length = 64, updatable = false)
+    private String resetpasswordToken;
+
     @Column(name = "messages")
     private String messages;
 

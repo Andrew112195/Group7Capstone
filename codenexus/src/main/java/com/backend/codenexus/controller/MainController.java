@@ -4,12 +4,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import com.backend.codenexus.model.*;
 import com.backend.codenexus.service.*;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/")
@@ -25,6 +30,9 @@ public class MainController {
     UserCourseService userCourseService;
     @Autowired
     MessagesService messagesService;
+    @Autowired
+    private JavaMailSender mailSender;
+
 
     //Get Mapping methods
 
@@ -45,7 +53,32 @@ public class MainController {
 
     @GetMapping("contact")
     public String getContact(){
-        return "contact";
+        return "contactus";
+    }
+
+    @PostMapping("contact")
+    public String submitContact(HttpServletRequest request){
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String subject = request.getParameter("subject");
+        String content = request.getParameter("content");
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("abc@gmail.com");
+        message.setTo("nexuscontactusmiami@gmail.com");
+
+        String mailSubject = fullname + " has sent a message";
+        String mailContent = "Sender Name:" + fullname + "\n";
+        mailContent += "Sender E-mail: " + email + "\n";
+        mailContent += "Subject: " + subject + "\n";
+        mailContent += "Content: " + content + "\n";
+
+        message.setSubject(mailSubject);
+        message.setText(mailContent);
+
+        mailSender.send(message);
+
+        return "message";
     }
     
     @GetMapping("login")

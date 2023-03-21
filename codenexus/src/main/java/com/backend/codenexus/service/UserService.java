@@ -14,7 +14,10 @@ public interface UserService {
     User login(User user);
 
     boolean updateUser(User user);
+    
     List<User> getAllStudents();
+
+   
 
 
 }
