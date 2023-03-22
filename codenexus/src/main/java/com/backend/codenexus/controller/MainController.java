@@ -6,8 +6,8 @@ import com.backend.codenexus.entity.UserEntity;
 import com.backend.codenexus.service.CourseService;
 import com.backend.codenexus.service.MessagesService;
 import com.backend.codenexus.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -16,9 +16,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/")
