@@ -33,8 +33,9 @@
 
 <div class="container-fluid mt-3">
     <h2>Available Courses</h2>
-    <form th:action="@{/get-userCourses}" method="GET" class="view-courses">
+    <form th:action="@{/get-courseModules/} + ${user.id}" method="GET" class="view-courses">
         <table class="table">
+
             <thead>
             <tr>
                 <th>Course Name</th>
@@ -46,7 +47,7 @@
 
             <th:block th:each="userCourse : ${userCourses}">
                 <tr>
-                    <td th:text="${userCourse.getCourse().getTitle()}"></td>
+                    <td th:text="${userCourse.Course.title}"></td>
                     <td>
                         <button type="submit" class="btn btn-primary">
                             Choose Course

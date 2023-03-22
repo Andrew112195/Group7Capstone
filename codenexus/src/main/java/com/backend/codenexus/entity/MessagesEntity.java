@@ -2,39 +2,53 @@ package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.relational.core.mapping.Table;
+
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "message")
-
+@Table(name = "messages")
 public class MessagesEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id")
     private Long id;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserEntity userId;
+    @JoinColumn(name = "sender")
+    private UserEntity sender;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne
-    @JoinColumn(name = "recipient_id")
-    private UserEntity recipientId;
+    @JoinColumn(name = "recipient")
+    private UserEntity recipient;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column
+    private Date timeSent;
+
+    @PrePersist
+    private void onCreate(){
+        timeSent = new Date();
+    }
     @Column(name = "read")
-    private boolean read;
-
-    @Column(name = "sent")
-    private boolean sent;
+    private boolean read = false;
 
     @Column(name = "header")
     private String header;
 
+
     @Column(name = "body")
     private String message;
 
+    @Column(name = "announcement")
+    private boolean isAnnouncement = false;
 }

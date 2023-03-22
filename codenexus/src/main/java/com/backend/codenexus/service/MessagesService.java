@@ -1,17 +1,20 @@
 package com.backend.codenexus.service;
 
+import com.backend.codenexus.entity.MessagesEntity;
+import com.backend.codenexus.entity.UserEntity;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
-import com.backend.codenexus.model.*;
-
+@Transactional
 public interface MessagesService {
 
-    List<Message> getMessages(Long user_id);
+    UserEntity getMessages(UserEntity user);
     
-    List<Message> getSentMessages(Long user_id);
+    List<MessagesEntity> getSentMessages(Long user_id);
 
-    Message readMessage(Long message_id);
+    MessagesEntity readMessage(Long message_id);
 
-    Message saveMessage(Message message);
+    MessagesEntity saveMessage(MessagesEntity message);
 
 }

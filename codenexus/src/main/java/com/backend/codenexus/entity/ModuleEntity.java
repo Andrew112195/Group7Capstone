@@ -1,10 +1,10 @@
-/*package com.backend.codenexus.entity;
+package com.backend.codenexus.entity;
 
-import java.util.List;
 import com.backend.codenexus.model.enums.Difficulty;
-import com.backend.codenexus.model.Module;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -16,15 +16,20 @@ public class ModuleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
-    /* Many modules in one course 
+    /* Many modules in one course */
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @ManyToOne
-    @JoinColumn(name = "courseId")
+    @JoinColumn(name = "course_id")
     private CourseEntity courseId;
 
-    /* One Module to many tasks 
-    @OneToMany(mappedBy = "moduleId")
+    /* One Module to many tasks  */
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "module_id")
     private List<TaskEntity> tasks;
 
     private void addTaskToModule(TaskEntity taskEntity){
@@ -39,10 +44,10 @@ public class ModuleEntity {
     @Column(name = "difficulty")
     private Difficulty difficulty;
 
-    @Column(name = "pre_req")
-    private boolean preReq;
+/*    @Column(name = "pre_req")
+    private boolean preReq;*/
+
 
     @Column(name = "module_complete")
     private boolean moduleComplete;
 }
-*/

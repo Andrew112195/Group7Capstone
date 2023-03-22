@@ -1,7 +1,10 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @AllArgsConstructor
@@ -14,7 +17,7 @@ public class QuizEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    @ToString.Exclude
     @OneToOne(targetEntity = CourseEntity.class,cascade = CascadeType.ALL)
     private CourseEntity courseQ;
 

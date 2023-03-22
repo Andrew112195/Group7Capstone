@@ -1,12 +1,8 @@
 package com.backend.codenexus.entity;
 
-import com.backend.codenexus.entity.CourseEntity;
 import com.backend.codenexus.model.enums;
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
@@ -22,11 +18,13 @@ public class TaskEntity {
 
     /*We are in the task class*/
     @ManyToOne
-    @JoinColumn(name = "course_id")
-    private CourseEntity course;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JoinColumn(name = "module_id")
+    private ModuleEntity module;
 
     @Column(name = "problem")
-    private String Question;
+    private String question;
 
     @Column(name = "difficulty_level")
     private int difficultyLevel;

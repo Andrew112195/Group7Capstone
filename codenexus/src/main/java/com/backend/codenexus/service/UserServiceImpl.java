@@ -1,24 +1,26 @@
 package com.backend.codenexus.service;
 
-import com.backend.codenexus.model.User;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.backend.codenexus.dao.UserCourseDao;
+import com.backend.codenexus.dao.UserDao;
+import com.backend.codenexus.entity.UserEntity;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.backend.codenexus.dao.*;
-import com.backend.codenexus.entity.*;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class  UserServiceImpl implements UserService {
 
     @Autowired
     UserDao userDao;
 
+    @Autowired
+    UserCourseDao userCourseDao;
     @Override
-    public boolean register(User user) {
+    public boolean register(UserEntity user) {
         /* use the userDao to create logic of data to populate */
         //searches for existing username
         if (!userDao.existsByUsername(user.getUsername())) {
@@ -32,15 +34,17 @@ public class  UserServiceImpl implements UserService {
         return false;
         
     }
-
     @Override
-    public User login(User user) {
+    @Transactional
+    public UserEntity updateUser(UserEntity user){
+        return userDao.updateUser(user.getId());
+    }
+    @Override
+    public UserEntity login(UserEntity user) {
         // catches null pointer exception on false return
         try {
             UserEntity checkUser = userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
-            User returnUser = new User();
-            BeanUtils.copyProperties(checkUser, returnUser);
-            return returnUser;
+            return checkUser;
         }
         catch(Exception e){
             return null;
@@ -48,23 +52,12 @@ public class  UserServiceImpl implements UserService {
     }
 
 
-    @Override
-    public boolean updateUser(User user) {
-        
-        return false;
-    }
 
     @Override
-    public List<User> getAllStudents() {
+    public List<UserEntity> getAllStudents() {
         List<UserEntity> userEntity = userDao.findAllByUserTypeId(1);
-        List<User> users = new ArrayList<>();
-        for(UserEntity user: userEntity){
-            User user1 = new User();
-            BeanUtils.copyProperties(user,user1);
-            users.add(user1);
-
-        }
-        return users;
+        
+        return userEntity;
     }
 
   
