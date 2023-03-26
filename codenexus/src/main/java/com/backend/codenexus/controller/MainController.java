@@ -7,6 +7,7 @@ import com.backend.codenexus.service.CourseService;
 import com.backend.codenexus.service.MessagesService;
 import com.backend.codenexus.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.List;
 
@@ -154,11 +156,11 @@ public class MainController {
 
     @GetMapping("inbox")
     public String inbox(ModelMap modelMap){
-        if(modelMap.containsKey("user")){
+        if(((UserEntity) modelMap.get("user")).getId() != null){
             return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId();
         }
         else{
-            return "login";
+            return "redirect:/login";
         }
     }
 
@@ -226,5 +228,13 @@ public class MainController {
         message.setSender((UserEntity) modelMap.get("user"));
         messagesService.saveMessage(message);
         return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
+    }
+
+    @GetMapping (value = "logout")
+    public String logout(ModelMap modelMap, HttpSession session, SessionStatus status){
+        modelMap.clear();
+        status.setComplete();
+        modelMap.put("logoutMessage", "Logout successful!!");
+        return "redirect:/index";
     }
 }

@@ -1,0 +1,116 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > CourseService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.backend.codenexus.service</a>
+</div>
+
+<h1>Coverage Summary for Class: CourseService (com.backend.codenexus.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">CourseService</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.backend.codenexus.service;
+&nbsp;
+&nbsp;import com.backend.codenexus.entity.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;//import com.backend.codenexus.model.Course;
+&nbsp;//import com.backend.codenexus.model.Module;
+&nbsp;//import com.backend.codenexus.model.UserCourse;
+&nbsp;
+&nbsp;public interface CourseService {
+&nbsp;
+&nbsp;    UserCourseEntity updateCourses(UserCourseEntity uc);
+&nbsp;    
+&nbsp;    List &lt;CourseEntity&gt; getCourseList();
+&nbsp;
+&nbsp;    List &lt;CourseEntity&gt; getStudentCompletedCourses(Long user_id);
+&nbsp;
+&nbsp;    List &lt;CourseEntity&gt; getStudentIncompleteCourses(Long user_id);
+&nbsp;
+&nbsp;    List &lt;ModuleEntity&gt; getCourseModules(Long course_id);
+&nbsp;
+&nbsp;    List&lt;UserCourseEntity&gt; getCourse(Long user_id);
+&nbsp;
+&nbsp;    public List&lt;UserCourseEntity&gt; getAllClassmates(Long user_id);
+&nbsp;    void addNewCourseToUser(long user_id, long course_id);
+&nbsp;
+&nbsp;    TaskEntity getTask(Long task_id);
+&nbsp;
+&nbsp;    QuizEntity getQuiz(Long quiz_id);
+&nbsp;
+&nbsp;    void completeTask(Long task_id);
+&nbsp;
+&nbsp;    void completeQuiz(Long quiz_id);
+&nbsp;
+&nbsp;    List&lt;TaskEntity&gt; getModuleTasks(Long module_id);
+&nbsp;
+&nbsp;    List&lt;UserCourseEntity&gt; getUsersSameCourse(UserCourseEntity userCourse);
+&nbsp;
+&nbsp;    QuizEntity getModuleQuiz(Long module_id);
+&nbsp;
+&nbsp;    void addTaskToModule(TaskEntity task);
+&nbsp;
+&nbsp;    void addQuizToModule(QuizEntity quiz);
+&nbsp;
+&nbsp;    List&lt;TaskEntity&gt; findAllTasksByModuleId(Long courseId);
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-03-26 15:23</div>
+</div>
+</body>
+</html>

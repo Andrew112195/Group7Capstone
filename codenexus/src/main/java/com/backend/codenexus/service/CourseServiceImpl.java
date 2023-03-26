@@ -158,4 +158,5 @@ public class CourseServiceImpl implements CourseService {
         QuizEntity quizEntity = new QuizEntity();
         quizDao.saveAndFlush(quizEntity);
     }
+
 }

@@ -39,6 +39,7 @@ public class  UserServiceImpl implements UserService {
     public UserEntity updateUser(UserEntity user){
         return userDao.updateUser(user.getId());
     }
+
     @Override
     public UserEntity login(UserEntity user) {
         // catches null pointer exception on false return
@@ -55,9 +56,9 @@ public class  UserServiceImpl implements UserService {
 
     @Override
     public List<UserEntity> getAllStudents() {
-        List<UserEntity> userEntity = userDao.findAllByUserTypeId(1);
+        List<UserEntity> allStudents = userDao.findAllByUserTypeId(1);
         
-        return userEntity;
+        return allStudents;
     }
 
   

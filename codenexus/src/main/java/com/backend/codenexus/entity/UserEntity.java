@@ -2,6 +2,7 @@ package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.apache.commons.lang3.builder.ToStringExclude;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.List;
@@ -58,5 +59,6 @@ public class UserEntity {
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<UserCourseEntity> userCourse;
+
 
 }

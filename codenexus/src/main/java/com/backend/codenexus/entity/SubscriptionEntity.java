@@ -1,5 +1,4 @@
 package com.backend.codenexus.entity;
-//import com.backend.codenexus.model.SubscriptionPlan;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

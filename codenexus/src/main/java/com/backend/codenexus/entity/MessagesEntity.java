@@ -49,6 +49,4 @@ public class MessagesEntity {
     @Column(name = "body")
     private String message;
 
-    @Column(name = "announcement")
-    private boolean isAnnouncement = false;
 }
