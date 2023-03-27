@@ -12,6 +12,8 @@ public interface UserService {
 
     UserEntity login(UserEntity user);
 
+    boolean changePassword(UserEntity user, String oldPassword, String newPassword);
+
     List<UserEntity> getAllStudents();
 
     UserEntity updateUser(UserEntity user);

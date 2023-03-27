@@ -42,7 +42,7 @@ public class  UserServiceImpl implements UserService {
 
     @Override
     public UserEntity login(UserEntity user) {
-        // catches null pointer exception on false return
+        // catches null pointer exception on null return
         try {
             UserEntity checkUser = userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
             return checkUser;
@@ -52,6 +52,20 @@ public class  UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public boolean changePassword(UserEntity user, String oldPassword, String newPassword){
+        // catches null pointer exception on null return
+        try {
+            userDao.findByUsernameAndPassword(user.getUsername(), oldPassword);
+            //if old password doesnot match will throw exception
+            user.setPassword(newPassword);
+            userDao.saveAndFlush(user);
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+    }
 
 
     @Override
