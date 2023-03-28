@@ -1,7 +1,6 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
 import lombok.*;
 
 import java.util.List;
@@ -27,11 +26,16 @@ public class CourseEntity {
     @Column(name = "price")
     private double price;
 
-    @OneToMany(mappedBy = "course")
-    private List<UserCourseEntity> userCourses;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToOne
+    @JoinColumn(name = "course_id")
+    private UserCourseEntity userCourse;
 
-    @OneToMany
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "course_id")
     private List<ModuleEntity> modules;
-
 
 }

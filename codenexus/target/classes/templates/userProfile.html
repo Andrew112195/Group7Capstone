@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Student Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/inbox">Inbox</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tasks</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <br>
+                <div class="card shadow-sm">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3"
+                        alt="Profile Picture">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Jessica Brown</h5>
+                        <p class="card-text text-center">@jessBrown</p>
+                        <p class="card-text">Email: jessyBrown@gmail.com</p>
+                        <p class="card-text">Subscription: Preferred</p>
+                    </div>
+                </div>
+                <br>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Edit Password</h5>
+                        <br>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary mx-auto my-2" data-bs-toggle="modal"
+                                data-bs-target="#passwordModal">Change Password</button>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <br>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Edit Profile</h5>
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="first-name" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="first-name"
+                                        placeholder="Enter your first name">
+                                </div>
+                                <div class="col">
+                                    <label for="last-name" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="last-name"
+                                        placeholder="Enter your last name">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subscription" class="form-label">Subscription</label>
+                                <select class="form-select" id="subscription">
+                                    <option selected>Select subscription</option>
+                                    <option value="basic">Preferred</option>
+                                    <option value="premium">Premium</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="profile-picture" class="form-label">Profile Picture</label>
+                                <input type="file" class="form-control" id="profile-picture">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn btn-danger">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Modal -->
+    <div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="current-password" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="current-password"
+                                placeholder="Enter your current password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-password" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="new-password"
+                                placeholder="Enter your new password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirm-password"
+                                placeholder="Confirm your new password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Link to Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

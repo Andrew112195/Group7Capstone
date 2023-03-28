@@ -10,8 +10,6 @@ INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username
 INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username, password) VALUES ('997', '2', 'Deland', 'Patrice','pat@hello.com', 'pat' ,'123');
 INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username, password) VALUES ('998', '2', 'Alexander', 'Justiniano','alex@hello.com','ale' ,'123');
 INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username, password) VALUES ('994', '1', 'Matt', 'Arias','matt@hello.com', 'matt' ,'123');
-INSERT INTO user_entity(user_type_id, first_name, last_name, email, username, password) VALUES (1, 'test', 'test','matt@hello.com', 'test' ,'test');
-INSERT INTO user_entity(user_type_id, first_name, last_name, email, username, password) VALUES (2, 'admin', 'admin','matt@hello.com', 'admin' ,'admin');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '1', '999');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '2', '999');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '999');
@@ -24,13 +22,15 @@ INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '998');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '995');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '2', '994');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '996');
-INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '999', '995');
-INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '999', '995');
-INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '995', '998');
-INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '995', '997');
-INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '995', '996');
-INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '999', '995');
-INSERT into messages_entity(read, header, announcement, body, recipient_id, user_id) values ('false', 'sub','false', 'text', '999', '994');
-
-
-select * from user_entity;
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '999', '995');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '999', '995');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '995', '998');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '995', '997');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '995', '996');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '999', '995');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '999', '994');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '995', '999');
+INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '996', '999');
+INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'Loop', 'Do the loop', 'false');
+INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'for loop', 'for the loop', 'false');
+INSERT INTO module(course_id, name, description, module_complete) VALUES(2, 'attributes', 'values and stuff', 'false');

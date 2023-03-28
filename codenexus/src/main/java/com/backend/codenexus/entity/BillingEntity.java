@@ -1,8 +1,10 @@
 package com.backend.codenexus.entity;
+
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

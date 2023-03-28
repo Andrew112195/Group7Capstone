@@ -1,31 +1,49 @@
 package com.backend.codenexus.service;
 
-import java.util.*;
+import com.backend.codenexus.entity.*;
 
-import com.backend.codenexus.entity.CourseEntity;
-import com.backend.codenexus.entity.UserCourseEntity;
-import com.backend.codenexus.entity.UserEntity;
+import java.util.List;
 
 //import com.backend.codenexus.model.Course;
 //import com.backend.codenexus.model.Module;
 //import com.backend.codenexus.model.UserCourse;
 
 public interface CourseService {
-    
 
+    UserCourseEntity updateCourses(UserCourseEntity uc);
+    
     List <CourseEntity> getCourseList();
 
     List <CourseEntity> getStudentCompletedCourses(Long user_id);
 
     List <CourseEntity> getStudentIncompleteCourses(Long user_id);
 
-    //List <Module> getCourseModules(Long course_id);
+    List <ModuleEntity> getCourseModules(Long course_id);
 
-    List<UserCourseEntity> getCourses(Long user_id);
-
-    public List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse);
+    List<UserCourseEntity> getCourse(Long user_id);
 
     public List<UserCourseEntity> getAllClassmates(Long user_id);
     void addNewCourseToUser(long user_id, long course_id);
+
+    TaskEntity getTask(Long task_id);
+
+    QuizEntity getQuiz(Long quiz_id);
+
+    void completeTask(Long task_id);
+
+    void completeQuiz(Long quiz_id);
+
+    List<TaskEntity> getModuleTasks(Long module_id);
+
+    List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse);
+
+    QuizEntity getModuleQuiz(Long module_id);
+
+    void addTaskToModule(TaskEntity task);
+
+    void addQuizToModule(QuizEntity quiz);
+
+    List<TaskEntity> findAllTasksByModuleId(Long courseId);
+
 
 }

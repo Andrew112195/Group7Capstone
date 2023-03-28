@@ -1,14 +1,10 @@
 package com.backend.codenexus.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 import lombok.*;
-
-import org.hibernate.annotations.Cascade;
+import org.apache.commons.lang3.builder.ToStringExclude;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -18,20 +14,12 @@ import java.util.List;
 @Table(name = "user_entity")
 public class UserEntity {
 
-    // @OneToMany(mappedBy = "user_id")
-    // ArrayList<MessagesEntity> userMessages;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "user_type_id")
     private long userTypeId;
-
-/*
-    @Column(name="cohort_id")
-    private long cohortId;
-*/
 
     @Column(name = "first_name")
     private String firstname;
@@ -48,22 +36,29 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
-    @OneToMany(mappedBy = "user",
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "sender",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<MessagesEntity> sentMessages;
 
-    @OneToMany(mappedBy = "recipientId",
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "recipient",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<MessagesEntity> messages;
-
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "user",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
+            fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     private List<UserCourseEntity> userCourse;
+
 
 }

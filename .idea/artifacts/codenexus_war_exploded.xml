@@ -20,7 +20,6 @@
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.4.5" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.4.5" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.19.0" />
-          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.19.0" />
           <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:2.0.6" />
           <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:2.1.1" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.33" />
@@ -30,7 +29,6 @@
           <element id="library" level="project" name="Maven: io.micrometer:micrometer-observation:1.10.4" />
           <element id="library" level="project" name="Maven: io.micrometer:micrometer-commons:1.10.4" />
           <element id="library" level="project" name="Maven: io.micrometer:micrometer-core:1.10.4" />
-          <element id="library" level="project" name="Maven: org.hdrhistogram:HdrHistogram:2.1.12" />
           <element id="library" level="project" name="Maven: org.latencyutils:LatencyUtils:2.0.3" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jdbc:3.0.4" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:3.0.4" />
@@ -54,7 +52,6 @@
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.12.23" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:4.0.2" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-core:4.0.2" />
-          <element id="library" level="project" name="Maven: org.eclipse.angus:angus-activation:2.0.0" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:4.0.2" />
           <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:4.1.1" />
           <element id="library" level="project" name="Maven: jakarta.inject:jakarta.inject-api:2.0.0" />
@@ -71,10 +68,17 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.5" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.5" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:6.0.6" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:3.0.4" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.0.4" />
           <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.0" />
           <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:2.1.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:6.0.6" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:6.0.6" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:3.6.0" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-mail:3.0.4" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:6.0.6" />
+          <element id="library" level="project" name="Maven: org.eclipse.angus:jakarta.mail:1.0.0" />
+          <element id="library" level="project" name="Maven: org.eclipse.angus:angus-activation:2.0.0" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.5.4" />
           <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
           <element id="library" level="project" name="Maven: org.webjars:bootstrap:5.0.1" />
@@ -96,8 +100,37 @@
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:3.0.4" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.0.4" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch:7.3.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-core:7.3.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-secure-sm:7.3.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-x-content:7.3.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.14.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.14.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-geo:7.3.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-backward-codecs:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-grouping:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-highlighter:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-join:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-misc:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial-extras:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial3d:8.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-suggest:8.1.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-cli:7.3.0" />
+          <element id="library" level="project" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.2" />
+          <element id="library" level="project" name="Maven: com.carrotsearch:hppc:0.8.1" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.10.2" />
+          <element id="library" level="project" name="Maven: com.tdunning:t-digest:3.2" />
+          <element id="library" level="project" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.19.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:jna:4.5.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

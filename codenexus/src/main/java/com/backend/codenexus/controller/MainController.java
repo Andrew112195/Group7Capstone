@@ -1,20 +1,23 @@
 package com.backend.codenexus.controller;
 
-import java.util.List;
-
-import jakarta.servlet.http.HttpServlet;
+import com.backend.codenexus.entity.MessagesEntity;
+import com.backend.codenexus.entity.UserCourseEntity;
+import com.backend.codenexus.entity.UserEntity;
+import com.backend.codenexus.service.CourseService;
+import com.backend.codenexus.service.MessagesService;
+import com.backend.codenexus.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
-import com.backend.codenexus.entity.*;
-import com.backend.codenexus.service.*;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -28,6 +31,9 @@ public class MainController {
     CourseService courseService;
     @Autowired
     MessagesService messagesService;
+    @Autowired
+    private JavaMailSender mailSender;
+
 
     //Get Mapping methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -70,7 +76,32 @@ public class MainController {
 
     @GetMapping("contact")
     public String getContact(){
-        return "contact";
+        return "contactus";
+    }
+
+    @PostMapping("contact")
+    public String submitContact(HttpServletRequest request){
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String subject = request.getParameter("subject");
+        String content = request.getParameter("content");
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("abc@gmail.com");
+        message.setTo("nexuscontactusmiami@gmail.com");
+
+        String mailSubject = fullname + " has sent a message";
+        String mailContent = "Sender Name:" + fullname + "\n";
+        mailContent += "Sender E-mail: " + email + "\n";
+        mailContent += "Subject: " + subject + "\n";
+        mailContent += "Content: " + content + "\n";
+
+        message.setSubject(mailSubject);
+        message.setText(mailContent);
+
+        mailSender.send(message);
+
+        return "message";
     }
     
     @GetMapping("login")
@@ -91,12 +122,58 @@ public class MainController {
         return "instructorDashboard";
     }
 
-    @GetMapping(value="get-userCourses/{id}",produces = MediaType.ALL_VALUE)
+    @GetMapping("get-userCourses/{id}")
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
-        modelMap.addAttribute("userCourses", courseService.getCourses(id));
-    
+        modelMap.addAttribute("userCourses", courseService.getCourse(id));
+
         return "studentDashboard";
     }
+
+    @GetMapping("get-courseModules/{id}")
+    public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
+        //modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
+
+        return "studentModules";
+    }
+
+    @GetMapping("get-moduleTasks/{id}")
+    public String getModuleTasks(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.addAttribute("moduleTasks", courseService.findAllTasksByModuleId(id));
+
+        return "studentDashboard";
+    }
+
+
+
+
+
+
+    @GetMapping("studentclassroom")
+    public String studentClassroom(){
+        return "studentClassroom";
+    }
+
+    @GetMapping("subscriptions")
+    public String subscriptions(){
+        return "subscriptions";
+    }
+
+    @GetMapping("checkout")
+    public String checkout(){
+        return "checkout";
+    }
+
+    @GetMapping("devtoolsPreview")
+    public String devtoolsPreview(){
+        return "devtoolsPreview";
+    }
+
+    @GetMapping("premadeLibrary")
+    public String premadeLibrary(){
+        return "premadeLibrary";
+    }
+
+
 
     @GetMapping("ide")
     public String ideLoader(){
@@ -111,11 +188,11 @@ public class MainController {
 
     @GetMapping("inbox")
     public String inbox(ModelMap modelMap){
-        if(modelMap.containsKey("user")){
+        if(((UserEntity) modelMap.get("user")).getId() != null){
             return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId();
         }
         else{
-            return "login";
+            return "redirect:/login";
         }
     }
 
@@ -130,8 +207,9 @@ public class MainController {
         return "inbox";
     }
 
-    @GetMapping("inbox/read_message/{message_id}")
+    @GetMapping("read_message/{message_id}")
     public String readMessage(@PathVariable Long message_id){
+        messagesService.readMessage(message_id);
         return null;
     }
 
@@ -147,7 +225,6 @@ public class MainController {
         try {
             if(user != null) {
                 modelMap.put("welcomeMessage", "Welcome " + user.getFirstname());
-                userService.updateUser(user);
                 modelMap.addAttribute("user", user);
                 return "redirect:/dashboard";
             }
@@ -179,9 +256,17 @@ public class MainController {
     //consumes = {"application/json", "application/xml", "multipart/form-data"}
 
     @PostMapping(value = "saveMessage")
-    public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message,   ModelMap modelMap) {
-        message.setUser(((UserEntity) modelMap.get("user")));
+    public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message, ModelMap modelMap) {
+        message.setSender((UserEntity) modelMap.get("user"));
         messagesService.saveMessage(message);
         return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
+    }
+
+    @GetMapping (value = "logout")
+    public String logout(ModelMap modelMap, HttpSession session, SessionStatus status){
+        modelMap.clear();
+        status.setComplete();
+        modelMap.put("logoutMessage", "Logout successful!!");
+        return "redirect:/index";
     }
 }

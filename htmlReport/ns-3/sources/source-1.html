@@ -1,0 +1,343 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MainController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.backend.codenexus.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: MainController (com.backend.codenexus.controller)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MainController</td>
+<td class="coverageStat">
+  <span class="percent">
+    37.5%
+  </span>
+  <span class="absValue">
+    (9/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.8%
+  </span>
+  <span class="absValue">
+    (26/77)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">MainController$$SpringCGLIB$$0</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    37.5%
+  </span>
+  <span class="absValue">
+    (9/24)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.8%
+  </span>
+  <span class="absValue">
+    (26/77)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.backend.codenexus.controller;
+&nbsp;
+&nbsp;import com.backend.codenexus.entity.MessagesEntity;
+&nbsp;import com.backend.codenexus.entity.UserCourseEntity;
+&nbsp;import com.backend.codenexus.entity.UserEntity;
+&nbsp;import com.backend.codenexus.service.CourseService;
+&nbsp;import com.backend.codenexus.service.MessagesService;
+&nbsp;import com.backend.codenexus.service.UserService;
+&nbsp;import jakarta.servlet.http.HttpServletRequest;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.mail.SimpleMailMessage;
+&nbsp;import org.springframework.mail.javamail.JavaMailSender;
+&nbsp;import org.springframework.stereotype.Controller;
+&nbsp;import org.springframework.transaction.annotation.Transactional;
+&nbsp;import org.springframework.ui.ModelMap;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Controller
+&nbsp;@RequestMapping(&quot;/&quot;)
+&nbsp;@SessionAttributes(&quot;user&quot;)
+&nbsp;@CrossOrigin
+<b class="fc">&nbsp;public class MainController {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    UserService userService;
+&nbsp;    @Autowired
+&nbsp;    CourseService courseService;
+&nbsp;    @Autowired
+&nbsp;    MessagesService messagesService;
+&nbsp;    @Autowired
+&nbsp;    private JavaMailSender mailSender;
+&nbsp;
+&nbsp;
+&nbsp;    //Get Mapping methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+&nbsp;
+&nbsp;    @ModelAttribute(&quot;user&quot;)
+&nbsp;    public UserEntity getUserUserEntity() {
+<b class="fc">&nbsp;        return new UserEntity();</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @GetMapping(&quot;index&quot;)
+&nbsp;    public String index(ModelMap modelMap) {
+<b class="nc">&nbsp;        if(modelMap.containsKey(&quot;user&quot;)){</b>
+<b class="nc">&nbsp;            return &quot;redirect:/dashboard&quot;;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return &quot;index&quot;;</b>
+&nbsp;    }
+&nbsp;    @GetMapping(&quot;dashboard&quot;)
+&nbsp;        public String getDashboard( ModelMap modelMap) {
+<b class="fc">&nbsp;        UserEntity user = (UserEntity) modelMap.get(&quot;user&quot;);</b>
+<b class="fc">&nbsp;        if (user.getUserTypeId() == 3) {</b>
+<b class="nc">&nbsp;            return &quot;adminDashboard&quot;;</b>
+<b class="fc">&nbsp;        } else if (user.getUserTypeId() == 2) {</b>
+<b class="nc">&nbsp;            return &quot;redirect:/students&quot;;</b>
+<b class="fc">&nbsp;        } else if (user.getUserTypeId() == 1) {</b>
+<b class="fc">&nbsp;            return &quot;redirect:/get-userCourses/&quot; + user.getId();</b>
+&nbsp;        }
+&nbsp;        else{
+<b class="nc">&nbsp;            return &quot;redirect:/index&quot;;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;aboutus&quot;)
+&nbsp;    public String getAboutus(){
+<b class="nc">&nbsp;        return &quot;aboutUs&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;pricing&quot;)
+&nbsp;    public String getPricing(){
+<b class="nc">&nbsp;        return &quot;pricing&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;contact&quot;)
+&nbsp;    public String getContact(){
+<b class="nc">&nbsp;        return &quot;contactus&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;contact&quot;)
+&nbsp;    public String submitContact(HttpServletRequest request){
+<b class="nc">&nbsp;        String fullname = request.getParameter(&quot;fullname&quot;);</b>
+<b class="nc">&nbsp;        String email = request.getParameter(&quot;email&quot;);</b>
+<b class="nc">&nbsp;        String subject = request.getParameter(&quot;subject&quot;);</b>
+<b class="nc">&nbsp;        String content = request.getParameter(&quot;content&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        SimpleMailMessage message = new SimpleMailMessage();</b>
+<b class="nc">&nbsp;        message.setFrom(&quot;abc@gmail.com&quot;);</b>
+<b class="nc">&nbsp;        message.setTo(&quot;nexuscontactusmiami@gmail.com&quot;);</b>
+&nbsp;
+<b class="nc">&nbsp;        String mailSubject = fullname + &quot; has sent a message&quot;;</b>
+<b class="nc">&nbsp;        String mailContent = &quot;Sender Name:&quot; + fullname + &quot;\n&quot;;</b>
+<b class="nc">&nbsp;        mailContent += &quot;Sender E-mail: &quot; + email + &quot;\n&quot;;</b>
+<b class="nc">&nbsp;        mailContent += &quot;Subject: &quot; + subject + &quot;\n&quot;;</b>
+<b class="nc">&nbsp;        mailContent += &quot;Content: &quot; + content + &quot;\n&quot;;</b>
+&nbsp;
+<b class="nc">&nbsp;        message.setSubject(mailSubject);</b>
+<b class="nc">&nbsp;        message.setText(mailContent);</b>
+&nbsp;
+<b class="nc">&nbsp;        mailSender.send(message);</b>
+&nbsp;
+<b class="nc">&nbsp;        return &quot;message&quot;;</b>
+&nbsp;    }
+&nbsp;    
+&nbsp;    @GetMapping(&quot;login&quot;)
+&nbsp;    public String loginProcess(){
+<b class="fc">&nbsp;        return &quot;login&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;register&quot;)
+&nbsp;    public String registration(){
+<b class="nc">&nbsp;        return &quot;register&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;students&quot;)
+&nbsp;    public String getStudents(ModelMap modelMap){
+<b class="nc">&nbsp;        modelMap.put(&quot;students&quot;, userService.getAllStudents());</b>
+<b class="nc">&nbsp;        modelMap.put(&quot;courses&quot;, courseService.getCourseList());</b>
+&nbsp;
+<b class="nc">&nbsp;        return &quot;instructorDashboard&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;get-userCourses/{id}&quot;)
+&nbsp;    public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
+<b class="fc">&nbsp;        modelMap.addAttribute(&quot;userCourses&quot;, courseService.getCourse(id));</b>
+&nbsp;
+<b class="fc">&nbsp;        return &quot;studentDashboard&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;get-courseModules/{id}&quot;)
+&nbsp;    public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
+&nbsp;        //modelMap.addAttribute(&quot;courseModules&quot;, courseService.getCourseModules(id));
+&nbsp;
+<b class="nc">&nbsp;        return &quot;studentModules&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;get-moduleTasks/{id}&quot;)
+&nbsp;    public String getModuleTasks(@PathVariable Long id, ModelMap modelMap) {
+<b class="nc">&nbsp;        modelMap.addAttribute(&quot;moduleTasks&quot;, courseService.findAllTasksByModuleId(id));</b>
+&nbsp;
+<b class="nc">&nbsp;        return &quot;studentDashboard&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;ide&quot;)
+&nbsp;    public String ideLoader(){
+<b class="nc">&nbsp;        return &quot;onlineIDE&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;sent/{user_id}&quot;)
+&nbsp;    public String getSentMessages(@PathVariable Long user_id) {
+<b class="nc">&nbsp;        List&lt;MessagesEntity&gt; messagesSent = messagesService.getSentMessages(user_id);</b>
+<b class="nc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;inbox&quot;)
+&nbsp;    public String inbox(ModelMap modelMap){
+<b class="fc">&nbsp;        if(modelMap.containsKey(&quot;user&quot;)){</b>
+<b class="fc">&nbsp;            return &quot;redirect:/inbox/&quot; + ((UserEntity) modelMap.get(&quot;user&quot;)).getId();</b>
+&nbsp;        }
+&nbsp;        else{
+<b class="nc">&nbsp;            return &quot;login&quot;;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    @Transactional
+&nbsp;    @GetMapping(&quot;inbox/{user_id}&quot;)
+&nbsp;    public String getMessages(@PathVariable Long user_id, ModelMap modelMap) {
+<b class="fc">&nbsp;        userService.updateUser((UserEntity) modelMap.get(&quot;user&quot;));</b>
+<b class="fc">&nbsp;        modelMap.addAttribute(&quot;userMessage&quot;, modelMap.get(&quot;user&quot;));</b>
+<b class="fc">&nbsp;        MessagesEntity messageForm = new MessagesEntity();</b>
+<b class="fc">&nbsp;        modelMap.addAttribute(&quot;messageForm&quot;,messageForm);</b>
+<b class="fc">&nbsp;        modelMap.addAttribute(&quot;peerList&quot;, courseService.getAllClassmates(user_id));</b>
+<b class="fc">&nbsp;        return &quot;inbox&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping(&quot;read_message/{message_id}&quot;)
+&nbsp;    public String readMessage(@PathVariable Long message_id){
+<b class="nc">&nbsp;        messagesService.readMessage(message_id);</b>
+<b class="nc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping  (&quot;getClassmates&quot;)
+&nbsp;    public void getClassmateList(ModelMap modelMap, UserCourseEntity userCourse){
+<b class="nc">&nbsp;        modelMap.put(&quot;userList&quot;, courseService.getAllClassmates(userCourse.getId()));</b>
+&nbsp;    }
+&nbsp;    //Post Mapping Methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+&nbsp;
+&nbsp;    @PostMapping(&quot;login-process&quot;)
+&nbsp;    public String login(ModelMap modelMap, UserEntity user) {
+<b class="fc">&nbsp;        user = userService.login(user);</b>
+&nbsp;        try {
+<b class="fc">&nbsp;            if(user != null) {</b>
+<b class="fc">&nbsp;                modelMap.put(&quot;welcomeMessage&quot;, &quot;Welcome &quot; + user.getFirstname());</b>
+<b class="fc">&nbsp;                modelMap.addAttribute(&quot;user&quot;, user);</b>
+<b class="fc">&nbsp;                return &quot;redirect:/dashboard&quot;;</b>
+&nbsp;            }
+&nbsp;
+<b class="nc">&nbsp;            modelMap.put(&quot;invalidLogin&quot;, &quot;Incorrect user name or password, please try again&quot;);</b>
+<b class="nc">&nbsp;            return &quot;login&quot;;</b>
+<b class="nc">&nbsp;        } catch (Exception e) {</b>
+<b class="nc">&nbsp;            e.printStackTrace();</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;register-process&quot;)
+&nbsp;    public String registerProcess(ModelMap modelMap, UserEntity user){
+<b class="nc">&nbsp;        if(userService.register(user)) {</b>
+<b class="nc">&nbsp;            modelMap.put(&quot;successfulRegistration&quot;, &quot;Thank you for your registration!! &quot; + user.getFirstname());</b>
+<b class="nc">&nbsp;            return &quot;login&quot;;</b>
+&nbsp;        }
+<b class="nc">&nbsp;        modelMap.put(&quot;registrationError&quot;, &quot;User name exists already, please try again&quot;);</b>
+<b class="nc">&nbsp;        return &quot;register&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping(&quot;addcourse/{userId}/{courseId}&quot;)
+&nbsp;    public String addUserCourse(@PathVariable(&quot;userId&quot;)long userId,@PathVariable(&quot;courseId&quot;) long courseId) {
+<b class="nc">&nbsp;        courseService.addNewCourseToUser(userId,courseId);</b>
+&nbsp;
+<b class="nc">&nbsp;        return &quot;redirect:/students&quot;;</b>
+&nbsp;    }
+&nbsp;    //consumes = {&quot;application/json&quot;, &quot;application/xml&quot;, &quot;multipart/form-data&quot;}
+&nbsp;
+&nbsp;    @PostMapping(value = &quot;saveMessage&quot;)
+&nbsp;    public String saveMessages(@ModelAttribute(&quot;messageForm&quot; ) MessagesEntity message, ModelMap modelMap) {
+<b class="fc">&nbsp;        message.setSender((UserEntity) modelMap.get(&quot;user&quot;));</b>
+<b class="fc">&nbsp;        messagesService.saveMessage(message);</b>
+<b class="fc">&nbsp;        return &quot;redirect:/inbox/&quot; + ((UserEntity) modelMap.get(&quot;user&quot;)).getId() ;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-03-26 15:23</div>
+</div>
+</body>
+</html>

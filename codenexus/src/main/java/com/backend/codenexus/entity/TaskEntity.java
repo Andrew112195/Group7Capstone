@@ -1,12 +1,12 @@
 package com.backend.codenexus.entity;
 
-import com.backend.codenexus.entity.CourseEntity;
 import com.backend.codenexus.model.enums;
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 @Data
 @NoArgsConstructor
@@ -22,23 +22,16 @@ public class TaskEntity {
 
     /*We are in the task class*/
     @ManyToOne
-    @JoinColumn(name = "course_id")
-    private CourseEntity course;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @JoinColumn(name = "module_id")
+    private ModuleEntity module;
 
-    @Column(name = "problem")
-    private String Question;
+    @Column(name = "answer")
+    private String answer;
 
     @Column(name = "difficulty_level")
     private int difficultyLevel;
-
-    @Column(name = "category")
-    private String category;
-
-    @Column(name = "explanation")
-    private String explanation;
-
-    @Column(name = "question_type")
-    private String questionType;
 
     @Column(name = "complete")
     private boolean complete;
@@ -70,5 +63,37 @@ public class TaskEntity {
             default:
                 throw new IllegalArgumentException("Invalid difficulty level: " + difficulty);
         }
+    }
+
+    private String[] taskContents;
+
+    public String[] setTaskContents(){
+        String[] wholeLesson;
+        String allText = null;
+
+
+
+        try {
+            File myObj = new File("/Users/andrewshapiro/IdeaProjects/TestingQuestions/src/SampleQuestions.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                allText += data;
+                allText += "\n";
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        System.out.println(allText);
+
+        wholeLesson = allText.split("%");
+
+        for (int i = 0; i < wholeLesson.length; i++) {
+            System.out.println(wholeLesson[i]);
+        }
+        return this.taskContents;
     }
 }
