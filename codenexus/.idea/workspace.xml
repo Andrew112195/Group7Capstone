@@ -5,15 +5,291 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/dataSources/b61af07a-21ff-4e1f-a6e6-cbbec9f4b56b/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_carrotsearch_hppc_0_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_smile_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_tdunning_t_digest_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__joda_time_joda_time_2_10_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__net_sf_jopt_simple_jopt_simple_5_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_common_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_backward_codecs_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_core_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_grouping_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_highlighter_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_join_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_memory_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_misc_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_queries_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_queryparser_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_sandbox_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_spatial3d_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_spatial_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_spatial_extras_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apache_lucene_lucene_suggest_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_eclipse_angus_jakarta_mail_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_elasticsearch_elasticsearch_7_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_elasticsearch_elasticsearch_cli_7_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_elasticsearch_elasticsearch_core_7_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_elasticsearch_elasticsearch_geo_7_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_elasticsearch_elasticsearch_secure_sm_7_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_elasticsearch_elasticsearch_x_content_7_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_elasticsearch_jna_4_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_3_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_context_support_6_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_webjars_jquery_3_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/style_checkout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/kids_programing_group.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/programming.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/programming_kids.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/contactus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/devtoolsPreview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/premadeLibrary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/studentClassroom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/studentModules.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/subscriptions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/backend/codenexus/service/UserServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/CSS/style_checkout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/kids_programing_group.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/programming.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/programming_kids.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/contactus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/devtoolsPreview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/premadeLibrary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/studentClassroom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/studentModules.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/subscriptions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/userProfile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/UserServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/css/coverage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/css/idea.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/img/arrowDown.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/img/arrowUp.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/js/highlight.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/js/highlightjs-line-numbers.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-1/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-2/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-3/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-b.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-4/sources/source-c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-5/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-6/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../htmlReport/ns-7/sources/source-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/codenexus_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/artifacts/codenexus_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/58c134b4-8eba-48cd-a1e8-fb1c82c65905.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources/b61af07a-21ff-4e1f-a6e6-cbbec9f4b56b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/58c134b4-8eba-48cd-a1e8-fb1c82c65905/storage_v2/_src_/database/code_nexus.Lf833Q.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources/b61af07a-21ff-4e1f-a6e6-cbbec9f4b56b/storage_v2/_src_/database/code_nexus.Lf833Q.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/58c134b4-8eba-48cd-a1e8-fb1c82c65905/storage_v2/_src_/database/code_nexus.Lf833Q/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources/b61af07a-21ff-4e1f-a6e6-cbbec9f4b56b/storage_v2/_src_/database/code_nexus.Lf833Q/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/58c134b4-8eba-48cd-a1e8-fb1c82c65905/storage_v2/_src_/database/code_nexus.Lf833Q/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources/b61af07a-21ff-4e1f-a6e6-cbbec9f4b56b/storage_v2/_src_/database/code_nexus.Lf833Q/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources/58c134b4-8eba-48cd-a1e8-fb1c82c65905/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codenexus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codenexus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/CodenexusApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/CodenexusApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/MessageDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/QuizDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/QuizDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/TaskDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserCourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserCourseDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/BillingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/BillingEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/CourseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/CourseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/MessagesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/MessagesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/ModuleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/ModuleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/PaymentInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/PaymentInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/QuizEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/QuizEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/SubscriptionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/SubscriptionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/SubscriptionPlanEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/SubscriptionPlanEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/TaskEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/UserCourseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/UserCourseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/UserTypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/UserTypeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/MessagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/MessagesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/MessagesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/MessagesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/ModuleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/ModuleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/TaskService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/TaskServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/style_about.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/style_about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/style_contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/style_contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/style_inbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/style_inbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/CSS/style_pricing.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/CSS/style_pricing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/aboutUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/aboutUs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/inbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/inbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login-process.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/onlineIDE.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/onlineIDE.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pricing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pricing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/backend/codenexus/CodenexusApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/backend/codenexus/CodenexusApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/CodenexusApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/CodenexusApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/CourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/CourseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/MessageDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/MessageDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/TaskDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/TaskDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserCourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserCourseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/BillingEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/BillingEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/MessagesEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/MessagesEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/PaymentInfoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/PaymentInfoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/QuizEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/QuizEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionPlanEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionPlanEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserTypeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserTypeEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/TaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/TaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/TaskServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/CSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_about.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/CSS/style_about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/CSS/style_contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_inbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/CSS/style_inbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_pricing.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/CSS/style_pricing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/aboutUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/aboutUs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/inbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/inbox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/onlineIDE.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/onlineIDE.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pricing.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pricing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/studentDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/studentDashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/CodenexusApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/CodenexusApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +477,7 @@
       <workItem from="1678455507762" duration="21031000" />
       <workItem from="1678542184571" duration="282000" />
       <workItem from="1678542544744" duration="7225000" />
-      <workItem from="1679959112855" duration="2956000" />
+      <workItem from="1679959112855" duration="4710000" />
     </task>
     <task id="LOCAL-00001" summary="added cohort and I">
       <created>1678330170701</created>
@@ -237,7 +513,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java</url>
-          <line>95</line>
+          <line>126</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
