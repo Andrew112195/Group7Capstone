@@ -58,9 +58,8 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<UserCourseEntity> getCourses(Long user_id) {
         Log.info("UserCourseServiceImpl getCourse");
-        List<UserCourseEntity> userCourses = userCourseDao.findByUserId(user_id);
-        
-        return userCourses;
+
+        return userCourseDao.findByUserId(user_id);
     }
 
     @Override

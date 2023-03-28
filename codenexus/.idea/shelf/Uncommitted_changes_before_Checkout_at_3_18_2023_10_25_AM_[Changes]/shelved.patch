@@ -1,0 +1,70 @@
+Index: target/classes/Sql Scripts to Run program/scripts.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>INSERT INTO course (description, is_complete,pre_requisites,price,title) VALUES ('fun', TRUE, TRUE, 14, 'funtimes');\r\nINSERT INTO course (description, is_complete,pre_requisites,price,title) VALUES ('very fun', TRUE, TRUE, 18, 'awesome times');\r\nINSERT INTO course (description, is_complete,pre_requisites,price,title) VALUES ('very expensive', TRUE, TRUE, 132, 'tough times');\r\nINSERT INTO user_type (type_name) VALUES ('Student');\r\nINSERT INTO user_type (type_name) VALUES ('Instructor');\r\nINSERT INTO user_type (type_name) VALUES ('Admin');
+===================================================================
+diff --git a/target/classes/Sql Scripts to Run program/scripts.sql b/target/classes/Sql Scripts to Run program/scripts.sql
+--- a/target/classes/Sql Scripts to Run program/scripts.sql	
++++ b/target/classes/Sql Scripts to Run program/scripts.sql	
+@@ -1,6 +1,6 @@
+-INSERT INTO course (description, is_complete,pre_requisites,price,title) VALUES ('fun', TRUE, TRUE, 14, 'funtimes');
+-INSERT INTO course (description, is_complete,pre_requisites,price,title) VALUES ('very fun', TRUE, TRUE, 18, 'awesome times');
+-INSERT INTO course (description, is_complete,pre_requisites,price,title) VALUES ('very expensive', TRUE, TRUE, 132, 'tough times');
++INSERT INTO course (description,price,title) VALUES ('fun',14, 'funtimes');
++INSERT INTO course (description,price,title) VALUES ('very fun',18, 'awesome times');
++INSERT INTO course (description,price,title) VALUES ('very expensive',132, 'tough times');
+ INSERT INTO user_type (type_name) VALUES ('Student');
+ INSERT INTO user_type (type_name) VALUES ('Instructor');
+ INSERT INTO user_type (type_name) VALUES ('Admin');
+\ No newline at end of file
+Index: target/classes/templates/studentDashboard.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n<html xmlns:th=\"http://www.thymeleaf.org\">\r\n\r\n\r\n<head>\r\n    <title>Student Dashboard</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js\"></script>\r\n    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\r\n</head>\r\n<body>\r\n\r\n<nav class=\"navbar navbar-expand-md bg-dark navbar-dark\">\r\n    <a class=\"navbar-brand\" href=\"#\">Student Dashboard</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">\r\n        <ul class=\"navbar-nav\">\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"#\">Courses</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"#\">Tasks</a>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</nav>\r\n\r\n<div class=\"container-fluid mt-3\">\r\n    <h2>Available Courses</h2>\r\n    <form th:action=\"@{/get-userCourses}\" method=\"GET\" class=\"view-courses\">\r\n        <table class=\"table\">\r\n            <thead>\r\n            <tr>\r\n                <th>Course Name</th>\r\n                <th>Action</th>\r\n            </tr>\r\n            </thead>\r\n\r\n            <tbody>\r\n\r\n            <th:block th:each=\"userCourse : ${userCourses}\">\r\n                <tr>\r\n                    <td th:text=\"${userCourse.getCourse().getTitle()}\"></td>\r\n                    <td>\r\n                        <button type=\"submit\" class=\"btn btn-primary\">\r\n                            Choose Course\r\n                        </button>\r\n                        <input type=\"hidden\" th:name=\"courseId\" th:value=\"${userCourse.getCourse().getId()}\" />\r\n                        <input type=\"hidden\" th:name=\"courseName\" th:value=\"${userCourse.getCourse().getTitle()}\" />\r\n                    </td>\r\n                </tr>\r\n            </th:block>\r\n            </tbody>\r\n        </table>\r\n    </form>\r\n</div>\r\n\r\n<div class=\"container-fluid mt-3\">\r\n    <h2>Available Tasks</h2>\r\n    <table class=\"table\">\r\n        <thead>\r\n        <tr>\r\n            <th>Task Name</th>\r\n            <th>Task Description</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        <tr>\r\n            <td>Math Quiz</td>\r\n            <td>A quiz on mathematical concepts and problem-solving.</td>\r\n        </tr>\r\n        <tr>\r\n            <td>Science Experiment</td>\r\n            <td>An experiment on scientific theories and concepts.</td>\r\n        </tr>\r\n        <tr>\r\n            <td>Essay Writing</td>\r\n            <td>A writing assignment on a given topic in English.</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n    <button type=\"button\" class=\"btn btn-primary\">Choose Task</button>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>\r\n
+===================================================================
+diff --git a/target/classes/templates/studentDashboard.html b/target/classes/templates/studentDashboard.html
+--- a/target/classes/templates/studentDashboard.html	
++++ b/target/classes/templates/studentDashboard.html	
+@@ -48,7 +48,7 @@
+                     <td th:text="${userCourse.getCourse().getTitle()}"></td>
+                     <td>
+                         <button type="submit" class="btn btn-primary">
+-                            Choose Course
++                            Start Course
+                         </button>
+                         <input type="hidden" th:name="courseId" th:value="${userCourse.getCourse().getId()}" />
+                         <input type="hidden" th:name="courseName" th:value="${userCourse.getCourse().getTitle()}" />
+@@ -60,31 +60,8 @@
+     </form>
+ </div>
+ 
+-<div class="container-fluid mt-3">
+-    <h2>Available Tasks</h2>
+-    <table class="table">
+-        <thead>
+-        <tr>
+-            <th>Task Name</th>
+-            <th>Task Description</th>
+-        </tr>
+-        </thead>
+-        <tbody>
+-        <tr>
+-            <td>Math Quiz</td>
+-            <td>A quiz on mathematical concepts and problem-solving.</td>
+-        </tr>
+-        <tr>
+-            <td>Science Experiment</td>
+-            <td>An experiment on scientific theories and concepts.</td>
+-        </tr>
+-        <tr>
+-            <td>Essay Writing</td>
+-            <td>A writing assignment on a given topic in English.</td>
+-        </tr>
+-        </tbody>
+-    </table>
+-    <button type="button" class="btn btn-primary">Choose Task</button>
++<div class="start-task">
++   <!--Want to show tasks when user clicks on start course-->
+ </div>
+ 
+ 

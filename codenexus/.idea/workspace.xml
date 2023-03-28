@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codenexus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codenexus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,12 +90,15 @@
     "DatabaseDriversLRU": [
       "postgresql"
     ],
+    "RunConfigurationTargetLRU": [
+      "4f9e3772-9c59-4c0f-877a-715a754c1e23/database/\"code_nexus\""
+    ],
     "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
       "PostgreSQL"
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.CodenexusApplication">
+  <component name="RunManager" selected="Database Script.scripts.sql">
     <configuration name="Difficulty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.model.Difficulty" />
       <module name="codenexus" />
@@ -114,6 +124,12 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="scripts.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="4f9e3772-9c59-4c0f-877a-715a754c1e23" namespace="database/&quot;code_nexus&quot;" />
+      <method v="2" />
     </configuration>
     <configuration name="CodenexusApplication | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/CodenexusApplication.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
@@ -141,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.scripts.sql" />
         <item itemvalue="HTTP Request.CodenexusApplication | #1" />
         <item itemvalue="Application.Difficulty" />
         <item itemvalue="JavaScript Debug.studentDashboard.html" />
         <item itemvalue="Application.UserCourseServiceImpl" />
-        <item itemvalue="HTTP Request.CodenexusApplication | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -185,6 +201,7 @@
       <workItem from="1678455507762" duration="21031000" />
       <workItem from="1678542184571" duration="282000" />
       <workItem from="1678542544744" duration="7225000" />
+      <workItem from="1679959112855" duration="2956000" />
     </task>
     <task id="LOCAL-00001" summary="added cohort and I">
       <created>1678330170701</created>
@@ -214,6 +231,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added cohort and I" />
     <option name="LAST_COMMIT_MESSAGE" value="added cohort and I" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

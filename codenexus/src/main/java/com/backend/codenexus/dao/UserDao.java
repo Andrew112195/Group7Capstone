@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public interface UserDao extends JpaRepository<UserEntity, Long> {
     @Query(value = "SELECT u FROM UserEntity u , MessagesEntity m, UserCourseEntity c  WHERE u.id = ?1")
     UserEntity updateUser(Long user_id);
 
-    @Query(value = "select ue from user_entity ue where ue.id = ?1", nativeQuery = true)
+    @Query(value = "select * from user_entity ue where ue.id = ?1", nativeQuery = true)
     UserEntity findById(long user_id);
 
     @Query(value = "SELECT * FROM user_entity WHERE course_id = ?1", nativeQuery = true)
