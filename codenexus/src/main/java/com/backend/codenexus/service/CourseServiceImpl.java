@@ -80,9 +80,8 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<ModuleEntity> getCourseModules(Long course_id){
-        List<ModuleEntity> moduleEntity = courseDao.findAllModulesByCourseId(course_id);
-        
-        return moduleEntity;
+
+        return courseDao.findAllModulesByCourseId(course_id);
     }
 
     //Task Methods

@@ -10,6 +10,9 @@ INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username
 INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username, password) VALUES ('997', '2', 'Deland', 'Patrice','pat@hello.com', 'pat' ,'123');
 INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username, password) VALUES ('998', '2', 'Alexander', 'Justiniano','alex@hello.com','ale' ,'123');
 INSERT INTO user_entity(id, user_type_id, first_name, last_name, email, username, password) VALUES ('994', '1', 'Matt', 'Arias','matt@hello.com', 'matt' ,'123');
+INSERT INTO user_entity(user_type_id, first_name, last_name, email, username, password) VALUES (1, 'test', 'test','matt@hello.com', 'test' ,'test');
+INSERT INTO user_entity(user_type_id, first_name, last_name, email, username, password) VALUES (2, 'admin', 'admin','matt@hello.com', 'admin' ,'admin');
+
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '1', '999');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '2', '999');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '999');
