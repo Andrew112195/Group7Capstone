@@ -155,6 +155,38 @@ public class MainController {
         return "studentDashboard";
     }
 
+
+
+
+
+
+    @GetMapping("studentclassroom")
+    public String studentClassroom(){
+        return "studentClassroom";
+    }
+
+    @GetMapping("subscriptions")
+    public String subscriptions(){
+        return "subscriptions";
+    }
+
+    @GetMapping("checkout")
+    public String checkout(){
+        return "checkout";
+    }
+
+    @GetMapping("devtoolsPreview")
+    public String devtoolsPreview(){
+        return "devtoolsPreview";
+    }
+
+    @GetMapping("premadeLibrary")
+    public String premadeLibrary(){
+        return "premadeLibrary";
+    }
+
+
+
     @GetMapping("ide")
     public String ideLoader(){
         return "onlineIDE";
