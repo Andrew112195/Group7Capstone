@@ -217,8 +217,8 @@ public class MainController {
     public void getClassmateList(ModelMap modelMap, UserCourseEntity userCourse){
         modelMap.put("userList", courseService.getAllClassmates(userCourse.getId()));
     }
-    //Post Mapping Methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+    //Post Mapping Methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     @PostMapping("login-process")
     public String login(ModelMap modelMap, UserEntity user) {
         user = userService.login(user);
@@ -253,8 +253,8 @@ public class MainController {
 
         return "redirect:/students";
     }
-    //consumes = {"application/json", "application/xml", "multipart/form-data"}
 
+    //consumes = {"application/json", "application/xml", "multipart/form-data"}
     @PostMapping(value = "saveMessage")
     public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message, ModelMap modelMap) {
         message.setSender((UserEntity) modelMap.get("user"));
@@ -269,4 +269,51 @@ public class MainController {
         modelMap.put("logoutMessage", "Logout successful!!");
         return "redirect:/index";
     }
+
+    @GetMapping("/profile")
+    public String getProfile(ModelMap modelMap){
+        UserEntity user = (UserEntity) modelMap.get("user");
+        UserEntity updateUser = new UserEntity();
+        modelMap.put("updateUser",updateUser);
+        modelMap.addAttribute("user", user);
+
+        return "userProfile";
+    }
+
+    @PutMapping("/profile")
+    @Transactional
+    public String updateProfile(@ModelAttribute("updateUser") UserEntity user,ModelMap modelMap){
+        UserEntity oldProfile = (UserEntity) modelMap.get("user");
+        user.setId(oldProfile.getId());
+        user.setFirstname(user.getFirstname());
+        user.setLastname(user.getLastname());
+        user.setEmail(user.getEmail());
+        user.setPassword(oldProfile.getPassword());
+        user.setUserCourse(oldProfile.getUserCourse());
+        user.setSentMessages(oldProfile.getSentMessages());
+        userService.updateProfile(user);
+        modelMap.addAttribute("user",user);
+        userService.updateUser((UserEntity) modelMap.get("user"));
+        return "redirect:/profile";
+    }
+
+
+//    @Transactional
+//    @GetMapping("inbox/{user_id}")
+//    public String getMessages(@PathVariable Long user_id, ModelMap modelMap) {
+//        userService.updateUser((UserEntity) modelMap.get("user"));
+//        modelMap.addAttribute("userMessage", modelMap.get("user"));
+//        MessagesEntity messageForm = new MessagesEntity();
+//        modelMap.addAttribute("messageForm",messageForm);
+//        modelMap.addAttribute("peerList", courseService.getAllClassmates(user_id));
+//        return "inbox";
+//    }
+
+
+    /*@PostMapping(value = "saveMessage")
+    public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message, ModelMap modelMap) {
+        message.setSender((UserEntity) modelMap.get("user"));
+        messagesService.saveMessage(message);
+        return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
+    }*/
 }

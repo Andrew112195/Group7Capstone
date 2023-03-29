@@ -39,10 +39,10 @@
                     <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3"
                         alt="Profile Picture">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Jessica Brown</h5>
-                        <p class="card-text text-center">@jessBrown</p>
-                        <p class="card-text">Email: jessyBrown@gmail.com</p>
-                        <p class="card-text">Subscription: Preferred</p>
+                        <h5 class="card-title text-center" th:text="${user.getFirstname()} + ' '+ ${user.getLastname()}"></h5>
+                        <p class="card-text text-center" th:text="@{${user.email}}"></p>
+                        <p class="card-text" th:text="@{Email: ${user.getEmail()}}"></p>
+                        <p class="card-text" th:text="Subscription"></p>
                     </div>
                 </div>
                 <br>
@@ -64,26 +64,27 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Edit Profile</h5>
-                        <form>
+                        <form th:method="PUT" th:object="${updateUser}" th:action="@{/profile}" class="update-profile">
+                            <input type="hidden" name="_method" value="PUT">
                             <div class="row mb-3">
                                 <div class="col">
                                     <label for="first-name" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="first-name"
+                                    <input th:field="*{firstname}" type="text" class="form-control" id="first-name"
                                         placeholder="Enter your first name">
                                 </div>
                                 <div class="col">
                                     <label for="last-name" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="last-name"
+                                    <input th:field="*{lastname}" type="text" class="form-control" id="last-name"
                                         placeholder="Enter your last name">
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                                <label  for="username" class="form-label">Username</label>
+                                <input th:field="*{username}" type="text" class="form-control" id="username" placeholder="Enter your username">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                <input th:field="*{email}" type="email" class="form-control" id="email" placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
                                 <label for="subscription" class="form-label">Subscription</label>

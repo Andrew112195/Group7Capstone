@@ -5,225 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/backend/codenexus/service/CourseServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codenexus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codenexus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/aop/LoggingAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/aop/LoggingAop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/instructorDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/instructorDashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentModules.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentModules.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/aop/LoggingAop.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/CourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/CourseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserCourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserCourseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/BillingEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/BillingEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/MessagesEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/MessagesEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login-process.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/instructorDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/instructorDashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/studentDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/studentDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/studentModules.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/studentModules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT.war.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/INSERT INTO course (description, is_comp.pgsql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/aboutUs.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/contact.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/help.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/inbox.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/instructorDashboard.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/login-process.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/onlineIDE.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/pricing.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/pricing1.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/registerProcess.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/studentDashboard.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/subscriptionPricing.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/resources/webapp/WEB-INF/jsp/subscriptionSelection.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/CodenexusApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/aop/LoggingAop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/CourseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/MessageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/ModuleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/QuizController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/TaskController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/controller/UserCourseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/dao/CourseDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/dao/MessageDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/dao/ModuleDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/dao/QuizDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/dao/TaskDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/dao/UserCourseDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/AccountInfoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/BillingEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/CohortEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/CourseEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/MessagesEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/ModuleEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/PaymentInfoEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/QuizEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/SubscriptionEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/SubscriptionPlanEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/TaskEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/UserCourseEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/UserEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/entity/UserTypeEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/AccountInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Billing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Cohort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Difficulty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Module.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/PaymentInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Quiz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Subscription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/SubscriptionPlan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/Task.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/USER_TYPE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/UserCourse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/model/UserType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/CourseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/MessagesService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/MessagesServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/ModuleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/ModuleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/QuizService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/QuizServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/TaskService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/TaskServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/UserCourseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/UserCourseServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/com/backend/codenexus/service/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/CSS/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/CSS/style_about.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/CSS/style_contact.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/CSS/style_index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/CSS/style_pricing.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/Java.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/coaching.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/easy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/home1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/home2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/home3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/html.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/library.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/classes/static/img/python.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/HdrHistogram-2.1.12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/HikariCP-5.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/LatencyUtils-2.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/angus-activation-2.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/antlr4-runtime-4.10.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.9.19.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/bootstrap-5.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/byte-buddy-1.12.23.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/checker-qual-3.5.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/classgraph-4.8.147.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/classmate-1.5.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/commons-lang3-3.12.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-commons-annotations-6.0.6.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-core-6.1.7.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/istack-commons-runtime-4.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.14.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-core-2.14.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-databind-2.14.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-datatype-jdk8-2.14.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-datatype-jsr310-2.14.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-module-parameter-names-2.14.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.activation-api-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.annotation-api-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.el-api-5.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.inject-api-2.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.persistence-api-3.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.servlet-api-6.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.servlet.jsp.jstl-3.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.transaction-api-2.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.xml.bind-api-4.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jandex-2.4.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jaxb-core-4.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jaxb-runtime-4.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jboss-logging-3.5.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jquery-3.6.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/jul-to-slf4j-2.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-api-2.19.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-to-slf4j-2.19.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/logback-classic-1.4.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/logback-core-1.4.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/micrometer-commons-1.10.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/micrometer-core-1.10.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/micrometer-observation-1.10.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/popper.js-2.9.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/postgresql-42.5.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/servlet-api-2.5-20081211.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-api-2.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/snakeyaml-1.33.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aop-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aspects-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-beans-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-actuator-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-actuator-autoconfigure-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-actuator-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-aop-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-data-jdbc-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-data-jpa-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-jdbc-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-json-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-3.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-core-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-commons-3.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-jdbc-3.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-jpa-3.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-relational-3.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-expression-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jcl-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jdbc-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-orm-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-tx-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-web-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/spring-webmvc-6.0.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/txw2-4.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/webjars-locator-0.30.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/codenexus-0.0.1-SNAPSHOT/WEB-INF/lib/webjars-locator-core-0.52.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.backend.codenexus.CodenexusApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.backend.codenexus.CodenexusApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/CodenexusApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/UserServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userProfile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +36,7 @@
       <list>
         <option value="Class" />
         <option value="HTML File" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -283,6 +85,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_opened_file_path": "C:/Users/HP/Downloads/jar_files/jakarta.xml.bind-api-3.0.0.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -308,26 +112,21 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Database Script.scripts.sql">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.backend.codenexus.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CourseServiceImplTest.addNewCourseToUser">
     <configuration name="Difficulty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.model.Difficulty" />
       <module name="codenexus" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.backend.codenexus.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserCourseServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.service.UserCourseServiceImpl" />
-      <module name="codenexus" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.backend.codenexus.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -344,8 +143,36 @@
     <configuration name="CodenexusApplication | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/CodenexusApplication.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="studentDashboard.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/codenexus/templates/studentDashboard.html" useBuiltInWebServerPort="true">
-      <method v="2" />
+    <configuration name="CourseServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="codenexus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.backend.codenexus.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.backend.codenexus.service" />
+      <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.service.CourseServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseServiceImplTest.addNewCourseToUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="codenexus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.backend.codenexus.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.backend.codenexus.service" />
+      <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.service.CourseServiceImplTest" />
+      <option name="METHOD_NAME" value="addNewCourseToUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -367,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CourseServiceImplTest.addNewCourseToUser" />
+        <item itemvalue="JUnit.CourseServiceImplTest" />
         <item itemvalue="Database Script.scripts.sql" />
         <item itemvalue="HTTP Request.CodenexusApplication | #1" />
         <item itemvalue="Application.Difficulty" />
-        <item itemvalue="JavaScript Debug.studentDashboard.html" />
-        <item itemvalue="Application.UserCourseServiceImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -411,7 +238,10 @@
       <workItem from="1678455507762" duration="21031000" />
       <workItem from="1678542184571" duration="282000" />
       <workItem from="1678542544744" duration="7225000" />
-      <workItem from="1679959112855" duration="9782000" />
+      <workItem from="1679959112855" duration="9893000" />
+      <workItem from="1680009102478" duration="620000" />
+      <workItem from="1680025242301" duration="9000" />
+      <workItem from="1680045461404" duration="11276000" />
     </task>
     <task id="LOCAL-00001" summary="added cohort and I">
       <created>1678330170701</created>

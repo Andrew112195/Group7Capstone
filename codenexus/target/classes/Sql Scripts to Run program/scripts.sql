@@ -37,3 +37,5 @@ INSERT into messages_entity(read, header, body, sender, recipient) values ('fals
 INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'Loop', 'Do the loop', 'false');
 INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'for loop', 'for the loop', 'false');
 INSERT INTO module(course_id, name, description, module_complete) VALUES(2, 'attributes', 'values and stuff', 'false');
+
+SELECT * from user_entity;

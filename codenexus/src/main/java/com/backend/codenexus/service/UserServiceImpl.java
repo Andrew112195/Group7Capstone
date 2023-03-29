@@ -41,6 +41,19 @@ public class  UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserEntity updateProfile(UserEntity user){
+        //first find the user by id using the incoming object
+        UserEntity findUser = userDao.findById(user.getId()).get();
+        //then update the user
+       findUser.setFirstname(user.getFirstname());
+       findUser.setLastname(user.getLastname());
+       findUser.setUsername(user.getUsername());
+       findUser.setEmail(user.getEmail());
+        return userDao.save(findUser);
+
+    }
+
+    @Override
     public UserEntity login(UserEntity user) {
         // catches null pointer exception on false return
         try {

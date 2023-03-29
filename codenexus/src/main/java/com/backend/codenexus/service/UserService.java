@@ -10,6 +10,8 @@ public interface UserService {
 
     boolean register(UserEntity user);
 
+    UserEntity updateProfile(UserEntity user);
+
     UserEntity login(UserEntity user);
 
     List<UserEntity> getAllStudents();
