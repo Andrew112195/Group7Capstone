@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/backend/codenexus/service/CourseServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/instructorDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/instructorDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/instructorDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/instructorDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/studentDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/studentDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userProfile.html" afterDir="false" />
-    </list>
+    <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -241,7 +220,7 @@
       <workItem from="1679959112855" duration="9893000" />
       <workItem from="1680009102478" duration="620000" />
       <workItem from="1680025242301" duration="9000" />
-      <workItem from="1680045461404" duration="11276000" />
+      <workItem from="1680045461404" duration="11742000" />
     </task>
     <task id="LOCAL-00001" summary="added cohort and I">
       <created>1678330170701</created>

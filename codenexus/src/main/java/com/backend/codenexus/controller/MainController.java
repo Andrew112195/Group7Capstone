@@ -298,22 +298,5 @@ public class MainController {
     }
 
 
-//    @Transactional
-//    @GetMapping("inbox/{user_id}")
-//    public String getMessages(@PathVariable Long user_id, ModelMap modelMap) {
-//        userService.updateUser((UserEntity) modelMap.get("user"));
-//        modelMap.addAttribute("userMessage", modelMap.get("user"));
-//        MessagesEntity messageForm = new MessagesEntity();
-//        modelMap.addAttribute("messageForm",messageForm);
-//        modelMap.addAttribute("peerList", courseService.getAllClassmates(user_id));
-//        return "inbox";
-//    }
 
-
-    /*@PostMapping(value = "saveMessage")
-    public String saveMessages(@ModelAttribute("messageForm" ) MessagesEntity message, ModelMap modelMap) {
-        message.setSender((UserEntity) modelMap.get("user"));
-        messagesService.saveMessage(message);
-        return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
-    }*/
 }
