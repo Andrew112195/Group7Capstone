@@ -36,6 +36,8 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "profile_picture")
+    private String profilePic;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude

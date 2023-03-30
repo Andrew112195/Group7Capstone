@@ -40,28 +40,34 @@ public class MainController {
     @ModelAttribute("user")
     public UserEntity getUserUserEntity() {
         return new UserEntity();
-
     }
     @GetMapping("index")
     public String index(ModelMap modelMap) {
-        if(modelMap.containsKey("user")){
+        UserEntity user = (UserEntity) modelMap.get("user");
+        if(user.getId() == null){
+            return "index";
+        }
+        else {
             return "redirect:/dashboard";
         }
-        return "index";
     }
     @GetMapping("dashboard")
         public String getDashboard( ModelMap modelMap) {
-        UserEntity user = (UserEntity) modelMap.get("user");
-        if (user.getUserTypeId() == 3) {
-            return "adminDashboard";
-        } else if (user.getUserTypeId() == 2) {
-            return "redirect:/students";
-        } else if (user.getUserTypeId() == 1) {
-            return "redirect:/get-userCourses/" + user.getId();
+        if(modelMap.containsAttribute("user")){
+            UserEntity user = (UserEntity) modelMap.get("user");
+            if (user.getUserTypeId() == 3) {
+                return "adminDashboard";
+            }
+            else if (user.getUserTypeId() == 2) {
+                return "redirect:/students";
+            }
+            else if (user.getUserTypeId() == 1) {
+                 return "redirect:/get-userCourses/" + user.getId();
         }
-        else{
-            return "redirect:/index";
         }
+        return "redirect:/index";
+
+
     }
 
     @GetMapping("aboutus")
@@ -103,10 +109,17 @@ public class MainController {
 
         return "message";
     }
-    
     @GetMapping("login")
     public String loginProcess(){
         return "login";
+    }
+
+    @GetMapping (value = "logout")
+    public String logout(ModelMap modelMap, SessionStatus status){
+        modelMap.clear();
+        status.setComplete();
+        modelMap.put("logoutMessage", "Logout successful!!");
+        return "redirect:/index";
     }
 
     @GetMapping("register")
@@ -125,7 +138,6 @@ public class MainController {
     @GetMapping("get-userCourses/{id}")
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
         modelMap.addAttribute("userCourses", courseService.getCourse(id));
-
         return "studentDashboard";
     }
 
@@ -192,7 +204,7 @@ public class MainController {
             return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId();
         }
         else{
-            return "redirect:/login";
+            return "redirect:/index";
         }
     }
 
@@ -205,6 +217,11 @@ public class MainController {
         modelMap.addAttribute("messageForm",messageForm);
         modelMap.addAttribute("peerList", courseService.getAllClassmates(user_id));
         return "inbox";
+    }
+    @GetMapping("userProfile/{user_id}")
+    public String userProfile(@PathVariable Long user_id, ModelMap modelMap) {
+        userService.updateUser((UserEntity) modelMap.get("user"));
+        return "userProfile";
     }
 
     @GetMapping("read_message/{message_id}")
@@ -262,12 +279,15 @@ public class MainController {
         return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
     }
 
-    @GetMapping (value = "logout")
-    public String logout(ModelMap modelMap, HttpSession session, SessionStatus status){
-        modelMap.clear();
-        status.setComplete();
-        modelMap.put("logoutMessage", "Logout successful!!");
-        return "redirect:/index";
+    @PostMapping(value = "changePassword")
+    public String changePassword(ModelMap modelMap, String oldPassword, String newPassword){
+        if(userService.changePassword((UserEntity) modelMap.get("user"), oldPassword, newPassword) == true) {
+            modelMap.put("successfulChange", "password successfully updated");
+        }
+        else{
+            modelMap.put("unsuccessfulChange", "password not updated please try again");
+        }
+        return "redirect:/userProfile" + ((UserEntity) modelMap.getAttribute("user")).getId();
     }
 
     @GetMapping("/profile")
