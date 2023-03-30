@@ -55,7 +55,7 @@ public class CourseServiceImpl implements CourseService {
         return courseEntity;
     }
 
-    @Override
+    /*@Override
     public List<CourseEntity> getStudentCompletedCourses(Long user_id){
         List <CourseEntity> courseEntity = courseDao.findAllCompletedByUserId(user_id);
         
@@ -67,7 +67,7 @@ public class CourseServiceImpl implements CourseService {
         List <CourseEntity> courseEntity = courseDao.findAllIncompletedByUserId(user_id);
         
         return courseEntity;
-    }
+    }*/
 
     @Override
     public List<UserCourseEntity> getCourse(Long user_id) {

@@ -15,7 +15,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.client.ExpectedCount.times;
@@ -36,7 +35,7 @@ class CourseServiceImplTest {
     @Test
     void addNewCourseToUser() {
         List<CourseEntity> courses = Arrays.asList(new CourseEntity(1L,"new","whatever",2,null,null));
-        List<UserEntity> users = Arrays.asList(new UserEntity(1L,1L,"yo", "yo","yo@gmail.com","yo","yo",null,null,null));
+        List<UserEntity> users = Arrays.asList(new UserEntity(1L,1L,"yo", "yo","yo@gmail.com","yo","yo",null,null,null, null));
 
         UserEntity foundUser = users.get(0);
 

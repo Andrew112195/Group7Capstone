@@ -14,9 +14,9 @@ public interface CourseService {
     
     List <CourseEntity> getCourseList();
 
-    List <CourseEntity> getStudentCompletedCourses(Long user_id);
+    //List <CourseEntity> getStudentCompletedCourses(Long user_id);
 
-    List <CourseEntity> getStudentIncompleteCourses(Long user_id);
+    //List <CourseEntity> getStudentIncompleteCourses(Long user_id);
 
     List <ModuleEntity> getCourseModules(Long course_id);
 
