@@ -50,23 +50,20 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<CourseEntity> getCourseList(){
-        List <CourseEntity> courseEntity = courseDao.findAll();
-        
-        return courseEntity;
+
+        return courseDao.findAll();
     }
 
     @Override
     public List<CourseEntity> getStudentCompletedCourses(Long user_id){
-        List <CourseEntity> courseEntity = courseDao.findAllCompletedByUserId(user_id);
-        
-        return courseEntity;
+
+        return courseDao.findAllCompletedByUserId(user_id);
     }
 
     @Override
     public List<CourseEntity> getStudentIncompleteCourses(Long user_id){
-        List <CourseEntity> courseEntity = courseDao.findAllIncompletedByUserId(user_id);
-        
-        return courseEntity;
+
+        return courseDao.findAllIncompletedByUserId(user_id);
     }
 
     @Override

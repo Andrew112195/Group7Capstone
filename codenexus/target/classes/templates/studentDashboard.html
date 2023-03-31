@@ -10,6 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function getCourseModules(courseId) {
+            window.location.href = "/get-courseModules/" + courseId;
+        }
+    </script>
 </head>
 <body>
 
@@ -33,7 +38,7 @@
 
 <div class="container-fluid mt-3">
     <h2>Available Courses</h2>
-    <form th:action="@{/get-courseModules/{userId}(userId=${user.id})}" method="GET" class="view-courses">
+    <form>
     <table class="table">
 
             <thead>
@@ -49,10 +54,9 @@
                 <tr>
                     <td th:text="${userCourse.Course.title}"></td>
                     <td>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" th:attr="onclick='getCourseModules(\'' + ${userCourse.getCourse().getId()} + '\');'">
                             Choose Course
                         </button>
-                        <input type="hidden" th:name="courseId" th:value="${userCourse.getCourse().getId()}" />
                         <input type="hidden" th:name="courseName" th:value="${userCourse.getCourse().getTitle()}" />
                     </td>
                 </tr>

@@ -10,10 +10,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
@@ -23,76 +27,58 @@ import static org.springframework.test.web.client.ExpectedCount.times;
 @SpringBootTest
 class CourseServiceImplTest {
 
-    @Mock
+    @MockBean
     private CourseDao courseDao;
+    @MockBean
+    private UserDao userDao;
 
-    @Mock
-    private UserDao userDao=mock(UserDao.class);
-
-
+    @InjectMocks
+    private CourseServiceImpl courseService;
 
     @Mock
     private UserCourseDao userCourseDao;
     @Test
     void addNewCourseToUser() {
-        List<CourseEntity> courses = Arrays.asList(new CourseEntity(1L,"new","whatever",2,null,null));
-        List<UserEntity> users = Arrays.asList(new UserEntity(1L,1L,"yo", "yo","yo@gmail.com","yo","yo",null,null,null));
 
-        UserEntity foundUser = users.get(0);
+            // create a new user and save it
+            UserEntity user = new UserEntity();
+            user.setId(1L);
+            user.setUserTypeId(1L);
+            user.setFirstname("John");
+            user.setLastname("Doe");
+            user.setEmail("john.doe@example.com");
+            user.setUsername("johndoe");
+            user.setPassword("password");
+            Mockito.when(userDao.findById(user.getId())).thenReturn(Optional.of(user));
 
-        CourseEntity foundCourse = courses.get(0);
+            // create a new course and save it
+            CourseEntity course = new CourseEntity();
+            course.setId(1L);
+            course.setTitle("Java Programming");
+            course.setDescription("Learn how to program in Java");
+            course.setPrice(99.99);
+            Mockito.when(courseDao.findById(course.getId())).thenReturn(Optional.of(course));
 
+            // create a new UserCourseEntity and save it
+            UserCourseEntity userCourseEntity = new UserCourseEntity();
+            userCourseEntity.setUser(user);
+            userCourseEntity.setCourse(course);
+            Mockito.when(userCourseDao.saveAndFlush(userCourseEntity)).thenReturn(userCourseEntity);
 
-        when(userDao.findById(1L)).thenReturn(foundUser);
-        when(courseDao.findById(1L).get()).thenReturn(foundCourse);
+            // call the addNewCourseToUser method
+            courseService.addNewCourseToUser(user.getId(), course.getId());
 
-        UserCourseEntity userCourseEntity = new UserCourseEntity();
-        userCourseEntity.setUser(foundUser);
-        userCourseEntity.setCourse(foundCourse);
+            // retrieve the UserCourseEntity from the database
+            List<UserCourseEntity> userCourses = new ArrayList<>();
+            userCourses.add(userCourseEntity);
 
-        when(userCourseDao.saveAndFlush(userCourseEntity)).thenReturn(userCourseEntity);
+            // assert that the UserCourseEntity was created and has the correct properties
+            assertEquals(1, userCourses.size());
+            UserCourseEntity userCourse = userCourses.get(0);
+            assertNotNull(userCourse);
+            assertEquals(user, userCourse.getUser());
+            assertEquals(course, userCourse.getCourse());
 
-        UserCourseEntity savedUserCourseEntity = userCourseDao.saveAndFlush(userCourseEntity);
-
-
-        Assertions.assertEquals(savedUserCourseEntity.getUser(), foundUser);
-        Assertions.assertEquals(savedUserCourseEntity.getCourse(), foundCourse);
-
-    /*    @RunWith(MockitoJUnitRunner.class)
-        public class UserServiceTest {
-
-            @Mock
-            private UserRepository userRepository;
-
-            @InjectMocks
-            private UserService userService;
-
-            @Test
-            public void testFindByLastName() {
-                List<User> users = new ArrayList<>();
-                users.add(new User("John", "Doe"));
-                Mockito.when(userRepository.findByLastName("Doe")).thenReturn(users);
-
-                List<User> result = userService.findByLastName("Doe");
-
-                Assert.assertEquals(users, result);
-            }
-        }*/
-
-
-      /*  @Override
-        public void addNewCourseToUser(long user_id, long course_id) {
-            try {
-                UserEntity foundUser = userDao.findById(user_id);
-                CourseEntity foundCourse = courseDao.findById(course_id).orElseThrow();
-                UserCourseEntity userCourseEntity = new UserCourseEntity();
-                userCourseEntity.setUser(foundUser);
-                userCourseEntity.setCourse(foundCourse);
-                userCourseDao.saveAndFlush(userCourseEntity);
-            } catch (Exception e) {
-                e.getStackTrace();
-            }
-        }*/
     }
 
     @Test
