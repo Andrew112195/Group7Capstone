@@ -18,7 +18,7 @@ import java.util.List;
 
 @Repository
 public interface UserDao extends JpaRepository<UserEntity, Long> {
-    @Query("select (count(u) > 0) from UserEntity u where u.username = ?1")
+    @Query("select (count(u) > 0) from UserEntity u where lower(u.username) = lower(?1)")
     boolean existsByUsername(@NonNull String username);
 
     @Query(value = "SELECT u FROM UserEntity u , MessagesEntity m, UserCourseEntity c, CourseEntity ce, ModuleEntity me WHERE u.id = ?1")
@@ -26,9 +26,6 @@ public interface UserDao extends JpaRepository<UserEntity, Long> {
 
     @Query(value = "select * from user_entity ue where ue.id = ?1", nativeQuery = true)
     UserEntity findById(long user_id);
-
-    @Query(value = "SELECT * FROM user_entity WHERE username = ?1", nativeQuery = true)
-    UserEntity findByUsername(String username);
 
     @Query(value = "SELECT * FROM user_entity WHERE username = ?1 AND password = ?2 ", nativeQuery = true)
     UserEntity findByUsernameAndPassword(String username,String password);

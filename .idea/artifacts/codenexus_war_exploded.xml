@@ -90,7 +90,7 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.14.2" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.14.2" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.12.0" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:6.0.5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:6.0.7" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:6.0.6" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:6.0.6" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:6.0.6" />
@@ -100,37 +100,39 @@
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch:7.3.0" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-core:7.3.0" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-secure-sm:7.3.0" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-x-content:7.3.0" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.14.2" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.2" />
-          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.14.2" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-geo:7.3.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-backward-codecs:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-grouping:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-highlighter:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-join:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-misc:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial-extras:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-spatial3d:8.1.0" />
-          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-suggest:8.1.0" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-cli:7.3.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch:8.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-core:8.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-logging:8.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-secure-sm:8.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-x-content:8.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-geo:8.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-lz4:8.6.2" />
+          <element id="library" level="project" name="Maven: org.lz4:lz4-java:1.8.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-plugin-api:8.6.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-plugin-analysis-api:8.6.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analysis-common:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-backward-codecs:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-grouping:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-highlighter:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-join:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-misc:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:9.4.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-suggest:9.4.2" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-cli:8.6.2" />
           <element id="library" level="project" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.2" />
-          <element id="library" level="project" name="Maven: com.carrotsearch:hppc:0.8.1" />
-          <element id="library" level="project" name="Maven: joda-time:joda-time:2.10.2" />
           <element id="library" level="project" name="Maven: com.tdunning:t-digest:3.2" />
           <element id="library" level="project" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.19.0" />
-          <element id="library" level="project" name="Maven: org.elasticsearch:jna:4.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.19.0" />
+          <element id="library" level="project" name="Maven: net.java.dev.jna:jna:5.10.0" />
+          <element id="library" level="project" name="Maven: co.elastic.logging:log4j2-ecs-layout:1.2.0" />
+          <element id="library" level="project" name="Maven: co.elastic.logging:ecs-logging-core:1.2.0" />
+          <element id="library" level="project" name="Maven: org.elasticsearch:elasticsearch-plugin-classloader:8.6.2" />
+          <element id="library" level="project" name="Maven: com.carrotsearch:hppc:0.8.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

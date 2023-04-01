@@ -9,31 +9,30 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
-@Transactional
-public class  UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     UserDao userDao;
 
     @Autowired
     UserCourseDao userCourseDao;
+
     @Override
     public boolean register(UserEntity user) {
-        /* use the userDao to create logic of data to populate */
-        //searches for existing username
+        // check if the username already exists in the database
         if (!userDao.existsByUsername(user.getUsername())) {
+            // create a new user entity and save it to the database
             UserEntity userEntity = new UserEntity();
             BeanUtils.copyProperties(user, userEntity);
             userDao.saveAndFlush(userEntity);
-
-            return true;
+            return true; // registration successful
         }
-        
-        return false;
-        
+        return false; // registration unsuccessful: username already exists
     }
+
     @Override
     @Transactional
     public UserEntity updateUser(UserEntity user){
@@ -42,51 +41,50 @@ public class  UserServiceImpl implements UserService {
 
     @Override
     public UserEntity updateProfile(UserEntity user){
-        //first find the user by id using the incoming object
+        // find the existing user in the database
         UserEntity findUser = userDao.findById(user.getId()).get();
-        //then update the user
-       findUser.setFirstname(user.getFirstname());
-       findUser.setLastname(user.getLastname());
-       findUser.setUsername(user.getUsername());
-       findUser.setEmail(user.getEmail());
-        return userDao.save(findUser);
-
+        // update the user's profile information
+        findUser.setFirstname(user.getFirstname());
+        findUser.setLastname(user.getLastname());
+        findUser.setUsername(user.getUsername());
+        findUser.setEmail(user.getEmail());
+        return userDao.save(findUser); // save the updated user entity to the database
     }
 
     @Override
     public UserEntity login(UserEntity user) {
-        // catches null pointer exception on null return
         try {
-            UserEntity checkUser = userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
-            return checkUser;
+            // find the user in the database by username and password
+            return userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
         }
         catch(Exception e){
-            return null;
+            return null; // login unsuccessful: user not found in the database
         }
     }
 
     @Override
-    public boolean changePassword(UserEntity user, String oldPassword, String newPassword){
-        // catches null pointer exception on null return
-        try {
-            userDao.findByUsernameAndPassword(user.getUsername(), oldPassword);
-            //if old password doesnot match will throw exception
-            user.setPassword(newPassword);
-            userDao.saveAndFlush(user);
-            return true;
+    public boolean changePassword(UserEntity user, String oldPassword, String newPassword) {
+        if (user == null || oldPassword == null || newPassword == null) {
+            return false; // input validation: null values not allowed
         }
-        catch(Exception e){
-            return false;
+
+        if (!Objects.equals(user.getPassword(), oldPassword)) {
+            return false; // old password is incorrect
+        }
+
+        try {
+            UserEntity updatedUser = userDao.findByUsernameAndPassword(user.getUsername(), oldPassword);
+            updatedUser.setPassword(newPassword);
+            userDao.save(updatedUser);
+            return true; // password updated successfully
+        } catch (Exception e) {
+            return false; // an error occurred while updating the password
         }
     }
-
 
     @Override
     public List<UserEntity> getAllStudents() {
-        List<UserEntity> allStudents = userDao.findAllByUserTypeId(1);
-        
-        return allStudents;
+        // find all users with userTypeId=1 (students) in the database
+        return userDao.findAllByUserTypeId(1);
     }
-
-  
 }
