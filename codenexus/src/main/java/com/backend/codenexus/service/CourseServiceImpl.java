@@ -28,12 +28,6 @@ public class CourseServiceImpl implements CourseService {
 
     //Course methods
 
-
-    @Override
-    public UserCourseEntity updateCourses(UserCourseEntity userCourse){
-        return userCourse = userCourseDao.updateAllCourses();
-    }
-
     @Override
     public void addNewCourseToUser(long user_id, long course_id) {
         try {

@@ -20,19 +20,6 @@ public class MessagesServiceImpl implements MessagesService {
     @Autowired
     MessageDao messageDao;
     UserDao userDao;
-    @Override
-    public UserEntity getMessages(UserEntity user) {
-        //List<MessagesEntity> messagesEntity = messageDao.findAllByUserId(user_id);
-        //return messagesEntity;
-        return messageDao.findAllByUserId(user.getId());
-    }
-
-    @Override
-    public List<MessagesEntity> getSentMessages(Long user_id) {
-        List<MessagesEntity> messagesEntity = messageDao.findAllSentByUserId(user_id);
-        
-        return messagesEntity;
-    }
 
     @Override
     public MessagesEntity readMessage(Long message_id){
