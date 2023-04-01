@@ -17,10 +17,7 @@ public interface UserCourseDao extends JpaRepository<UserCourseEntity, Long> {
 
     @Query(value = "SELECT * FROM user_course uc, user_entity ue " +
             "JOIN uc ON ue WHERE uc.course_id = ?1 AND uc.user_id = ue.id AND uc.user_id != ?2", nativeQuery = true)
-        List<UserCourseEntity> findUsersInSameCourse(Long course_id, Long User_id);
-
-    @Query(value = "SELECT u FROM UserCourseEntity u, CourseEntity c, ModuleEntity m, TaskEntity t WHERE m.courseId.id = c.id ")
-    UserCourseEntity updateAllCourses();
+    List<UserCourseEntity> findUsersInSameCourse(Long course_id, Long User_id);
 
     @Query(value = "SELECT uc FROM UserCourseEntity uc, UserEntity ue WHERE uc.user.id != ?1")
     List<UserCourseEntity> findClassmates(Long user_id);

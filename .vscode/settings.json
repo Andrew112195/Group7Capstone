@@ -3,5 +3,6 @@
     "liveshare.allowGuestDebugControl": true,
     "liveshare.allowGuestTaskControl": true,
     "liveshare.notebooks.allowGuestExecuteCells": true,
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true
 }

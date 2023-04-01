@@ -155,11 +155,6 @@ public class MainController {
         return "studentDashboard";
     }
 
-
-
-
-
-
     @GetMapping("studentclassroom")
     public String studentClassroom(){
         return "studentClassroom";
@@ -190,12 +185,6 @@ public class MainController {
     @GetMapping("ide")
     public String ideLoader(){
         return "onlineIDE";
-    }
-
-    @GetMapping("sent/{user_id}")
-    public String getSentMessages(@PathVariable Long user_id) {
-        List<MessagesEntity> messagesSent = messagesService.getSentMessages(user_id);
-        return null;
     }
 
     @GetMapping("inbox")
