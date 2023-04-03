@@ -13,13 +13,8 @@ import java.util.List;
 
 public interface MessageDao extends JpaRepository<MessagesEntity, Long> {
 
-    @Query(value = "SELECT distinct MessagesEntity FROM UserEntity ue, MessagesEntity me WHERE me.sender.id = ?1")
-    UserEntity findAllByUserId(Long user_id);
-
     @Query(value = "SELECT * FROM messages_entity WHERE id = ?1", nativeQuery = true)
     MessagesEntity findByMessageId(Long messageId);
 
-    @Query(value = "SELECT * FROM messages_entity  WHERE recipient = ?1", nativeQuery = true)
-    List<MessagesEntity> findAllSentByUserId(Long userId);
 
 }

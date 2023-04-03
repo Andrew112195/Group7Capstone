@@ -18,21 +18,31 @@ public class MessagesServiceImpl implements MessagesService {
     final static Logger Log = LoggerFactory.getLogger(MessagesServiceImpl.class);
 
     @Autowired
-    MessageDao messageDao;
-    UserDao userDao;
+    private MessageDao messageDao;
+
+    @Autowired
+    private UserDao userDao;
 
     @Override
-    public MessagesEntity readMessage(Long message_id){
-        MessagesEntity source = messageDao.findByMessageId(message_id);
-        source.setRead(true);
-        messageDao.saveAndFlush(source);
-              
-        return source;
+    public MessagesEntity readMessage(Long message_id) {
+        try {
+            MessagesEntity source = messageDao.findByMessageId(message_id);
+            source.setRead(true);
+            messageDao.saveAndFlush(source);
+            return source;
+        } catch (Exception e) {
+            Log.error("Error occurred while reading message with ID {}", message_id, e);
+            throw new RuntimeException("Error occurred while reading message with ID " + message_id, e);
+        }
     }
 
     @Override
     public MessagesEntity saveMessage(MessagesEntity message) {
-        messageDao.saveAndFlush(message);
-        return null;
+        try {
+            return messageDao.saveAndFlush(message);
+        } catch (Exception e) {
+            Log.error("Error occurred while saving message: {}", message, e);
+            throw new RuntimeException("Error occurred while saving message: " + message, e);
+        }
     }
 }
