@@ -75,6 +75,17 @@ public class MainController {
         return "aboutUs";
     }
 
+    @GetMapping("catalog")
+    public String getCatalog(){
+        return "catalog";
+    }
+
+
+    @GetMapping("catalogCourseDescription")
+    public String getCatalogCourseDescription(){
+        return "catalogCourseDescription";
+    }
+
     @GetMapping("pricing")
     public String getPricing(){
         return "pricing";
