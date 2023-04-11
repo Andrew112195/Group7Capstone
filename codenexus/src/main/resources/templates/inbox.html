@@ -12,59 +12,59 @@
 
 <body>
 
-    <!-- Fixed top bar-menu -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/index"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<!-- Fixed top bar-menu -->
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/index"><span class="text-info">Nexus</span> e-learning</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="col-sm-2">
-                    <select class="form-control">
-                        <option value="inbox">Inbox</option>
-                        <option value="sent">Sent</option>
-                    </select>
-                </div>
-                <div class="btn-group mr-2">
-                    <button class="btn btn-primary" id="emailButtons" type="button" data-toggle="modal"
+            <div class="col-sm-2">
+                <select class="form-control" id="select-option" onchange="showOption()">
+                    <option value="inbox">Inbox</option>
+                    <option value="sent">Sent</option>
+                </select>
+            </div>
+            <div class="btn-group mr-2">
+                <button class="btn btn-primary" id="emailButtons" type="button" data-toggle="modal"
                         data-target="#composeModal">Compose</button>
-                </div>
+            </div>
         </div>
-        </div>     
-    </nav>
+    </div>
+</nav>
 
-    <div class="modal fade" id="composeModal" tabindex="-1" role="dialog" aria-labelledby="composeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="composeModalLabel">Compose Message</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+<div class="modal fade" id="composeModal" tabindex="-1" role="dialog" aria-labelledby="composeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="composeModalLabel">Compose Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
-                <div class="modal-body">
-                    <form method="POST" th:object="${messageForm}" th:action="@{/saveMessage}" class="messagePostForm" >
-                        <div class="form-group blu-margin">
-                            <select class="form-control" th:field="${messageForm.recipient}">
-                                <option value="0">Select Recipient</option>
-                                <option th:each="peer : ${peerList}" th:value="${peer.user.id}"
-                                        th:text="${peer.user.firstname} + ' ' +  ${peer.user.lastname} + ' From: ' + ${peer.course.title} "/>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="header">Subject:</label>
-                            <input type="text" class="form-control" th:field="*{header}" id="header" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea class="form-control" th:field="*{message}" id="message" rows="5" required></textarea>
-                        </div>
+            <div class="modal-body">
+                <form method="POST" th:object="${messageForm}" th:action="@{/saveMessage}" class="messagePostForm" >
+                    <div class="form-group blu-margin">
+                        <select class="form-control" th:field="${messageForm.recipient}">
+                            <option value="0">Select Recipient</option>
+                            <option th:each="peer : ${peerList}" th:value="${peer.user.id}"
+                                    th:text="${peer.user.firstname} + ' ' +  ${peer.user.lastname} + ' From: ' + ${peer.course.title} "/>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="header">Subject:</label>
+                        <input type="text" class="form-control" th:field="*{header}" id="header" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" th:field="*{message}" id="message" rows="5" required></textarea>
+                    </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary btn-block">Send</button>
                     </div>
-                    </form>
+                </form>
             </div>
         </div>
     </div>
@@ -72,92 +72,104 @@
 
 
 
-    <br><br>
-    <div class="row">
-        <div class="col-md-2 text-white">
-            <nav class="sidebar">
-                <br><br>
-                <ul class="list-group vertical-scrollable">
-                    <li class="list-group-item">
-                        <a href="/dashboard">
-                            <span class="me-2">&#127968
-                                Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">
-                            <span class="me-2">&#128218;</span>
-                            Courses
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/inbox">
-                            <span class="me-2">&#128231;</span>
-                            Inbox
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">
-                            <span class="me-2">&#9881;</span>
-                            Settings
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-
-     <div class="col-md-3 bg-white text-black ">
+<br><br>
+<div class="row">
+    <div class="col-md-2 text-white">
+        <nav class="sidebar">
             <br><br>
-            <div class="list-group" style="max-height: 750px; overflow-y: auto;"> 
-            <form th:action="@{/getMessages}" method="get">
+            <ul class="list-group vertical-scrollable">
+                <li class="list-group-item">
+                    <a href="/studentDashboard">
+                            <span class="me-2">&#127968
+                            Dashboard</span>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">
+                        <span class="me-2">&#128218;</span>
+                        Courses
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/inbox">
+                        <span class="me-2">&#128231;</span>
+                        Inbox
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="col-md-3 bg-white text-black" id="inbox">
+        <br><br>
+        <div class="list-group" style="max-height: 750px; overflow-y: auto;">
+            <form th:action="@{/getMessages}" method="get" id="messageForm">
                 <div class="list-group">
                     <a href="#"  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" th:each="message : ${user.messages}" th:id="'message-' + ${message.id}" th:data-header="${message.header}" th:data-content="${message.message}">
                         <div class="email" id="lista-mensajes">
-                       <div class = "sender" th:text="${message.sender.firstname} + ' ' + ${message.sender.lastname}"></div>
-                       <div class = "subject" th:text="${message.header}"></div>
-                       <div class="date" th:text="${message.timeSent}"></div>
-                    </div>
+                            <div class = "sender" th:text="${message.sender.firstname} + ' ' + ${message.sender.lastname}"></div>
+                            <div class = "subject" th:text="${message.header}"></div>
+                            <div class="date" th:text="${message.timeSent}"></div>
+                        </div>
                     </a>
                 </div>
-              </form>
+            </form>
         </div>
+    </div>
+
+
+    <div class="col-md-3 bg-white text-black" style="display: none;" id="sent">
+        <br><br>
+        <div class="list-group" style="max-height: 750px; overflow-y: auto;">
+            <form th:action="@{/getMessages}" method="get">
+                <div class="list-group">
+                    <a href="#"  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" th:each="message : ${user.sentMessages}" th:id="'message-' + ${message.id}" th:data-header="${message.header}" th:data-content="${message.message}">
+                        <div class="email" id="lista-mensajes">
+                            <div class = "sender" th:text="${message.recipient.firstname} + ' ' + ${message.recipient.lastname}"></div>
+                            <div class = "subject" th:text="${message.header}"></div>
+                            <div class="date" th:text="${message.timeSent}"></div>
+                        </div>
+                    </a>
+                </div>
+            </form>
         </div>
+    </div>
 
-         <div class="col-md-5 text-black">
-            <br><br>
-            <div class="email-content">
+    <div class="col-md-5 text-black">
+        <br><br>
+        <div class="email-content">
 
-                <h2>No Message Selected</h2>
-                <div class="meta">
-                    <span class="sender"></span>
-                    <span class="date"></span>
-                </div>  
-                <hr>
-                <p class="content">
-            
-                </p>         
+            <h2>No Message Selected</h2>
+            <div class="meta">
+                <span class="sender"></span>
+                <span class="date"></span>
             </div>
-        </div> 
+            <hr>
+            <p class="content">
 
-        
-    </div>
+            </p>
+        </div>
     </div>
 
-    <script>
-        //get the elements of the list group
-        var messageLinks = document.querySelectorAll('.list-group-item');
-      
-       //Add click event handler for each element
-        messageLinks.forEach(function(link) {
-          link.addEventListener('click', function(event) {
+
+</div>
+</div>
+
+<script>
+    //get the elements of the list group
+    var messageLinks = document.querySelectorAll('.list-group-item');
+
+    //Add click event handler for each element
+    messageLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
             event.preventDefault();
-      
+
             // get the  ID, header and content of the message
             var messageId = link.getAttribute('id').replace('message-', '');
             var messageHeader = link.getAttribute('data-header');
             var messageContent = link.getAttribute('data-content');
-      
+
             // update the content of div email-content
             var emailContent = document.querySelector('.email-content');
             emailContent.querySelector('h2').textContent = messageHeader;
@@ -165,15 +177,35 @@
             emailContent.querySelector('.meta .date').textContent = link.querySelector('.date').textContent;
             emailContent.querySelector('p').textContent = messageContent;
             emailContent.querySelector('.content').textContent = link.querySelector('.content').textContent;
-            
-          });
-        });
 
- 
-      </script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        });
+    });
+
+
+    function showOption() {
+
+        var opcionSeleccionada = document.getElementById("select-option").value;
+        if (opcionSeleccionada === "inbox") {
+
+            document.getElementById("inbox").style.display = "block";
+            document.getElementById("sent").style.display = "none";
+        } else if (opcionSeleccionada === "sent") {
+
+            document.getElementById("inbox").style.display = "none";
+            document.getElementById("sent").style.display = "block";
+        } else {
+            document.getElementById("inbox").style.display = "none";
+            document.getElementById("sent").style.display = "none";
+        }
+
+
+    }
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
