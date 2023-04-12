@@ -211,8 +211,7 @@ public class MainController {
     @Transactional
     @GetMapping("inbox/{user_id}")
     public String getMessages(@PathVariable Long user_id, ModelMap modelMap) {
-        userService.updateUser((UserEntity) modelMap.get("user"));
-        modelMap.addAttribute("userMessage", modelMap.get("user"));
+        updateModelmapUser(modelMap);
         MessagesEntity messageForm = new MessagesEntity();
         modelMap.addAttribute("messageForm",messageForm);
         modelMap.addAttribute("peerList", courseService.getAllClassmates(user_id));
@@ -318,5 +317,10 @@ public class MainController {
     }
 
 
+    public void updateModelmapUser(ModelMap modelMap){
+        UserEntity userToBeUpdated = userService.updateUser((UserEntity) modelMap.get("user"));
+        modelMap.put("user", userToBeUpdated);
+        modelMap.addAttribute("userMessage", modelMap.get("user"));
+    }
 
 }
