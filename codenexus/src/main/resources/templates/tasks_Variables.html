@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Classroom</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <div th:replace ="header :: myheader"></div>
+  <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+<div class="container" style="padding: 100px">
+  <div class="row">
+    <div class="col-3 overflow-auto" style="max-height: 500px; height: 500px; background-color: #1002;">
+      <div class="accordion" id="modules">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="ModuleZero">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#variablesAndDataTypes" aria-expanded="false" aria-controls="variablesAndDataTypes">
+              Module 0- Varialbes and Data Types
+            </button>
+          </h2>
+          <div id="variablesAndDataTypes" class="accordion-collapse collapse show" aria-labelledby="headingZero">
+            <div class="accordion-body">
+              <a class="nav-link" href="/tasks_Variables">Variables</a>
+            </div>
+          </div>
+          <div id="variablesAndDataTypes" class="accordion-collapse collapse show" aria-labelledby="headingZero">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">Primitive Data Types</a>
+            </div>
+          </div>
+          <div id="variablesAndDataTypes" class="accordion-collapse collapse show" aria-labelledby="headingZero">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">Object Data Types</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="ModuleOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#loops" aria-expanded="true" aria-controls="loops">
+              Module 1- Loops
+            </button>
+          </h2>
+          <div id="loops" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">"For" Loops</a>
+            </div>
+          </div>
+          <div id="loops" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">"While" Loops</a>
+            </div>
+          </div>
+          <div id="loops" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">Enhanced For Loops</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="ModuleTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#conditionalStatements" aria-expanded="true" aria-controls="conditionalStatements">
+              Module 2- Conditional Statements
+            </button>
+          </h2>
+          <div id="conditionalStatements" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">If Statements</a>
+            </div>
+          </div>
+          <div id="conditionalStatements" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">Nested Conditional Statements</a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="ModuleThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#arrays" aria-expanded="true" aria-controls="dataTypes">
+              Module 3- Arrays
+            </button>
+          </h2>
+          <div id="arrays" class="accordion-collapse collapse show" aria-labelledby="headingThree">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">Fixed Arrays</a>
+            </div>
+          </div>
+          <div id="arrays" class="accordion-collapse collapse show" aria-labelledby="headingThree">
+            <div class="accordion-body">
+              <a class="nav-link" href="#">Array Lists</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="selected-content col-8 text-wrap">
+      <div id="VariableContent">
+        <form>
+          <div class="form-group">
+            <label class="h1">Variables</label>
+
+            <p>A variable is a piece of memory to which we can assign data to make it easy to reuse. We want to use variables as tools to make our code more understandable. That means that we want to give our variables good names that represent the data they hold</p>
+            <br>
+            <p>Every variable requires a type declaration when we initialize it. This is to help with speed and safety. Speed, because all variables of the same type require the same amount of memory, and by declaring the type at initialization, Java is able to allocate only the proper amount. It helps with safety, in that if we try to assign a value of the wrong type to a variable, we will receive an error even before we try to run the code. This lets us catch our mistakes before the program even runs, removing one big source of bugs.</p>
+            <br>
+            <p>If a variable is declared but not initialized with a value, the following default values are assigned:</p>
+            <br>
+            <p>int: 0</p>
+            <p>double: 0.0</p>
+            <p>boolean: false</p>
+            <p>String: null</p>
+            <br>
+            <p>Some rules of thumb to follow when choosing a variable name include: </p>
+            <p>Variable names should not be reserved keywords like char, class or int, for example.</p>
+            <p>Use camel case. Start the variable name with a lower-case letter and capitalize any words within the name, for example amountOfSale.</p>
+            <p>Variable names cannot begin with number or a whitespace, and generally you should not use _ (underscores).</p>
+            <p>Make your variables readable. Rather than using a or b or other inscrutable names like amtColl, instead use something clear and descriptive like amountCollected, for example.</p>
+            <br>
+            <br>
+            <h5 class="text-center">Reading Comprehension:</h5>
+            <h5>Which of these are NOT valid Java and would produce a compile time error?</h5>
+            <div class="radio">
+              <label><input type="radio" name="options" value="option1">int age;</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="options" value="option2">double amount=3;</label>
+            </div>
+            <!-- The answer is the option below this text vvv -->
+            <div class="radio">
+              <label><input type="radio" name="options" value="option3">Double price=3;</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="options" value="option4">String name="James Gosling";</label>
+            </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -8,22 +8,109 @@
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-<br></br>
-    <div class="container-fluid py-5">
-        <div class="row">
-            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#sideBar" aria-controls="sideBar" aria-expanded="true" aria-label="Toggle">
-                Toggle
-            </button>
-            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse show" id="sideBar">
-
-                Test
-                <!-- Sidebar content goes here -->
-            </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                Test
-                <!-- Main content goes here -->
-            </main>
+<div class="container" style="padding: 100px">
+    <div class="row">
+        <div class="col-3 overflow-auto" style="max-height: 500px; height: 500px; background-color: #1002;">
+            <div class="accordion" id="modules">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="ModuleZero">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#variablesAndDataTypes" aria-expanded="false" aria-controls="variablesAndDataTypes">
+                            Module 0- Varialbes and Data Types
+                        </button>
+                    </h2>
+                    <div id="variablesAndDataTypes" class="accordion-collapse collapse show" aria-labelledby="headingZero">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="/tasks_Variables">Variables</a>
+                        </div>
+                    </div>
+                    <div id="variablesAndDataTypes" class="accordion-collapse collapse show" aria-labelledby="headingZero">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">Primitive Data Types</a>
+                        </div>
+                    </div>
+                    <div id="variablesAndDataTypes" class="accordion-collapse collapse show" aria-labelledby="headingZero">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">Object Data Types</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="ModuleOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#loops" aria-expanded="true" aria-controls="loops">
+                            Module 1- Loops
+                        </button>
+                    </h2>
+                    <div id="loops" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">"For" Loops</a>
+                        </div>
+                    </div>
+                    <div id="loops" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">"While" Loops</a>
+                        </div>
+                    </div>
+                    <div id="loops" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">Enhanced For Loops</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="ModuleTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#conditionalStatements" aria-expanded="true" aria-controls="conditionalStatements">
+                            Module 2- Conditional Statements
+                        </button>
+                    </h2>
+                    <div id="conditionalStatements" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">If Statements</a>
+                        </div>
+                    </div>
+                    <div id="conditionalStatements" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">Nested Conditional Statements</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="ModuleThree">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#arrays" aria-expanded="true" aria-controls="dataTypes">
+                            Module 3- Arrays
+                        </button>
+                    </h2>
+                    <div id="arrays" class="accordion-collapse collapse show" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">Fixed Arrays</a>
+                        </div>
+                    </div>
+                    <div id="arrays" class="accordion-collapse collapse show" aria-labelledby="headingThree">
+                        <div class="accordion-body">
+                            <a class="nav-link" href="#">Array Lists</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="selected-content col-8 text-wrap">
+            <div id="VariableContent">
+                <h1>Welcome to Java with Coding Nexus!</h1>
+                <h4>What is Java technology and why do you need it?</h4>
+                <p>Java is a programming language and computing platform first released by Sun Microsystems in 1995. It has evolved from humble beginnings to power a large share of today’s digital world, by providing the reliable platform upon which many services and applications are built. New, innovative products and digital services designed for the future continue to rely on Java, as well.</p>
+                <br>
+                <p>On the Coding Nexus platform you will be presented with literature about a particular coding subject and then a question at the end of your reading. You will need to select the correct answer to the question before you can move on to the next section. At the end of the Module, you will be presented with a Quiz, where you will need a score of 80% or greater in order to move on to the next Module.</p>
+                <br>
+                <p>You can navigate through the Modules and their Sections using the navbar provided on the left hand side of your screen.</p>
+                <h5>Please select a Module and its first Section to begin learning.</h5>
+            </div>
         </div>
     </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
 </body>
 </html>

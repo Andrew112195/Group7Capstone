@@ -191,6 +191,9 @@ public class MainController {
         return "premadeLibrary";
     }
 
+    @GetMapping("tasks_Variables")
+    public String tasksVariables(){ return "tasks_Variables";}
+
 
 
     @GetMapping("ide")
