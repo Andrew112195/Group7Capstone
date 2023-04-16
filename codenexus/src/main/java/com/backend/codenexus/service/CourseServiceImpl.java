@@ -50,24 +50,23 @@ public class CourseServiceImpl implements CourseService {
         return courseDao.findAll();
     }
 
-    /*@Override
-    public List<CourseEntity> getStudentCompletedCourses(Long user_id){
-
-        return courseDao.findAllCompletedByUserId(user_id);
-    }
-
-    @Override
-    public List<CourseEntity> getStudentIncompleteCourses(Long user_id){
-        List <CourseEntity> courseEntity = courseDao.findAllIncompletedByUserId(user_id);
-        
-        return courseEntity;
-    }*/
-
     @Override
     public List<UserCourseEntity> getCourse(Long user_id) {
         Log.info("UserCourseServiceImpl getCourse");
 
         return userCourseDao.findByUserId(user_id);
+    }
+
+    @Override
+    public List<UserCourseEntity> getAllClassmates(Long user_id){
+        List<UserCourseEntity> classMates = userCourseDao.findClassmates(user_id);
+        return classMates;
+    }
+
+    @Override
+    public List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse){
+        List<UserCourseEntity> userList = userCourseDao.findUsersInSameCourse(userCourse.getCourse().getId(), userCourse.getUser().getId());
+        return userList;
     }
 
     //Module Methods
@@ -113,6 +112,44 @@ public class CourseServiceImpl implements CourseService {
         return taskEntity;
     }
 
+    @Override
+    public TaskQuestionBuilder buildTaskQuestion(ModuleEntity  module, TaskEntity task){
+
+        Random random = new Random();
+
+        TaskQuestionBuilder taskQuestionBuilder = new TaskQuestionBuilder();
+        //store all the answers from all the modules int the current Course
+        List<String> answers = courseDao.findAllModulesByCourseId(module.getCourseId().getId())
+                .stream()
+                .flatMap(eachModule -> eachModule.getTasks().stream())
+                .map(TaskEntity::getAnswer)
+                .toList();
+
+        //now I have to randomize the answers
+        int firstRandomIndex = random.nextInt(answers.size());
+        String firstRandomAnswer = answers.get(firstRandomIndex);
+        int secondRandomIndex = random.nextInt(answers.size());
+        String secondRandomAnswer = answers.get(secondRandomIndex);
+        String theAnswer = task.getAnswer();
+
+        /*Lets build the object to pass on the front end*/
+        taskQuestionBuilder.setQuestion(task.getQuestion());
+        taskQuestionBuilder.setOptionA(firstRandomAnswer);
+        taskQuestionBuilder.setOptionB(secondRandomAnswer);
+        taskQuestionBuilder.setOptionC(theAnswer);
+
+        return taskQuestionBuilder;
+    }
+
+    @Override
+    public void update(Long taskId, String answer){
+        TaskEntity task = getTask(taskId);
+        boolean isCorrect = answer.equals(task.getAnswer());
+        task.setCorrect(isCorrect);
+        task.setComplete(true);
+        taskDao.saveAndFlush(task);
+    }
+
     //Quiz Methods
 
     @Override
@@ -135,62 +172,8 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<UserCourseEntity> getAllClassmates(Long user_id){
-        List<UserCourseEntity> classMates = userCourseDao.findClassmates(user_id);
-        return classMates;
-    }
-    @Override
-    public List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse){
-        List<UserCourseEntity> userList = userCourseDao.findUsersInSameCourse(userCourse.getCourse().getId(), userCourse.getUser().getId());
-        return userList;
-    }
-
-    @Override
     public void addQuizToModule(QuizEntity quiz) {
         QuizEntity quizEntity = new QuizEntity();
         quizDao.saveAndFlush(quizEntity);
     }
-
-    @Override
-    public TaskQuestionBuilder buildTaskQuestion(ModuleEntity  module, TaskEntity task){
-
-        Random random = new Random();
-
-        TaskQuestionBuilder taskQuestionBuilder = new TaskQuestionBuilder();
-        //store all the answers from all the modules int the current Course
-        List<String> answers = courseDao.findAllModulesByCourseId(module.getCourseId().getId())
-                .stream()
-                .flatMap(eachModule -> eachModule.getTasks().stream())
-                .map(TaskEntity::getAnswer)
-                .toList();
-
-
-        //now I have to randomize the answers
-        int firstRandomIndex = random.nextInt(answers.size());
-        String firstRandomAnswer = answers.get(firstRandomIndex);
-        int secondRandomIndex = random.nextInt(answers.size());
-        String secondRandomAnswer = answers.get(secondRandomIndex);
-        String theAnswer = task.getAnswer();
-
-        /*Lets build the object to pass on the front end*/
-        taskQuestionBuilder.setQuestion(task.getQuestion());
-        taskQuestionBuilder.setOptionA(firstRandomAnswer);
-        taskQuestionBuilder.setOptionB(secondRandomAnswer);
-        taskQuestionBuilder.setOptionC(theAnswer);
-
-        return taskQuestionBuilder;
-
-
-    }
-
-    public void update(Long taskId, String answer){
-        TaskEntity task = getTask(taskId);
-        boolean isCorrect = answer.equals(task.getAnswer());
-        task.setCorrect(isCorrect);
-        task.setComplete(true);
-        taskDao.saveAndFlush(task);
-
-
-    }
-
 }

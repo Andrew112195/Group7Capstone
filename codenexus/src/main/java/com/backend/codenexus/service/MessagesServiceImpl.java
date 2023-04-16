@@ -1,16 +1,12 @@
 package com.backend.codenexus.service;
 
 import com.backend.codenexus.dao.MessageDao;
-import com.backend.codenexus.dao.UserDao;
 import com.backend.codenexus.entity.MessagesEntity;
-import com.backend.codenexus.entity.UserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional
@@ -19,9 +15,6 @@ public class MessagesServiceImpl implements MessagesService {
 
     @Autowired
     private MessageDao messageDao;
-
-    @Autowired
-    private UserDao userDao;
 
     @Override
     public MessagesEntity readMessage(Long message_id) {

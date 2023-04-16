@@ -20,7 +20,6 @@ public class TaskEntity {
     @Column(name = "id")
     private Long id;
 
-    /*We are in the task class*/
     @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
@@ -72,6 +71,7 @@ public class TaskEntity {
 
     private String[] taskContents;
 
+    @SuppressWarnings("null")
     public String[] setTaskContents(){
         String[] wholeLesson;
         String allText = null;

@@ -14,11 +14,10 @@ import java.util.List;
 public interface ModuleDao extends JpaRepository<ModuleEntity, Long> {
 
     @Query(value = "SELECT te FROM TaskEntity te WHERE te.module = :moduleId")
-     List<TaskEntity> findTasksByModuleId(@PathVariable("moduleId") Long moduleId);
+    List<TaskEntity> findTasksByModuleId(@PathVariable("moduleId") Long moduleId);
 
     @Query(value = "SELECT te FROM TaskEntity te WHERE te.id=:taskId")
     TaskEntity findTaskById(Long taskId);
-
 
     @Query(value = "SELECT qz FROM QuizEntity qz WHERE qz.courseQ = :courseId")
     QuizEntity findQuizById(@PathVariable("courseId")Long courseId);

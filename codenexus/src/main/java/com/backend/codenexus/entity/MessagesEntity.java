@@ -30,6 +30,15 @@ public class MessagesEntity {
     @JoinColumn(name = "recipient")
     private UserEntity recipient;
 
+    @Column(name = "read")
+    private boolean read = false;
+
+    @Column(name = "header")
+    private String header;
+
+    @Column(name = "body")
+    private String message;
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column
@@ -39,14 +48,4 @@ public class MessagesEntity {
     private void onCreate(){
         timeSent = new Date();
     }
-    @Column(name = "read")
-    private boolean read = false;
-
-    @Column(name = "header")
-    private String header;
-
-
-    @Column(name = "body")
-    private String message;
-
 }

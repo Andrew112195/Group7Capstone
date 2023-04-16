@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
     UserCourseDao userCourseDao;
 
     @Override
+    @SuppressWarnings("null")
     public boolean register(UserEntity user) {
         // check if the username already exists in the database
         if (!userDao.existsByUsername(user.getUsername())) {
@@ -34,24 +35,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
-    public UserEntity updateUser(UserEntity user){
-        return userDao.updateUser(user.getId());
-    }
-
-    @Override
-    public UserEntity updateProfile(UserEntity user){
-        // find the existing user in the database
-        UserEntity findUser = userDao.findById(user.getId()).get();
-        // update the user's profile information
-        findUser.setFirstname(user.getFirstname());
-        findUser.setLastname(user.getLastname());
-        findUser.setUsername(user.getUsername());
-        findUser.setEmail(user.getEmail());
-        return userDao.save(findUser); // save the updated user entity to the database
-    }
-
-    @Override
     public UserEntity login(UserEntity user) {
         try {
             // find the user in the database by username and password
@@ -60,6 +43,33 @@ public class UserServiceImpl implements UserService {
         catch(Exception e){
             return null; // login unsuccessful: user not found in the database
         }
+    }
+
+    @Override
+    public List<UserEntity> getAllStudents() {
+        // find all users with userTypeId=1 (students) in the database
+        return userDao.findAllByUserTypeId(1);
+    }
+
+    @Override
+    @Transactional
+    public UserEntity updateUser(UserEntity user){
+        return userDao.updateUser(user.getId());
+    }
+
+    @Override
+    public UserEntity updateProfile(UserEntity user){
+
+        // find the existing user in the database
+        UserEntity findUser = userDao.findById(user.getId()).get();
+
+        // update the user's profile information
+        findUser.setFirstname(user.getFirstname());
+        findUser.setLastname(user.getLastname());
+        findUser.setUsername(user.getUsername());
+        findUser.setEmail(user.getEmail());
+
+        return userDao.save(findUser); // save the updated user entity to the database
     }
 
     @Override
@@ -80,11 +90,5 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             return false; // an error occurred while updating the password
         }
-    }
-
-    @Override
-    public List<UserEntity> getAllStudents() {
-        // find all users with userTypeId=1 (students) in the database
-        return userDao.findAllByUserTypeId(1);
     }
 }

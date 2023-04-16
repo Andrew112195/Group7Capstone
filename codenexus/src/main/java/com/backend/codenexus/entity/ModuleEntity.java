@@ -33,9 +33,6 @@ public class ModuleEntity {
     @JoinColumn(name = "module_id")
     private List<TaskEntity> tasks;
 
-    private void addTaskToModule(TaskEntity taskEntity){
-        this.tasks.add(taskEntity);
-    }
     @Column(name = "name")
     private String name;
 
@@ -44,10 +41,6 @@ public class ModuleEntity {
 
     @Column(name = "difficulty")
     private Difficulty difficulty;
-
-/*    @Column(name = "pre_req")
-    private boolean preReq;*/
-
 
     @Column(name = "module_complete")
     private boolean moduleComplete;

@@ -22,5 +22,4 @@ public interface UserCourseDao extends JpaRepository<UserCourseEntity, Long> {
     @Query(value = "SELECT uc FROM UserCourseEntity uc, UserEntity ue WHERE uc.user.id != ?1")
     List<UserCourseEntity> findClassmates(Long user_id);
 
-
 }

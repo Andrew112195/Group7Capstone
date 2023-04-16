@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-//Data Access Object
-
 @Repository
 public interface UserDao extends JpaRepository<UserEntity, Long> {
     @Query("select (count(u) > 0) from UserEntity u where lower(u.username) = lower(?1)")
@@ -23,5 +21,6 @@ public interface UserDao extends JpaRepository<UserEntity, Long> {
 
     @Query(value = "SELECT * FROM user_entity WHERE username = ?1 AND password = ?2 ", nativeQuery = true)
     UserEntity findByUsernameAndPassword(String username,String password);
+
     List<UserEntity> findAllByUserTypeId(long userTypeId);
 }

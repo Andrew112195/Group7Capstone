@@ -9,8 +9,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "course")
 @Entity
+@Table(name = "course")
 public class CourseEntity {
 
     @Id
@@ -38,5 +38,4 @@ public class CourseEntity {
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id")
     private List<ModuleEntity> modules;
-
 }
