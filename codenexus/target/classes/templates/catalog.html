@@ -16,7 +16,7 @@
       <h2>Courses Catalog</h2>
       <br>
       <div class="row mt-3">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3" th:each="course : ${courses}">
           <div class="card">
             <img
               class="card-img-top"
@@ -24,8 +24,8 @@
               alt="Curso de HTML"
             />
             <div class="card-body">
-              <h5 class="card-title">Java Programming Basics</h5>
-              <p class="card-text">
+              <h5 class="card-title" th:text="${course.title}"></h5>
+              <p class="card-text" th:text="${course.description}">
               This course will provide you with a basic foundation in Java syntax.
               </p>
               <a href="/catalogCourseDescription" class="btn btn-primary">More Info</a>

@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_18_2023_10_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_18_2023_10_25_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/catalog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/instructorDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/instructorDashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentDashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/backend/codenexus/service/CourseServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/backend/codenexus/service/CourseServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/CourseServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/CourseServiceImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,7 @@
         <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,11 +45,6 @@
       <MavenGeneralSettings>
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2MLs63uws64kcnk6j4I48ZhrbwM" />
@@ -75,7 +72,8 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Downloads/jar_files/jakarta.xml.bind-api-3.0.0.jar&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/OneDrive/Desktop/CapstoneProject/Group7Capstone/Group7Capstone/codenexus/pom.xml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -108,7 +106,7 @@
       <recent name="com.backend.codenexus.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.CodenexusApplication">
+  <component name="RunManager" selected="Database Script.scripts.sql">
     <configuration name="Difficulty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.model.Difficulty" />
       <module name="codenexus" />
@@ -158,17 +156,6 @@
       <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.service.CourseServiceImplTest" />
       <option name="METHOD_NAME" value="addNewCourseToUser" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -236,6 +223,11 @@
       <workItem from="1680187219560" duration="37000" />
       <workItem from="1680187435316" duration="46000" />
       <workItem from="1680222796035" duration="3603000" />
+      <workItem from="1681169772118" duration="1545000" />
+      <workItem from="1681261454848" duration="2620000" />
+      <workItem from="1681354089831" duration="1252000" />
+      <workItem from="1681429351561" duration="4903000" />
+      <workItem from="1681606489788" duration="1556000" />
     </task>
     <task id="LOCAL-00001" summary="added cohort and I">
       <created>1678330170701</created>

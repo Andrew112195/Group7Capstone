@@ -1,5 +1,6 @@
 package com.backend.codenexus.controller;
 
+import com.backend.codenexus.entity.CourseEntity;
 import com.backend.codenexus.entity.MessagesEntity;
 import com.backend.codenexus.entity.UserCourseEntity;
 import com.backend.codenexus.entity.UserEntity;
@@ -21,7 +22,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes("user")
+@SessionAttributes({"user","currentCourseFromCatalog"})
 @CrossOrigin
 public class MainController {
 
@@ -56,7 +57,7 @@ public class MainController {
         if(modelMap.containsAttribute("user")){
             UserEntity user = (UserEntity) modelMap.get("user");
             if (user.getUserTypeId() == 3) {
-                return "adminDashboard";
+                return "instructorDashboard";
             }
             else if (user.getUserTypeId() == 2) {
                 return "redirect:/students";
@@ -75,14 +76,16 @@ public class MainController {
         return "aboutUs";
     }
 
-    @GetMapping("catalog")
+  /*  @GetMapping("catalog")
     public String getCatalog(){
         return "catalog";
-    }
+    }*/
 
 
     @GetMapping("catalogCourseDescription")
-    public String getCatalogCourseDescription(){
+    public String getCatalogCourseDescription(ModelMap modelMap,CourseEntity course){
+
+        modelMap.addAttribute("currentCourseFromCatalog", course);
         return "catalogCourseDescription";
     }
 
@@ -144,6 +147,14 @@ public class MainController {
         modelMap.put("courses", courseService.getCourseList());
 
         return "instructorDashboard";
+    }
+
+    @GetMapping("catalog")
+    private String getCatalog(ModelMap modelMap){
+        List<CourseEntity> courses = courseService.getCourseList();
+        modelMap.addAttribute("courses",courses);
+
+        return "catalog";
     }
 
     @GetMapping("get-userCourses/{id}")
