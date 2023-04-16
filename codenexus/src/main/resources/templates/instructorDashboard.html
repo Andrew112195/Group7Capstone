@@ -39,7 +39,7 @@
 
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Instructors Dashboard</a>
+  <a class="navbar-brand" href="#">Administrator Dashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -74,8 +74,8 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <th:block th:each="course : ${courses}">
-              <button class="dropdown-item" type="button" th:attr="onclick='addStudentToCourse(\'' + ${student.id}+ '\', \'' + ${course.getId()} + '\');'">
-                <span th:text="${course.getTitle()}"></span>
+              <button class="dropdown-item" type="button" th:attr="onclick='addStudentToCourse(\'' + ${student.id}+ '\', \'' + ${course.id} + '\');'">
+                <span th:text="${course.title}"></span>
               </button>
             </th:block>
           </div>

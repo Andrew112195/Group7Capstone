@@ -35,7 +35,17 @@ INSERT into messages_entity(read, header, body, sender, recipient) values ('fals
 INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '995', '999');
 INSERT into messages_entity(read, header, body, sender, recipient) values ('false', 'sub', 'text', '996', '999');
 INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'Loop', 'Do the loop', 'false');
-INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'for loop', 'for the loop', 'false');
+
 INSERT INTO module(course_id, name, description, module_complete) VALUES(2, 'attributes', 'values and stuff', 'false');
+
+INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
+VALUES (1, 'What is the output of the following code? \n\n int x = 5; \n System.out.println(x++); \n System.out.println(++x);', '6 \n 7', 1, false, false);
+
+INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
+VALUES (1, 'What is the output of the following code? \n\n for(int i=0; i<5; i++) { \n   System.out.println(i); \n }', '0 \n 1 \n 2 \n 3 \n 4', 2, false, false);
+
+INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
+VALUES (1, 'What is the output of the following code? \n\n String s = "Hello"; \n System.out.println(s.charAt(1));', 'e', 3, false, false);
+
 
 SELECT * from user_entity;

@@ -1,8 +1,7 @@
 package com.backend.codenexus.controller;
 
-import com.backend.codenexus.entity.MessagesEntity;
-import com.backend.codenexus.entity.UserCourseEntity;
-import com.backend.codenexus.entity.UserEntity;
+import com.backend.codenexus.entity.*;
+import com.backend.codenexus.model.TaskQuestionBuilder;
 import com.backend.codenexus.service.CourseService;
 import com.backend.codenexus.service.MessagesService;
 import com.backend.codenexus.service.UserService;
@@ -21,7 +20,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes("user")
+@SessionAttributes({"user","currentCourseFromCatalog"})
 @CrossOrigin
 public class MainController {
 
@@ -56,7 +55,7 @@ public class MainController {
         if(modelMap.containsAttribute("user")){
             UserEntity user = (UserEntity) modelMap.get("user");
             if (user.getUserTypeId() == 3) {
-                return "adminDashboard";
+                return "instructorDashboard";
             }
             else if (user.getUserTypeId() == 2) {
                 return "redirect:/students";
@@ -75,14 +74,16 @@ public class MainController {
         return "aboutUs";
     }
 
-    @GetMapping("catalog")
+  /*  @GetMapping("catalog")
     public String getCatalog(){
         return "catalog";
-    }
+    }*/
 
 
     @GetMapping("catalogCourseDescription")
-    public String getCatalogCourseDescription(){
+    public String getCatalogCourseDescription(ModelMap modelMap,CourseEntity course){
+
+        modelMap.addAttribute("currentCourseFromCatalog", course);
         return "catalogCourseDescription";
     }
 
@@ -146,6 +147,14 @@ public class MainController {
         return "instructorDashboard";
     }
 
+    @GetMapping("catalog")
+    private String getCatalog(ModelMap modelMap){
+        List<CourseEntity> courses = courseService.getCourseList();
+        modelMap.addAttribute("courses",courses);
+
+        return "catalog";
+    }
+
     @GetMapping("get-userCourses/{id}")
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
         modelMap.addAttribute("userCourses", courseService.getCourse(id));
@@ -156,7 +165,7 @@ public class MainController {
     public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
         modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
 
-        return "studentModules";
+        return "studentClassroom";
     }
 
     @GetMapping("get-moduleTasks/{id}")
@@ -325,5 +334,31 @@ public class MainController {
         modelMap.put("user", userToBeUpdated);
         modelMap.addAttribute("userMessage", modelMap.get("user"));
     }
+
+    @GetMapping("/task/{id}")
+    public String getTask(@PathVariable Long id, ModelMap model) {
+
+        TaskEntity task = courseService.getTask(id);
+        if (!task.getModule().isModuleComplete()) {
+            if (!task.isComplete()) {
+                TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
+                model.addAttribute("task", taskQuestionBuilder);
+            }else {
+                task = courseService.getTask(++id);
+                TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
+                model.addAttribute("task", taskQuestionBuilder);
+
+            }
+        } else {
+
+            return "redirect:studentClassroom";
+        }
+        return "task";
+    }
+    /*@PostMapping("/submit-task")
+    public String submitTask(@RequestParam Long taskId, @RequestParam String answer, HttpSession session) {
+
+    }
+*/
 
 }

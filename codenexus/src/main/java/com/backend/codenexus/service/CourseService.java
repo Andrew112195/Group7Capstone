@@ -1,6 +1,7 @@
 package com.backend.codenexus.service;
 
 import com.backend.codenexus.entity.*;
+import com.backend.codenexus.model.TaskQuestionBuilder;
 
 import java.util.List;
 
@@ -44,4 +45,5 @@ public interface CourseService {
     List<TaskEntity> findAllTasksByModuleId(Long courseId);
 
 
+    TaskQuestionBuilder buildTaskQuestion(ModuleEntity module, TaskEntity task);
 }
