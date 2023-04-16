@@ -167,7 +167,7 @@ public class MainController {
     public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
         modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
 
-        return "studentModules";
+        return "studentClassroom";
     }
 
     @GetMapping("get-moduleTasks/{id}")
