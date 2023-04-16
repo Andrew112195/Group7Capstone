@@ -26,6 +26,51 @@
 	letter-spacing: 2px;
 }
 
+.navbar .getstarted {
+	background: #106eea;
+	margin-left: 30px;
+	border-radius: 4px;
+	font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+	padding: .5rem 1rem;
+	line-height: 2.3;
+}
+.navbar-nav a {
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+	color: #000;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link {
+	color: #000;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+	color: #000;
+}
+.w-100 {
+	height: 100vh;
+}
+.navbar-toggler {
+	padding: 1px 5px;
+	font-size: 18px;
+	line-height: 0.3;
+	background: #fff;
+}
+
+h2 {color: black;
+  font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+  padding-left: 10px;
+}
+
 .col-sm-2{
 
   padding-left: 10px;
@@ -58,3 +103,60 @@
   color: #888;
   font-size: 12px;
 }
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #F7F9F9;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #D0D3D4;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color:#283747;
+}
+
+#sidebar .nav{
+  
+}
+
+#sidebar .nav a{
+  color:black;
+  font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+  text-decoration: none;
+}
+
+#sidebar .nav a:hover{
+  color: black;
+  font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+  text-decoration: none;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+

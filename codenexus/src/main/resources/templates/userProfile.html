@@ -7,13 +7,14 @@
 
     <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSS/style_index.css">   
 </head>
 
 <body>
 
-    <!-- NavBar -->
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Student Dashboard</a>
+    <!-- NavBar 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Update Profile</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,18 +32,40 @@
             </ul>
         </div>
     </nav>
+-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Update Profile</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/inbox">Inbox</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tasks</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link logSelect" href="/index">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <br><br>
     <div class="container my-5">
         <div class="row">
             <div class="col-md-4">
                 <br>
                 <div class="card shadow-sm">
-                    <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3"
+                    <img src="/img/userProfileIcon.png" class="rounded-circle mx-auto mt-3"
                         alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title text-center" th:text="${user.getFirstname()} + ' '+ ${user.getLastname()}"></h5>
                         <p class="card-text text-center" th:text="@{${user.email}}"></p>
-                        <p class="card-text" th:text="@{Email: ${user.getEmail()}}"></p>
-                        <p class="card-text" th:text="Subscription"></p>
                     </div>
                 </div>
                 <br>
@@ -85,18 +108,6 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input th:field="*{email}" type="email" class="form-control" id="email" placeholder="Enter your email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="subscription" class="form-label">Subscription</label>
-                                <select class="form-select" id="subscription">
-                                    <option selected>Select subscription</option>
-                                    <option value="basic">Preferred</option>
-                                    <option value="premium">Premium</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="profile-picture" class="form-label">Profile Picture</label>
-                                <input type="file" class="form-control" id="profile-picture">
                             </div>
                             <button type="submit" class="btn btn-primary">Save Changes</button>
                             <button type="submit" class="btn btn-danger">Cancel</button>
