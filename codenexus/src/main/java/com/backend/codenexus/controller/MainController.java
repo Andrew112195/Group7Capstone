@@ -283,7 +283,8 @@ public class MainController {
         else{
             modelMap.put("unsuccessfulChange", "password not updated please try again");
         }
-        return "redirect:/userProfile" + ((UserEntity) modelMap.getAttribute("user")).getId();
+        //return "redirect:/userProfile" + ((UserEntity) modelMap.getAttribute("user")).getId();
+        return "redirect:/profile";
     }
 
     @PutMapping("/profile")

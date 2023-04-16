@@ -127,7 +127,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form th:action="@{/changePassword}" method="POST">
                         <div class="mb-3">
                             <label for="current-password" class="form-label">Current Password</label>
                             <input type="password" class="form-control" id="current-password"
@@ -138,17 +138,25 @@
                             <input type="password" class="form-control" id="new-password"
                                 placeholder="Enter your new password">
                         </div>
-                        <div class="mb-3">
-                            <label for="confirm-password" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirm-password"
-                                placeholder="Confirm your new password">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
+                        <div th:if="${successfulChange}">
+                            <div class="alert alert-success mt-3" role="alert">
+                                <p th:text="${successfulChange}"></p>
+                            </div>
+                        </div>
+                        <div th:if="${unsuccessfulChange}">
+                            <div class="alert alert-danger mt-3" role="alert">
+                                <p th:text="${unsuccessfulChange}"></p>
+                            </div>
+                        </div>
+                    </div>
+                        
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Changes</button>
-                </div>
+                    
+               
             </div>
         </div>
     </div>
