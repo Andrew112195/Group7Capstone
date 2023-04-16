@@ -27,6 +27,9 @@ public class TaskEntity {
     @JoinColumn(name = "module_id")
     private ModuleEntity module;
 
+    @Column(name="question")
+    private String question;
+
     @Column(name = "answer")
     private String answer;
 
@@ -35,6 +38,8 @@ public class TaskEntity {
 
     @Column(name = "complete")
     private boolean complete;
+
+    private boolean isCorrect;
 
     public enums.Difficulty getDifficulty() {
         switch (difficultyLevel) {

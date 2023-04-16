@@ -23,7 +23,7 @@
                         <div class="accordion-body">
                             <ul>
                                 <li th:each="task : ${courseModule.tasks}">
-                                    <a class="nav-link" th:href="@{/task/{id}(id=${task.id})}" th:text="${task.title}"></a>
+                                    <a class="nav-link" th:href="@{/task/{id}(id=${task.id})}" th:text="${task.question}"></a>
                                 </li>
                             </ul>
                         </div>

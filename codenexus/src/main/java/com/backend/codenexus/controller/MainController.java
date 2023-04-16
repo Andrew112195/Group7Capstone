@@ -1,9 +1,7 @@
 package com.backend.codenexus.controller;
 
-import com.backend.codenexus.entity.CourseEntity;
-import com.backend.codenexus.entity.MessagesEntity;
-import com.backend.codenexus.entity.UserCourseEntity;
-import com.backend.codenexus.entity.UserEntity;
+import com.backend.codenexus.entity.*;
+import com.backend.codenexus.model.TaskQuestionBuilder;
 import com.backend.codenexus.service.CourseService;
 import com.backend.codenexus.service.MessagesService;
 import com.backend.codenexus.service.UserService;
@@ -336,5 +334,31 @@ public class MainController {
         modelMap.put("user", userToBeUpdated);
         modelMap.addAttribute("userMessage", modelMap.get("user"));
     }
+
+    @GetMapping("/task/{id}")
+    public String getTask(@PathVariable Long id, ModelMap model) {
+
+        TaskEntity task = courseService.getTask(id);
+        if (!task.getModule().isModuleComplete()) {
+            if (!task.isComplete()) {
+                TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
+                model.addAttribute("task", taskQuestionBuilder);
+            }else {
+                task = courseService.getTask(++id);
+                TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
+                model.addAttribute("task", taskQuestionBuilder);
+
+            }
+        } else {
+
+            return "redirect:studentClassroom";
+        }
+        return "task";
+    }
+    /*@PostMapping("/submit-task")
+    public String submitTask(@RequestParam Long taskId, @RequestParam String answer, HttpSession session) {
+
+    }
+*/
 
 }

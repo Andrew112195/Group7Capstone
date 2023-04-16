@@ -2,12 +2,14 @@ package com.backend.codenexus.service;
 
 import com.backend.codenexus.dao.*;
 import com.backend.codenexus.entity.*;
+import com.backend.codenexus.model.TaskQuestionBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -147,6 +149,48 @@ public class CourseServiceImpl implements CourseService {
     public void addQuizToModule(QuizEntity quiz) {
         QuizEntity quizEntity = new QuizEntity();
         quizDao.saveAndFlush(quizEntity);
+    }
+
+    @Override
+    public TaskQuestionBuilder buildTaskQuestion(ModuleEntity  module, TaskEntity task){
+
+        Random random = new Random();
+
+        TaskQuestionBuilder taskQuestionBuilder = new TaskQuestionBuilder();
+        //store all the answers from all the modules int the current Course
+        List<String> answers = courseDao.findAllModulesByCourseId(module.getCourseId().getId())
+                .stream()
+                .flatMap(eachModule -> eachModule.getTasks().stream())
+                .map(TaskEntity::getAnswer)
+                .toList();
+
+
+        //now I have to randomize the answers
+        int firstRandomIndex = random.nextInt(answers.size());
+        String firstRandomAnswer = answers.get(firstRandomIndex);
+        int secondRandomIndex = random.nextInt(answers.size());
+        String secondRandomAnswer = answers.get(secondRandomIndex);
+        String theAnswer = task.getAnswer();
+
+        /*Lets build the object to pass on the front end*/
+        taskQuestionBuilder.setQuestion(task.getQuestion());
+        taskQuestionBuilder.setOptionA(firstRandomAnswer);
+        taskQuestionBuilder.setOptionB(secondRandomAnswer);
+        taskQuestionBuilder.setOptionC(theAnswer);
+
+        return taskQuestionBuilder;
+
+
+    }
+
+    public void update(Long taskId, String answer){
+        TaskEntity task = getTask(taskId);
+        boolean isCorrect = answer.equals(task.getAnswer());
+        task.setCorrect(isCorrect);
+        task.setComplete(true);
+        taskDao.saveAndFlush(task);
+
+
     }
 
 }
