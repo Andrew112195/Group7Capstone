@@ -8,6 +8,7 @@ import org.hibernate.annotations.Cascade;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "user_course")
 public class UserCourseEntity {
 

@@ -63,12 +63,6 @@ public class CourseServiceImpl implements CourseService {
         return classMates;
     }
 
-    @Override
-    public List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse){
-        List<UserCourseEntity> userList = userCourseDao.findUsersInSameCourse(userCourse.getCourse().getId(), userCourse.getUser().getId());
-        return userList;
-    }
-
     //Module Methods
 
     @Override

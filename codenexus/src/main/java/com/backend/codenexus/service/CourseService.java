@@ -15,8 +15,6 @@ public interface CourseService {
     List<UserCourseEntity> getCourse(Long user_id);
 
     List<UserCourseEntity> getAllClassmates(Long user_id);
-    
-    List<UserCourseEntity> getUsersSameCourse(UserCourseEntity userCourse);
 
     //Module Methods
     List <ModuleEntity> getCourseModules(Long course_id);
