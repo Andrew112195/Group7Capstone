@@ -126,42 +126,64 @@
                     <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form th:action="@{/changePassword}" method="POST">
+                <form th:method="PUT" th:object="${updateUser}" th:action="@{/changePassword}" id="changePasswordForm">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="modal-body">
                         <div class="mb-3">
                             <label for="current-password" class="form-label">Current Password</label>
-                            <input type="password" class="form-control" id="current-password"
-                                placeholder="Enter your current password">
+                            <input type="password" class="form-control" id="current-password" name="currentPassword" placeholder="Enter your current password">
                         </div>
                         <div class="mb-3">
                             <label for="new-password" class="form-label">New Password</label>
-                            <input type="password" class="form-control" id="new-password"
-                                placeholder="Enter your new password">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                        </div>
-                        <div th:if="${successfulChange}">
-                            <div class="alert alert-success mt-3" role="alert">
-                                <p th:text="${successfulChange}"></p>
-                            </div>
-                        </div>
-                        <div th:if="${unsuccessfulChange}">
-                            <div class="alert alert-danger mt-3" role="alert">
-                                <p th:text="${unsuccessfulChange}"></p>
-                            </div>
+                            <input type="password" class="form-control" id="new-password" name="newPassword" placeholder="Enter your new password">
                         </div>
                     </div>
-                        
-                    </form>
-                    
-               
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+                <div th:if="${successfulChange}">
+                    <div class="alert alert-success mt-3" role="alert">
+                        <p th:text="${successfulChange}"></p>
+                    </div>
+                </div>
+                <div th:if="${unsuccessfulChange}">
+                    <div class="alert alert-danger mt-3" role="alert">
+                        <p th:text="${unsuccessfulChange}"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <!-- Link to Bootstrap JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+    <script>
+        const currentPasswordInput = document.getElementById('current-password');
+        const newPasswordInput = document.getElementById('new-password');
+
+        const changePasswordForm = document.getElementById('changePasswordForm');
+        changePasswordForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const currentPassword = currentPasswordInput.value;
+            const newPassword = newPasswordInput.value;
+
+            const url = `/changePassword?oldPassword=${currentPassword}&newPassword=${newPassword}`;
+            const response = await fetch(url, {
+                method: 'POST'
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                newPasswordInput.value = data.newPassword;
+            } else {
+                console.error('Failed to change password');
+            }
+        });
+    </script>
 
 </body>
 

@@ -3,11 +3,16 @@
     margin-left: 20px;
 
 }
-.header {  padding-top: 15px;
+.header {
+    padding-top: 50px;
     padding-right: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     padding-left: 15px;
-     }
+    background-color: #C0C0C0;
+  }
+.header a{
+  padding-top:10px;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -45,8 +50,6 @@
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
 	color: #000;
 }
-
-
 
 .navbar-light .navbar-nav .nav-link {
 	color: #000;
@@ -110,6 +113,7 @@ h2 {color: black;
   left: 250px;
   width: 250px;
   height: 100%;
+  margin-top:10px;
   margin-left: -250px;
   overflow-y: auto;
   background: #F7F9F9;
