@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/model/TaskQuestionBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/TaskEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/studentClassroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/studentClassroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +106,7 @@
       <recent name="com.backend.codenexus.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.scripts.sql">
+  <component name="RunManager" selected="Spring Boot.CodenexusApplication">
     <configuration name="Difficulty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.backend.codenexus.model.Difficulty" />
       <module name="codenexus" />
@@ -262,6 +257,22 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added cohort and I" />
     <option name="LAST_COMMIT_MESSAGE" value="added cohort and I" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java</url>
+          <line>279</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java</url>
+          <line>280</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -276,14 +276,15 @@ public class MainController {
 
     @SuppressWarnings("null")
     @PostMapping(value = "changePassword")
-    public String changePassword(ModelMap modelMap, String oldPassword, String newPassword){
-        if(userService.changePassword((UserEntity) modelMap.get("user"), oldPassword, newPassword) == true) {
+    public String changePassword(ModelMap modelMap, @RequestParam String oldPassword, @RequestParam String newPassword){
+        if(userService.changePassword((UserEntity) modelMap.get("user"), oldPassword, newPassword)) {
             modelMap.put("successfulChange", "password successfully updated");
         }
         else{
             modelMap.put("unsuccessfulChange", "password not updated please try again");
         }
-        return "redirect:/userProfile" + ((UserEntity) modelMap.getAttribute("user")).getId();
+        //return "redirect:/userProfile" + ((UserEntity) modelMap.getAttribute("user")).getId();
+        return "userProfile";
     }
 
     @PutMapping("/profile")
