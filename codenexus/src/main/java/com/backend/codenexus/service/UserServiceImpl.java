@@ -5,11 +5,13 @@ import com.backend.codenexus.dao.UserDao;
 import com.backend.codenexus.entity.UserEntity;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,6 +28,8 @@ public class UserServiceImpl implements UserService {
         // check if the username already exists in the database
         if (!userDao.existsByUsername(user.getUsername())) {
             // create a new user entity and save it to the database
+            BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+            user.setPassword(bcrypt.encode(user.getPassword()));
             UserEntity userEntity = new UserEntity();
             BeanUtils.copyProperties(user, userEntity);
             userDao.saveAndFlush(userEntity);
@@ -38,11 +42,17 @@ public class UserServiceImpl implements UserService {
     public UserEntity login(UserEntity user) {
         try {
             // find the user in the database by username and password
-            return userDao.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+            BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+            UserEntity checkUser = userDao.findByUsername(user.getUsername());
+            if(bcrypt.matches(user.getPassword(), checkUser.getPassword())){
+                return checkUser;
+            }
+
         }
         catch(Exception e){
             return null; // login unsuccessful: user not found in the database
         }
+        return null;
     }
 
     @Override
@@ -83,12 +93,16 @@ public class UserServiceImpl implements UserService {
         }
 
         try {
-            UserEntity updatedUser = userDao.findByUsernameAndPassword(user.getUsername(), oldPassword);
-            updatedUser.setPassword(newPassword);
-            userDao.save(updatedUser);
-            return true; // password updated successfully
+            UserEntity updatedUser = userDao.findByUsername(user.getUsername());
+            BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+            if(bcrypt.matches(oldPassword, updatedUser.getPassword())) {
+                updatedUser.setPassword(bcrypt.encode(newPassword));
+                userDao.save(updatedUser);
+                return true; // password updated successfully
+            }
         } catch (Exception e) {
             return false; // an error occurred while updating the password
         }
+        return false;
     }
 }
