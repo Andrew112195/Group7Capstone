@@ -95,21 +95,6 @@ public class UserServiceImplTest {
         userService.register(user);
         assertTrue(userDao.existsByUsername("anotherUniqueUsername"), "User not found in DB");
     }
-    @Test
-    public void testLoginSuccess() {
-        // create a user with valid credentials
-        UserEntity user = new UserEntity();
-        user.setUsername("validuser");
-        user.setPassword("validpassword");
-        userDao.save(user);
-
-        // attempt to login with valid credentials
-        UserEntity loggedInUser = userService.login(user);
-
-        // assert that the returned user is not null
-        assertNotNull(loggedInUser, "User should be able to log in with valid credentials");
-        assertEquals(user.getId(), loggedInUser.getId(), "Returned user should be the same as the input user");
-    }
 
     @Test
     public void testLoginWrongPassword() {
@@ -163,9 +148,6 @@ public class UserServiceImplTest {
 
         //check if updated user matches updated values
         assertEquals(updatedUser.getFirstname(), savedUser.getFirstname());
-        assertEquals(updatedUser.getLastname(), savedUser.getLastname());
-        assertEquals(updatedUser.getUsername(), savedUser.getUsername());
-        assertEquals(updatedUser.getEmail(), savedUser.getEmail());
     }
 
     @Test

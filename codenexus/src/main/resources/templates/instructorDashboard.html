@@ -10,7 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/CSS/style_index.css">
   <script>
+
     function addStudentToCourse(userId,courseId) {
       const userCourse = {
         userId: userId,
@@ -37,8 +39,20 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">ADMIN DASHBOARD</a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Update Profile</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<div class="container">
   <a class="navbar-brand" href="#">Administrator Dashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -48,14 +62,13 @@
       <li class="nav-item">
         <a class="nav-link" href="/profile">Update Profile</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">T</a>
-      </li>
     </ul>
   </div>
+</div>
 </nav>
 
 <div class="container-fluid mt-3">
+  <br><br>
   <h2>Work Space</h2>
   <table class="table">
     <thead>

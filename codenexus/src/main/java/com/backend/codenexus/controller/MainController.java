@@ -47,8 +47,14 @@ public class MainController {
     public String getContact(){ return "contactus"; }
 
     @GetMapping("login")
-    public String loginProcess(){ return "login"; }
-
+    public String loginProcess(ModelMap modelMap) {
+        UserEntity user = (UserEntity) modelMap.get("user");
+        if (user.getId() == null) {
+            return "login";
+        } else {
+            return "index";
+        }
+    }
     @GetMapping("register")
     public String registration(){ return "register"; }
 

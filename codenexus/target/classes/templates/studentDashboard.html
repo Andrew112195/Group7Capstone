@@ -21,7 +21,7 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: #222;
+            background-color: #F7F9F9;
             overflow-x: hidden;
             padding-top: 20px;
         }
@@ -30,15 +30,15 @@
             padding: 6px 8px 6px 16px;
             text-decoration: none;
             font-size: 20px;
-            color: #818181;
+            color: black;
             display: block;
         }
 
         .sidebar a:hover {
-            color: #f1f1f1;
+            color: #818181;
         }
         .sidebar-header{
-            color: #f1f1f1;
+            color: black;
         }
     </style>
 </head>
@@ -50,17 +50,19 @@
     <a href="/profile">Update Profile</a>
     <a href="/inbox">Inbox</a>
     <a href="/studentclassroom">Courses</a>
-    <a href="#">Tasks</a>
-    <a href="#">Logout</a>
+    <a href="/logout">Logout</a>
 </div>
 
 <div style="margin-left:200px;">
+    <br>
+    <h2>Available Courses</h2>
+    <br>
 
-    <div class="container-fluid mt-3">
-        <h2>Available Courses</h2>
+    <div class="container-fluid d-flex flex-row">
+        <br>
 
         <th:block th:each="userCourse : ${userCourses}">
-            <div class="card" style="width: 18rem;">
+            <div class="card mr-3 mb-3" style="width: 18rem;">
                 <img src="/img/programming.jpg" class="card-img-top" alt="programming image">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${userCourse.course.title}">Card title</h5>
@@ -70,21 +72,9 @@
                     </button>
                 </div>
             </div>
-            <!--   <div class="container">
-                   <div class="card" style="width:400px">
-                       <h2 th:text="${userCourse.course.title}"></h2>
-                       <div class="card-body">
-                           <p th:text="${userCourse.course.description}"></p>
-                           <button type="button" class="btn btn-primary" th:attr="onclick='getCourseModules(\'' + ${userCourse.getCourse().getId()} + '\');'">
-                               Start Course
-                           </button>
-                       </div>
-                   </div>
-               </div>-->
         </th:block>
 
     </div>
 
 </div>
 </html>
-
