@@ -5,15 +5,111 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/model/PasswordChangeRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codenexus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codenexus.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/CourseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/INSERT INTO course (description, is_comp.pgsql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/CodenexusApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/CourseDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/MessageDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/QuizDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/TaskDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserCourseDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/BillingEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity$CourseEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/MessagesEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity$ModuleEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/PaymentInfoEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/QuizEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/SubscriptionPlanEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity$UserCourseEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity$UserEntityBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserTypeEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/TaskQuestionBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums$Difficulty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums$USER_TYPE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/MessagesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/MessagesServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_about.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_checkout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_contact.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_inbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/CSS/style_pricing.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/Java.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/coaching.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/easy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/home1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/home2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/home3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/html.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/kids_programing_group.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/library.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/programming.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/programming_kids.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/python.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/userProfileIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/aboutUs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/catalog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/catalogCourseDescription.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/changePassword" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/checkout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/contactus.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/devtoolsPreview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/inbox.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/inboxHeader.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/instructorDashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/message.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/onlineIDE.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/premadeLibrary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pricing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/studentClassroom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/studentDashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/studentModules.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/subscriptions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tasks_Variables.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userProfile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/CodenexusApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/dao/CourseDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/dao/UserCourseDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/CourseServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/MessagesServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/UserServiceImplTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +120,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,49 +151,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/OneDrive/Desktop/CapstoneProject/Group7Capstone/Group7Capstone/codenexus/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e93659008ce16bed60bce1792d2811ac&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/HP/OneDrive/Desktop/CapstoneProject/Group7Capstone/Group7Capstone/codenexus/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "spring.configuration.checksum": "e93659008ce16bed60bce1792d2811ac",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;4f9e3772-9c59-4c0f-877a-715a754c1e23/database/\&quot;code_nexus\&quot;&quot;
+    "RunConfigurationTargetLRU": [
+      "4f9e3772-9c59-4c0f-877a-715a754c1e23/database/\"code_nexus\""
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;PostgreSQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -228,6 +325,7 @@
       <workItem from="1681354089831" duration="1252000" />
       <workItem from="1681429351561" duration="4903000" />
       <workItem from="1681606489788" duration="9835000" />
+      <workItem from="1681929648523" duration="9979000" />
     </task>
     <task id="LOCAL-00001" summary="added cohort and I">
       <created>1678330170701</created>
@@ -263,13 +361,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java</url>
-          <line>279</line>
-          <option name="timeStamp" value="7" />
+          <line>142</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java</url>
-          <line>280</line>
-          <option name="timeStamp" value="8" />
+          <line>143</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

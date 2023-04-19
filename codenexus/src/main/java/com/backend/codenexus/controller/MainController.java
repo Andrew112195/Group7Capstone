@@ -1,6 +1,7 @@
 package com.backend.codenexus.controller;
 
 import com.backend.codenexus.entity.*;
+import com.backend.codenexus.model.PasswordChangeRequest;
 import com.backend.codenexus.model.TaskQuestionBuilder;
 import com.backend.codenexus.service.CourseService;
 import com.backend.codenexus.service.MessagesService;
@@ -25,8 +26,10 @@ public class MainController {
 
     @Autowired
     UserService userService;
+
     @Autowired
     CourseService courseService;
+
     @Autowired
     MessagesService messagesService;
     @Autowired
@@ -201,6 +204,7 @@ public class MainController {
     @GetMapping("userProfile/{user_id}")
     public String userProfile(@PathVariable Long user_id, ModelMap modelMap) {
         userService.updateUser((UserEntity) modelMap.get("user"));
+        modelMap.addAttribute("changePassword", new PasswordChangeRequest());
 
         return "userProfile";
     }
@@ -294,18 +298,20 @@ public class MainController {
         return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
     }
 
-    @SuppressWarnings("null")
-    @PostMapping(value = "changePassword")
-    public String changePassword(ModelMap modelMap, @RequestParam String oldPassword, @RequestParam String newPassword){
-        if(userService.changePassword((UserEntity) modelMap.get("user"), oldPassword, newPassword)) {
+    @PostMapping({"changePassword"})
+    public String changePassword(ModelMap modelMap, @ModelAttribute PasswordChangeRequest passwordChangeRequest) {
+        String oldPassword = passwordChangeRequest.getOldPassword();
+        String newPassword = passwordChangeRequest.getNewPassword();
+        UserEntity user = (UserEntity)modelMap.get("user");
+        if (this.userService.changePassword(user, oldPassword, newPassword)) {
             modelMap.put("successfulChange", "password successfully updated");
-        }
-        else{
+        } else {
             modelMap.put("unsuccessfulChange", "password not updated please try again");
         }
-        //return "redirect:/userProfile" + ((UserEntity) modelMap.getAttribute("user")).getId();
-        return "userProfile";
+
+        return "redirect:/profile";
     }
+
 
     @PutMapping("/profile")
     @Transactional

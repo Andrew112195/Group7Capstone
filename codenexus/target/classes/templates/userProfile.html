@@ -123,7 +123,7 @@
                     <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form th:method="PUT" th:object="${updateUser}" th:action="@{/changePassword}" id="changePasswordForm">
+                <form th:method="POST" th:object="${changePassword}" th:action="@{/changePassword}" id="changePasswordForm">
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">
                         <div class="mb-3">
@@ -168,9 +168,15 @@
             const currentPassword = currentPasswordInput.value;
             const newPassword = newPasswordInput.value;
 
-            const url = `/changePassword?oldPassword=${currentPassword}&newPassword=${newPassword}`;
+            const url = `/changePassword`;
             const response = await fetch(url, {
-                method: 'POST'
+                method: 'POST',
+                body: new URLSearchParams(
+                    {
+                        oldPassword: currentPassword,
+                        newPassword: newPassword
+                    }
+                )
             });
 
             if (response.ok) {
