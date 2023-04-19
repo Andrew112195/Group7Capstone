@@ -14,8 +14,9 @@ import java.util.List;
 @Repository
 public interface CourseDao extends JpaRepository<CourseEntity,Long> {
 
-    @Query(value = "SELECT * FROM course", nativeQuery = true)
-    List<CourseEntity> findAll();
+   @Query(value="SELECT u FROM CourseEntity u")
+   List<CourseEntity> findAll();
+
 
     @Query(value = "SELECT u FROM ModuleEntity u WHERE u.courseId.id =:courseId")
     List<ModuleEntity> findAllModulesByCourseId(@Param("courseId") Long course_id);

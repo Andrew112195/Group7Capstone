@@ -47,7 +47,15 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<CourseEntity> getCourseList(){
 
-        return courseDao.findAll();
+
+        try {
+            return courseDao.findAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
     }
 
     @Override

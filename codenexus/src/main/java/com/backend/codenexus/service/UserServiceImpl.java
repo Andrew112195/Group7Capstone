@@ -84,25 +84,31 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean changePassword(UserEntity user, String oldPassword, String newPassword) {
-        if (user == null || oldPassword == null || newPassword == null) {
-            return false; // input validation: null values not allowed
-        }
 
-        if (!Objects.equals(user.getPassword(), oldPassword)) {
-            return false; // old password is incorrect
-        }
+            if (user == null || oldPassword == null || newPassword == null) {
+                return false; // input validation: null values not allowed
+            }
 
-        try {
-            UserEntity updatedUser = userDao.findByUsername(user.getUsername());
             BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
-            if(bcrypt.matches(oldPassword, updatedUser.getPassword())) {
+
+            if (!bcrypt.matches(oldPassword, user.getPassword())) {
+                return false; // old password is incorrect
+            }
+
+            try {
+                UserEntity updatedUser = userDao.findByUsername(user.getUsername());
+
+                if (updatedUser == null) {
+                    return false; // user not found
+                }
+
                 updatedUser.setPassword(bcrypt.encode(newPassword));
                 userDao.save(updatedUser);
                 return true; // password updated successfully
+
+            } catch (Exception e) {
+                return false; // an error occurred while updating the password
             }
-        } catch (Exception e) {
-            return false; // an error occurred while updating the password
         }
-        return false;
+
     }
-}
