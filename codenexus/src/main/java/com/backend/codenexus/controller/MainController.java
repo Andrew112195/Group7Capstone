@@ -49,17 +49,31 @@ public class MainController {
     @GetMapping("login")
     public String loginProcess(ModelMap modelMap) {
         UserEntity user = (UserEntity) modelMap.get("user");
-        if (user.getId() == null) {
-            return "login";
-        } else {
+        if (user.getId() != null) {
             return "index";
+        } else {
+            return "login";
         }
     }
     @GetMapping("register")
-    public String registration(){ return "register"; }
+    public String registration(ModelMap modelMap) {
+        UserEntity user = (UserEntity) modelMap.get("user");
+        if (user.getId() != null) {
+            return "index";
+        } else {
+            return "register";
+        }
+    }
 
     @GetMapping("studentclassroom")
-    public String studentClassroom(){ return "studentClassroom"; }
+    public String studentClassroom(ModelMap modelMap){
+        UserEntity user = (UserEntity) modelMap.get("user");
+        if (user.getId() != null) {
+            return "index";
+        } else {
+            return "studentClassroom";
+        }
+    }
 
     @GetMapping("subscriptions")
     public String subscriptions(){ return "subscriptions"; }
