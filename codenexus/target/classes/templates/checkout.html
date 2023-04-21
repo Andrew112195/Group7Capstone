@@ -37,6 +37,17 @@
     <p class="lead">To complete your purchase, please fill out all the required information below.</p>
   </div>
 
+  <!-- Add cart items section here -->
+  <div class="container">
+    <h4 class="mb-3">Cart items</h4>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span th:text="${userCart.title}"></span>
+        <span class="badge bg-primary rounded-pill" th:text="${userCart.price}"></span>
+      </li>
+    </ul>
+  </div>
+
 
   <div class="container">
     <h4 class="mb-3">Billing address</h4>

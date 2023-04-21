@@ -49,21 +49,19 @@
 </head>
 <body>
 <h1>Task Questions</h1>
-<form th:method="PUT" th:object="${task}" th:action="@{/taskCompleted}" class="update-profile">
+<form th:method="PUT" th:object="${currentTask}" th:action="@{/taskCompleted}" class="update-profile">
   <input type="hidden" name="_method" value="PUT">
-  <th:block th:each="task : ${task}">
-    <label class="question-text" th:text="${task.question}"></label>
-    <div class="question-options">
-      <input type="radio" th:id="${task.optionA} + '_option1'" th:name="${task.optionA}" th:value="option1" required>
-      <label th:for="${task.optionA} + '_option1'" th:text="${task.optionA}"></label><br>
-      <input type="radio" th:id="${task.optionB} + '_option2'" th:name="${task.optionB}" th:value="option2">
-      <label th:for="${task.optionB} + '_option2'" th:text="${task.optionB}"></label><br>
-      <input type="radio" th:id="${task.getOptionC} + '_option3'" th:name="${task.getOptionC}" th:value="option3">
-      <label th:for="${task.getOptionC} + '_option3'" th:text="${task.getOptionC}"></label>
-    </div>
-  </th:block>
-
+  <label class="question-text" th:text="${currentTask.question}"></label>
+  <div class="question-options">
+    <input type="radio" th:id="${currentTask.optionA} + '_option1'" th:name="selectedAnswer" th:value="option1" required>
+    <label th:for="${currentTask.optionA} + '_option1'" th:text="${currentTask.optionA}"></label><br>
+    <input type="radio" th:id="${currentTask.optionB} + '_option2'" th:name="selectedAnswer" th:value="option2">
+    <label th:for="${currentTask.optionB} + '_option2'" th:text="${currentTask.optionB}"></label><br>
+    <input type="radio" th:id="${currentTask.getOptionC} + '_option3'" th:name="selectedAnswer" th:value="option3">
+    <label th:for="${currentTask.getOptionC} + '_option3'" th:text="${currentTask.getOptionC}"></label>
+  </div>
   <button type="submit">Next Task</button>
 </form>
+
 </body>
 </html>

@@ -15,23 +15,27 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes({"user","currentCourseFromCatalog"})
+@SessionAttributes({"user","courses","userCart","currentTask"})
 @CrossOrigin
 public class MainController {
 
-    @Autowired
-    UserService userService;
+    final static Logger Log = LoggerFactory.getLogger(MainController.class);
 
     @Autowired
-    CourseService courseService;
+    private UserService userService;
 
     @Autowired
-    MessagesService messagesService;
+    private CourseService courseService;
+
+    @Autowired
+    private MessagesService messagesService;
     @Autowired
     private JavaMailSender mailSender;
 
@@ -67,8 +71,8 @@ public class MainController {
     @GetMapping("subscriptions")
     public String subscriptions(){ return "subscriptions"; }
 
-    @GetMapping("checkout")
-    public String checkout(){ return "checkout"; }
+  /*  @GetMapping("checkout")
+    public String checkout(){ return "checkout"; }*/
 
     @GetMapping("devtoolsPreview")
     public String devtoolsPreview(){ return "devtoolsPreview"; }
@@ -115,12 +119,12 @@ public class MainController {
         return "catalog";
     }*/
 
-    @GetMapping("catalogCourseDescription")
+ /*   @GetMapping("catalogCourseDescription")
     public String getCatalogCourseDescription(ModelMap modelMap,CourseEntity course){
         modelMap.addAttribute("currentCourseFromCatalog", course);
 
         return "catalogCourseDescription";
-    }
+    }*/
 
     @GetMapping (value = "logout")
     public String logout(ModelMap modelMap, SessionStatus status){
@@ -129,6 +133,13 @@ public class MainController {
         modelMap.put("logoutMessage", "Logout successful!!");
         return "redirect:/index";
     }
+
+
+    @ModelAttribute("courses")
+    public List<CourseEntity> getCourses() {
+        return courseService.getCourseList();
+    }
+
 
     @GetMapping("students")
     public String getStudents(ModelMap modelMap){
@@ -139,12 +150,43 @@ public class MainController {
     }
 
     @GetMapping("catalog")
-    private String getCatalog(ModelMap modelMap){
-        List<CourseEntity> courses = courseService.getCourseList();
-        modelMap.addAttribute("courses",courses);
+    private String getCatalog(ModelMap modelMap, @ModelAttribute("courses") List<CourseEntity> courses) {
+        Log.debug("Fetching catalog");
 
+        try {
+            modelMap.addAttribute("catalogCourses", courses);
+            Log.debug("Successfully fetched catalog with {} courses", courses.size());
+        } catch (Exception e) {
+            Log.error("Failed to fetch catalog: {}", e.getMessage(), e);
+            // Handle the exception, e.g., display an error message or return a different view
+        }
         return "catalog";
     }
+
+    @GetMapping("buyCourse/{id}")
+    public String buyCourse(@PathVariable Long id, ModelMap modelMap) {
+
+        if(modelMap.containsAttribute("user")){
+
+            CourseEntity selectedCourse =courseService.getSingleCourse(id);
+
+            modelMap.addAttribute("userCart", selectedCourse);
+        }else{
+            return "redirect:/login";
+        }
+
+        return "redirect:/checkout";
+    }
+
+    @GetMapping("checkout")
+    public String getCheckout(@ModelAttribute("userCart") CourseEntity userCart, ModelMap modelMap) {
+
+        // Here you can access the user-cart object directly
+        modelMap.addAttribute("userCart", userCart);
+
+        return "checkout";
+    }
+
 
     @GetMapping("get-userCourses/{id}")
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
@@ -214,11 +256,15 @@ public class MainController {
         if (!task.getModule().isModuleComplete()) {
             if (!task.isComplete()) {
                 TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
-                model.addAttribute("task", taskQuestionBuilder);
+                model.addAttribute("currentTask", taskQuestionBuilder);
             }else {
-                task = courseService.getTask(++id);
-                TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
-                model.addAttribute("task", taskQuestionBuilder);
+                TaskEntity nextTask = courseService.getTask(++id);
+                if(nextTask != null) {
+                    TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(), task);
+                    model.addAttribute("currentTask", taskQuestionBuilder);
+                }else{
+                    return "redirect:studentClassroom";
+                }
 
             }
         } else {
@@ -227,6 +273,27 @@ public class MainController {
         }
         return "task";
     }
+
+    @PostMapping("/taskCompleted")
+    public String taskCompleted(ModelMap modelMap,@ModelAttribute TaskEntity task,@RequestParam("selectedAnswer") String selectedAnswer) {
+
+        Long taskID = task.getId();
+        // Process the completed task here
+        courseService.completeTask(taskID,selectedAnswer);
+
+        //reload next task in attribute
+        task = courseService.getTask(++taskID);
+        if (task!= null) {
+            TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
+            modelMap.addAttribute("currentTask", taskQuestionBuilder);
+        } else {
+            return "redirect:studentClassroom";
+        }
+
+        return "task";
+    }
+
+
 
     @GetMapping("/profile")
     public String getProfile(ModelMap modelMap){

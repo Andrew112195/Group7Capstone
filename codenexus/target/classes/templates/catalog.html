@@ -28,7 +28,7 @@
               <p class="card-text" th:text="${course.description}">
               This course will provide you with a basic foundation in Java syntax.
               </p>
-              <a href="/catalogCourseDescription" class="btn btn-primary">More Info</a>
+              <a th:href="@{/buyCourse/{id}(id=${course.id})}" class="btn btn-primary">Buy Course</a>
             </div>
           </div>
         </div>       

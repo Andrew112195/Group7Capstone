@@ -3,7 +3,9 @@ package com.backend.codenexus.service;
 import com.backend.codenexus.entity.*;
 import com.backend.codenexus.model.TaskQuestionBuilder;
 
+
 import java.util.List;
+
 
 public interface CourseService {
     
@@ -11,6 +13,8 @@ public interface CourseService {
     void addNewCourseToUser(long user_id, long course_id);
 
     List <CourseEntity> getCourseList();
+
+    CourseEntity getSingleCourse(Long course_id);
 
     List<UserCourseEntity> getCourse(Long user_id);
 
@@ -20,7 +24,7 @@ public interface CourseService {
     List <ModuleEntity> getCourseModules(Long course_id);
 
     //Task Methods
-    void completeTask(Long task_id);
+    void completeTask(Long task_id,String answer);
 
     void addTaskToModule(TaskEntity task);
 

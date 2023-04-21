@@ -6,6 +6,7 @@ import com.backend.codenexus.model.TaskQuestionBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,17 +17,17 @@ public class CourseServiceImpl implements CourseService {
     final static Logger Log = LoggerFactory.getLogger(CourseServiceImpl.class);
 
     @Autowired
-    CourseDao courseDao;
+    private CourseDao courseDao;
     @Autowired
-    UserCourseDao userCourseDao;
+    private UserCourseDao userCourseDao;
     @Autowired
-    UserDao userDao;
+    private UserDao userDao;
     @Autowired
-    ModuleDao moduleDao;
+    private ModuleDao moduleDao;
     @Autowired
-    TaskDao taskDao;
+    private TaskDao taskDao;
     @Autowired
-    QuizDao quizDao;
+    private QuizDao quizDao;
 
     //Course methods
 
@@ -45,17 +46,23 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseEntity> getCourseList(){
-
-
+    public List<CourseEntity> getCourseList() {
         try {
-            return courseDao.findAll();
+            Log.debug("Fetching course list");
+            List<CourseEntity> courseList = courseDao.findAll();
+            Log.debug("Successfully fetched course list with {} items", courseList.size());
+            return courseList;
         } catch (Exception e) {
+            Log.error("Failed to fetch course list: {}", e.getMessage(), e);
             e.printStackTrace();
         }
-
         return null;
+    }
 
+    @Override
+    public CourseEntity getSingleCourse(Long course_id) {
+
+        return courseDao.findById(course_id).orElseThrow();
     }
 
     @Override
@@ -82,8 +89,9 @@ public class CourseServiceImpl implements CourseService {
     //Task Methods
 
     @Override
-    public void completeTask(Long task_id) {
+    public void completeTask(Long task_id,String answer) {
         TaskEntity taskEntity = getTask(task_id);
+        taskEntity.setCorrect(taskEntity.getAnswer().equals(answer));
         taskEntity.setComplete(true);
         taskDao.saveAndFlush(taskEntity);
     }
