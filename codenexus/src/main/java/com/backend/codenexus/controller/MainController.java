@@ -56,17 +56,31 @@ public class MainController {
     @GetMapping("login")
     public String loginProcess(ModelMap modelMap) {
         UserEntity user = (UserEntity) modelMap.get("user");
-        if (user.getId() == null) {
-            return "login";
-        } else {
+        if (user.getId() != null) {
             return "index";
+        } else {
+            return "login";
         }
     }
     @GetMapping("register")
-    public String registration(){ return "register"; }
+    public String registration(ModelMap modelMap) {
+        UserEntity user = (UserEntity) modelMap.get("user");
+        if (user.getId() != null) {
+            return "index";
+        } else {
+            return "register";
+        }
+    }
 
     @GetMapping("studentclassroom")
-    public String studentClassroom(){ return "studentClassroom"; }
+    public String studentClassroom(ModelMap modelMap){
+        UserEntity user = (UserEntity) modelMap.get("user");
+        if (user.getId() != null) {
+            return "index";
+        } else {
+            return "studentClassroom";
+        }
+    }
 
     @GetMapping("subscriptions")
     public String subscriptions(){ return "subscriptions"; }
@@ -351,19 +365,17 @@ public class MainController {
         return "redirect:/inbox/" + ((UserEntity) modelMap.get("user")).getId() ;
     }
 
-    @SuppressWarnings("null")
-    @PostMapping(value = "changePassword")
-    public String changePassword(ModelMap modelMap, @ModelAttribute PasswordChangeRequest passwordChangeRequest){
+    @PostMapping({"changePassword"})
+    public String changePassword(ModelMap modelMap, @ModelAttribute PasswordChangeRequest passwordChangeRequest) {
         String oldPassword = passwordChangeRequest.getOldPassword();
         String newPassword = passwordChangeRequest.getNewPassword();
-        UserEntity user = (UserEntity) modelMap.get("user");
-        if(userService.changePassword(user, oldPassword, newPassword)) {
+        UserEntity user = (UserEntity)modelMap.get("user");
+        if (this.userService.changePassword(user, oldPassword, newPassword)) {
             modelMap.put("successfulChange", "password successfully updated");
-        }
-        else{
+        } else {
             modelMap.put("unsuccessfulChange", "password not updated please try again");
         }
-        //return "redirect:/userProfile" + ((UserEntity) modelMap.getAttribute("user")).getId();
+
         return "redirect:/profile";
     }
 
