@@ -24,13 +24,15 @@ public interface CourseService {
     List <ModuleEntity> getCourseModules(Long course_id);
 
     //Task Methods
-    void completeTask(Long task_id,String answer);
+    void completeTask(String gettingTaskByQuestion,String answer);
 
     void addTaskToModule(TaskEntity task);
 
     List<TaskEntity> findAllTasksByModuleId(Long courseId);
 
     TaskEntity getTask(Long task_id);
+
+    TaskEntity getTaskByQuestion(String question);
 
     List<TaskEntity> getModuleTasks(Long module_id);
 

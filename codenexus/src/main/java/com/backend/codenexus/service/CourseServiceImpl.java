@@ -89,8 +89,8 @@ public class CourseServiceImpl implements CourseService {
     //Task Methods
 
     @Override
-    public void completeTask(Long task_id,String answer) {
-        TaskEntity taskEntity = getTask(task_id);
+    public void completeTask(String findByTaskQuestion,String answer) {
+        TaskEntity taskEntity = getTaskByQuestion(findByTaskQuestion);
         taskEntity.setCorrect(taskEntity.getAnswer().equals(answer));
         taskEntity.setComplete(true);
         taskDao.saveAndFlush(taskEntity);
@@ -113,6 +113,12 @@ public class CourseServiceImpl implements CourseService {
     public TaskEntity getTask(Long task_id) {
         TaskEntity taskEntity = moduleDao.findTaskById(task_id);
         return taskEntity;
+    }
+
+    @Override
+    public TaskEntity getTaskByQuestion(String question){
+
+        return moduleDao.findTaskByQuestion(question);
     }
 
     @Override

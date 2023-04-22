@@ -21,4 +21,7 @@ public interface ModuleDao extends JpaRepository<ModuleEntity, Long> {
 
     @Query(value = "SELECT qz FROM QuizEntity qz WHERE qz.courseQ = :courseId")
     QuizEntity findQuizById(@PathVariable("courseId")Long courseId);
+
+    @Query(value="SELECT tk FROM TaskEntity tk WHERE tk.question = :paramQuestion")
+    TaskEntity findTaskByQuestion(String paramQuestion);
 }
