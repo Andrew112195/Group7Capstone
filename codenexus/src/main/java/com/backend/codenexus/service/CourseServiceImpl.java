@@ -97,12 +97,6 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void addTaskToModule(TaskEntity task) {
-        TaskEntity taskEntity = new TaskEntity();
-        taskDao.saveAndFlush(taskEntity);
-    }
-
-    @Override
     public List<TaskEntity> findAllTasksByModuleId(Long moduleId) {
         List<TaskEntity> taskEntityList = taskDao.findAllByModuleId(moduleId);
         
@@ -119,13 +113,6 @@ public class CourseServiceImpl implements CourseService {
     public TaskEntity getTaskByQuestion(String question){
 
         return moduleDao.findTaskByQuestion(question);
-    }
-
-    @Override
-    public List<TaskEntity> getModuleTasks(Long module_id) {
-        List<TaskEntity> taskEntity = moduleDao.findTasksByModuleId(module_id);
-
-        return taskEntity;
     }
 
     @Override

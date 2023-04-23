@@ -4,10 +4,6 @@ import com.backend.codenexus.model.enums;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -67,38 +63,5 @@ public class TaskEntity {
             default:
                 throw new IllegalArgumentException("Invalid difficulty level: " + difficulty);
         }
-    }
-
-    private String[] taskContents;
-
-    @SuppressWarnings("null")
-    public String[] setTaskContents(){
-        String[] wholeLesson;
-        String allText = null;
-
-
-
-        try {
-            File myObj = new File("/Users/andrewshapiro/IdeaProjects/TestingQuestions/src/SampleQuestions.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                allText += data;
-                allText += "\n";
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-        System.out.println(allText);
-
-        wholeLesson = allText.split("%");
-
-        for (int i = 0; i < wholeLesson.length; i++) {
-            System.out.println(wholeLesson[i]);
-        }
-        return this.taskContents;
     }
 }

@@ -64,6 +64,7 @@ public class MainController {
             return "login";
         }
     }
+
     @GetMapping("register")
     public String registration(ModelMap modelMap) {
         UserEntity user = (UserEntity) modelMap.get("user");
@@ -87,20 +88,8 @@ public class MainController {
     @GetMapping("subscriptions")
     public String subscriptions(){ return "subscriptions"; }
 
-  /*  @GetMapping("checkout")
-    public String checkout(){ return "checkout"; }*/
-
-    @GetMapping("devtoolsPreview")
-    public String devtoolsPreview(){ return "devtoolsPreview"; }
-
-    @GetMapping("premadeLibrary")
-    public String premadeLibrary(){ return "premadeLibrary"; }
-
     @GetMapping("tasks_Variables")
     public String tasksVariables(){ return "tasks_Variables"; }
-
-    @GetMapping("ide")
-    public String ideLoader(){ return "onlineIDE"; }
 
     @GetMapping("index")
     public String index(ModelMap modelMap) {
@@ -130,18 +119,6 @@ public class MainController {
         return "redirect:/index";
     }
 
-  /*  @GetMapping("catalog")
-    public String getCatalog(){
-        return "catalog";
-    }*/
-
- /*   @GetMapping("catalogCourseDescription")
-    public String getCatalogCourseDescription(ModelMap modelMap,CourseEntity course){
-        modelMap.addAttribute("currentCourseFromCatalog", course);
-
-        return "catalogCourseDescription";
-    }*/
-
     @GetMapping (value = "logout")
     public String logout(ModelMap modelMap, SessionStatus status){
         modelMap.clear();
@@ -150,12 +127,10 @@ public class MainController {
         return "redirect:/index";
     }
 
-
     @ModelAttribute("courses")
     public List<CourseEntity> getCourses() {
         return courseService.getCourseList();
     }
-
 
     @GetMapping("students")
     public String getStudents(ModelMap modelMap){
@@ -196,13 +171,11 @@ public class MainController {
 
     @GetMapping("checkout")
     public String getCheckout(@ModelAttribute("userCart") CourseEntity userCart, ModelMap modelMap) {
-
         // Here you can access the user-cart object directly
         modelMap.addAttribute("userCart", userCart);
 
         return "checkout";
     }
-
 
     @GetMapping("get-userCourses/{id}")
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
@@ -242,6 +215,7 @@ public class MainController {
         MessagesEntity messageForm = new MessagesEntity();
         modelMap.addAttribute("messageForm",messageForm);
         modelMap.addAttribute("peerList", courseService.getAllClassmates(user_id));
+
         return "inbox";
     }
 
@@ -300,8 +274,6 @@ public class MainController {
             Log.debug("An error occurred while processing the /task/id endpoint: {}", e.getMessage());
             throw new RuntimeException(e);
         }
-
-
         return "task";
     }
 
@@ -333,8 +305,6 @@ public class MainController {
             return "redirect:/task";
         }
     }
-
-
 
     @GetMapping("/profile")
     public String getProfile(ModelMap modelMap){
@@ -457,10 +427,4 @@ public class MainController {
         modelMap.put("user", userToBeUpdated);
         modelMap.addAttribute("userMessage", modelMap.get("user"));
     }
-
-    /*@PostMapping("/submit-task")
-    public String submitTask(@RequestParam Long taskId, @RequestParam String answer, HttpSession session) {
-
-    }
-    */
 }

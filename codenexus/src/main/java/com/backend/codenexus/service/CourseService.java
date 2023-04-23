@@ -26,15 +26,11 @@ public interface CourseService {
     //Task Methods
     void completeTask(String gettingTaskByQuestion,String answer);
 
-    void addTaskToModule(TaskEntity task);
-
     List<TaskEntity> findAllTasksByModuleId(Long courseId);
 
     TaskEntity getTask(Long task_id);
 
     TaskEntity getTaskByQuestion(String question);
-
-    List<TaskEntity> getModuleTasks(Long module_id);
 
     TaskQuestionBuilder buildTaskQuestion(ModuleEntity module, TaskEntity task);
 
