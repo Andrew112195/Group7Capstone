@@ -34,11 +34,17 @@ INSERT into messages_entity(read, header, body, sender, recipient, time_sent) va
 INSERT into messages_entity(read, header, body, sender, recipient, time_sent) values ('false', 'Follow-up on Project 2', 'Hello, I am writing to follow up on the progress of Project 2, which we had discussed earlier.  I wanted to check in and see how the project is progressing.', '996', '999','2023-04-11 13:24:38.155');
 INSERT INTO module(course_id, name, description, module_complete) VALUES(1, 'Loop', 'Do the loop', 'false');
 INSERT INTO module(course_id, name, description, module_complete) VALUES(2, 'attributes', 'values and stuff', 'false');
-INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
-VALUES (1, 'What is the output of the following code? \n\n int x = 5; \n System.out.println(x++); \n System.out.println(++x);', '6 \n 7', 1, false, false);
-INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
-VALUES (1, 'What is the output of the following code? \n\n for(int i=0; i<5; i++) { \n   System.out.println(i); \n }', '0 \n 1 \n 2 \n 3 \n 4', 2, false, false);
-INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
-VALUES (1, 'What is the output of the following code? \n\n String s = "Hello"; \n System.out.println(s.charAt(1));', 'e', 3, false, false);
+INSERT INTO task (module_id, task_name, question, answer, difficulty_level, complete, is_correct)
+VALUES (1, 'Variable increment', 'What is the output of the following code?\nint x = 5;\nSystem.out.println(x++); \n System.out.println(++x);\n','6 7', 1, false, false);
+INSERT INTO task (module_id, task_name, question, answer, difficulty_level, complete, is_correct)
+VALUES (1, 'For loop', 'What is the output of the following code? \n\n for(int i=0; i<5; i++) { %0A   System.out.println(i); %0A }', '0 \n 1 \n 2 \n 3 \n 4', 2, false, false);
+INSERT INTO task (module_id, task_name, question, answer, difficulty_level, complete, is_correct)
+VALUES (1, 'String array', 'What is the output of the following code? \n\n String s = "Hello"; \n System.out.println(s.charAt(1));', 'e', 3, false, false);
+INSERT INTO task (module_id, task_name, question, answer, difficulty_level, complete, is_correct) 
+VALUES (2, 'Java while loop', 'What is the output of the following Java code snippet?\n\nint i = 5;\ndo {\n System.out.print(i + " ");\n i--;\n} while (i > 0);', 'A) 5 4 3 2 1', 2, false, false);
+INSERT INTO task (module_id, task_name, question, answer, difficulty_level, complete, is_correct)
+VALUES (2, 'Java while loop 2', 'What is the output of the following code snippet: \n int i = 0;\n do {\n i++;\n } while (i < 5);\n System.out.println(i);', '5', 1, false, false);
+INSERT INTO task (module_id, task_name, question, answer, difficulty_level, complete, is_correct)
+VALUES (2, 'Java division','What is the result of 5/2 in Java?', '2', 1, false, false);
 
 SELECT * from user_entity;

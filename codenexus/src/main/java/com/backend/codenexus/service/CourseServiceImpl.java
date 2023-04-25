@@ -86,6 +86,11 @@ public class CourseServiceImpl implements CourseService {
         return courseDao.findAllModulesByCourseId(course_id);
     }
 
+    @Override
+    public List<ModuleEntity> getAllModules(){
+        return moduleDao.findAll();
+    }
+
     //Task Methods
 
     @Override
@@ -113,6 +118,11 @@ public class CourseServiceImpl implements CourseService {
     public TaskEntity getTaskByQuestion(String question){
 
         return moduleDao.findTaskByQuestion(question);
+    }
+
+    @Override
+    public void saveTask(TaskEntity task){
+        taskDao.saveAndFlush(task);
     }
 
     @Override

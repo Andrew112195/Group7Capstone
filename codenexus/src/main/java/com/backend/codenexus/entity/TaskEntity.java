@@ -22,6 +22,9 @@ public class TaskEntity {
     @JoinColumn(name = "module_id")
     private ModuleEntity module;
 
+    @Column(name="task_name")
+    private String taskName;
+
     @Column(name="question")
     private String question;
 

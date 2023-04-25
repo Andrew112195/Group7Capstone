@@ -23,6 +23,8 @@ public interface CourseService {
     //Module Methods
     List <ModuleEntity> getCourseModules(Long course_id);
 
+    List<ModuleEntity> getAllModules();
+
     //Task Methods
     void completeTask(String gettingTaskByQuestion,String answer);
 
@@ -31,6 +33,8 @@ public interface CourseService {
     TaskEntity getTask(Long task_id);
 
     TaskEntity getTaskByQuestion(String question);
+
+    void saveTask(TaskEntity task);
 
     TaskQuestionBuilder buildTaskQuestion(ModuleEntity module, TaskEntity task);
 

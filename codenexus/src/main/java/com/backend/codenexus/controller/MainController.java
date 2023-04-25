@@ -38,6 +38,7 @@ public class MainController {
 
     @Autowired
     private MessagesService messagesService;
+
     @Autowired
     private JavaMailSender mailSender;
 
@@ -57,22 +58,12 @@ public class MainController {
 
     @GetMapping("login")
     public String loginProcess(ModelMap modelMap) {
-        UserEntity user = (UserEntity) modelMap.get("user");
-        if (user.getId() != null) {
-            return "index";
-        } else {
-            return "login";
-        }
+        return "login";
     }
 
     @GetMapping("register")
     public String registration(ModelMap modelMap) {
-        UserEntity user = (UserEntity) modelMap.get("user");
-        if (user.getId() != null) {
-            return "index";
-        } else {
-            return "register";
-        }
+        return "register";
     }
 
     @GetMapping("studentclassroom")
@@ -316,6 +307,13 @@ public class MainController {
         return "userProfile";
     }
 
+    @GetMapping("/task/new")
+    public String showTaskForm(ModelMap model) {
+        model.addAttribute("task", new TaskEntity());
+        model.addAttribute("modules", courseService.getAllModules());
+        return "task-form";
+    }
+
     //Post Mapping Methods xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     @PostMapping("login-process")
@@ -420,6 +418,15 @@ public class MainController {
         mailSender.send(message);
 
         return "message";
+    }
+
+    @PostMapping("/task/create")
+    public String createTask(@ModelAttribute("task") TaskEntity task) {
+        // Save the task to the database
+        courseService.saveTask(task);
+    
+        // Redirect the user to the task list page
+        return "redirect:/students";
     }
 
     public void updateModelmapUser(ModelMap modelMap){
