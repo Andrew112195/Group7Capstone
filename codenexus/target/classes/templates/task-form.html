@@ -4,13 +4,10 @@
 	<title>Create Task</title>
 </head>
 <body>
+	<!-- Not working fully -->
 	<h1>Create Task</h1>
 	<form th:action="@{/task/create}" method="post">
 		
-		<select th:field="*{module.id}">
-			<option value="">-- Select a Module ID --</option>
-			<option th:each="module : ${modules}" th:value="${module.id}" th:text="${module.id}"></option>
-		</select><br><br>
 		
 		<label for="task_name">Task Name:</label>
 		<input type="text" id="task_name" name="task_name" th:value="${task.taskName}" /><br><br>

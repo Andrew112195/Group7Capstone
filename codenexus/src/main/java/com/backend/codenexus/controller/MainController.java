@@ -271,6 +271,7 @@ public class MainController {
     @PostMapping("/taskCompleted")
     public String taskCompleted(ModelMap modelMap, @ModelAttribute("currentTask") TaskQuestionBuilder task, @RequestParam("selectedAnswer") String selectedAnswer) {
         try {
+            UserEntity user = (UserEntity) modelMap.get("user");
             String findByTaskQuestion = task.getQuestion();
 
             // Process the completed task here
@@ -278,23 +279,27 @@ public class MainController {
 
             // Reload next task in attribute
             TaskEntity taskByQuestion = courseService.getTaskByQuestion(findByTaskQuestion);
-            Long id = taskByQuestion.getId();
-
-            // Increment to the next task and check if the task is not null
-            TaskEntity nextTask = courseService.getTask(++id);
-            if (nextTask != null) {
-                TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(nextTask.getModule(), nextTask);
-                modelMap.addAttribute("currentTask", taskQuestionBuilder);
-                return "redirect:/task/" + nextTask.getId();
-            } else {
-                return "redirect:/studentClassroom";
+            Long id = taskByQuestion.getModule().getId();
+            List<TaskEntity> moduleTasks = courseService.findAllTasksByModuleId(id);
+            
+            for (int i = 0; i < moduleTasks.size();){
+                if (moduleTasks.get(i).isComplete() == false) {
+                    TaskEntity currentTask = moduleTasks.get(i);
+                    TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(currentTask.getModule(), currentTask);
+                    modelMap.addAttribute("currentTask", taskQuestionBuilder);
+                    return "redirect:/task/" + currentTask.getId();
+                } else {
+                    return "redirect:/get-userCourses/" + user.getId();
+                }
             }
+            
         } catch (Exception e) {
             // Handle any exceptions that may occur during processing
             Log.error("An error occurred while processing the completed task: {}", e.getMessage());
             modelMap.addAttribute("errorMessage", "An error occurred while processing the completed task. Please try again later.");
             return "redirect:/task";
         }
+        return null;
     }
 
     @GetMapping("/profile")
