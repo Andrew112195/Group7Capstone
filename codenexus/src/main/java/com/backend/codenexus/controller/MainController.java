@@ -1,5 +1,7 @@
 package com.backend.codenexus.controller;
 
+import com.backend.codenexus.dao.QuestionDao;
+import com.backend.codenexus.dao.QuizDao;
 import com.backend.codenexus.entity.*;
 import com.backend.codenexus.model.PasswordChangeRequest;
 import com.backend.codenexus.model.TaskQuestionBuilder;
@@ -13,6 +15,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
@@ -40,6 +43,12 @@ public class MainController {
     private MessagesService messagesService;
     @Autowired
     private JavaMailSender mailSender;
+
+    @Autowired
+    private QuestionDao questionRepository;
+
+    @Autowired
+    private QuizDao quizRepository;
 
     @ModelAttribute("user")
     public UserEntity getUserUserEntity() { return new UserEntity(); }
@@ -169,13 +178,13 @@ public class MainController {
         return "redirect:/checkout";
     }
 
-    @GetMapping("checkout")
+    /*@GetMapping("checkout")
     public String getCheckout(@ModelAttribute("userCart") CourseEntity userCart, ModelMap modelMap) {
         // Here you can access the user-cart object directly
         modelMap.addAttribute("userCart", userCart);
 
         return "checkout";
-    }
+    }*/
 
     @GetMapping("get-userCourses/{id}")
     public String getUserCourse(@PathVariable Long id, ModelMap modelMap) {
@@ -427,4 +436,18 @@ public class MainController {
         modelMap.put("user", userToBeUpdated);
         modelMap.addAttribute("userMessage", modelMap.get("user"));
     }
+
+    @GetMapping("/quiz/{quizId}")
+    public String showQuizPage(@PathVariable Long quizId, ModelMap modelMap) {
+       UserEntity user = (UserEntity) modelMap.get("user");
+       userService.updateUser(user);
+        QuizEntity quiz = quizRepository.findById(quizId).orElse(null);
+        if (quiz == null) {
+            return "redirect:/";
+        }
+        List<QuestionEntity> questions = questionRepository.findByQuizID(quiz);
+        modelMap.addAttribute("questions", questions);
+        return "quiz";
+    }
+
 }

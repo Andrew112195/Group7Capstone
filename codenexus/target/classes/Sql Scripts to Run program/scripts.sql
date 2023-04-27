@@ -23,6 +23,7 @@ INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '998');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '995');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '2', '994');
 INSERT INTO user_course(progress, course_id, user_id) VALUES ('1', '3', '996');
+
 INSERT into messages_entity(read, header, body, sender, recipient, time_sent) values ('false', 'Important Meeting', 'I am writing to inform you about an important meeting that has been scheduled for tomorrow at 2pm. The meeting will take place at room 1532, and it is of utmost importance that you attend.', '999', '995', '2023-03-14 16:24:38.155');
 INSERT into messages_entity(read, header, body, sender, recipient, time_sent) values ('false', 'Follow-up on Project 2', 'As you may recall, we had set a deadline for completion of this project for next week. I wanted to check in and see how the project is progressing and whether there are any roadblocks or issues that need to be addressed.', '999', '995', '2023-02-14 12:24:38.155');
 INSERT into messages_entity(read, header, body, sender, recipient, time_sent) values ('false', 'Training/Workshops', 'I am writing to remind you of the upcoming training/workshop session on Java Programming, which will be held on June 23rd at 1:00pm at room 102.', '995', '998', '2023-04-10 16:00:00.155');
@@ -40,5 +41,13 @@ INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_co
 VALUES (1, 'What is the output of the following code? \n\n for(int i=0; i<5; i++) { \n   System.out.println(i); \n }', '0 \n 1 \n 2 \n 3 \n 4', 2, false, false);
 INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
 VALUES (1, 'What is the output of the following code? \n\n String s = "Hello"; \n System.out.println(s.charAt(1));', 'e', 3, false, false);
+
+INSERT INTO quiz(quiz_name, complete) VALUES ('Quiz #1 Learning is Fun', false);
+INSERT INTO quiz(quiz_name, complete) VALUES ('Quiz #2 Practicing the Basics', false);
+INSERT INTO quiz(quiz_name, complete) VALUES ('Quiz #3 Test Yourself', false);
+
+INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
+VALUES (1,'Which one of the following is a valid way to create a loop', 'i=0; i<10, i++', 'for i = 0, i<10; i++', 'for i = 0; i < 10; i++', 2);
+
 
 SELECT * from user_entity;

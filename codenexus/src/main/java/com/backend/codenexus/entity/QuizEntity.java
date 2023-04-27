@@ -1,10 +1,9 @@
 package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -15,15 +14,19 @@ public class QuizEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @Column(name = "Quiz_ID")
+    private long quizID;
+
+    @Column(name = "Quiz_Name")
+    private String quizName;
     @ToString.Exclude
-    @OneToOne(targetEntity = CourseEntity.class,cascade = CascadeType.ALL)
-    private CourseEntity courseQ;
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quizID")
+    private List<QuestionEntity> questions;
 
-    @Column(name = "question_id")
-    private Long questionId;
-
-    @Column(name = "complete")
     private boolean complete;
+
+    @OneToOne(mappedBy = "quiz")
+    private ModuleEntity module;
+
 }

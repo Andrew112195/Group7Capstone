@@ -5,29 +5,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7094f39f-2443-4f18-b3cd-d006970eb075" name="Changes" comment="added cohort and I">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/PaypalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/QuestionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/AccessPass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/QuestionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/PaypalAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/PaypalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/QuizService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/QuizServiceInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cancel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/quiz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f9e3772-9c59-4c0f-877a-715a754c1e23/storage_v2/_src_/database/code_nexus.Lf833Q/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_18_2023_10_25_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_18_2023_10_25_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codenexus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/codenexus.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/ModuleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/service/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/QuizDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/QuizDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/ModuleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/ModuleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/QuizEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/codenexus/entity/QuizEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Sql Scripts to Run program/scripts.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/checkout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sql Scripts to Run program/scripts.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/CodenexusApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/CodenexusApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/CourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/CourseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/MessageDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/MessageDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/ModuleDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/QuizDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/QuizDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/TaskDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/TaskDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserCourseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserCourseDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity$CourseEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity$CourseEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/CourseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/MessagesEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/MessagesEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity$ModuleEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity$ModuleEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/ModuleEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/QuizEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/QuizEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/TaskEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity$UserCourseEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity$UserCourseEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserCourseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity$UserEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity$UserEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserTypeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/entity/UserTypeEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/PasswordChangeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/PasswordChangeRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/TaskQuestionBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/TaskQuestionBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums$Difficulty.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums$Difficulty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums$USER_TYPE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums$USER_TYPE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/model/enums.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/CourseServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/studentClassroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/studentClassroom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/task.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/UserServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/MessagesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/MessagesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/MessagesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/MessagesServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/codenexus/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/CodenexusApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/CodenexusApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/dao/CourseDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/dao/CourseDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/dao/UserCourseDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/dao/UserCourseDaoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/CourseServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/CourseServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/MessagesServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/MessagesServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/UserServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/backend/codenexus/service/UserServiceImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +86,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -51,6 +100,19 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3b6e6346-37ba-4b06-b06c-ba31105a95cb" />
+        <option name="url" value="https://github.com/Andrew112195/Group7Capstone" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -61,6 +123,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2MLs63uws64kcnk6j4I48ZhrbwM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -69,53 +134,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/HP/OneDrive/Desktop/CapstoneProject/Group7Capstone/Group7Capstone/codenexus/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "e93659008ce16bed60bce1792d2811ac",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/OneDrive/Desktop/CapstoneProject/Group7Capstone/Group7Capstone/codenexus/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e93659008ce16bed60bce1792d2811ac&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "4f9e3772-9c59-4c0f-877a-715a754c1e23/database/\"code_nexus\""
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;4f9e3772-9c59-4c0f-877a-715a754c1e23/database/\&quot;code_nexus\&quot;&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "PostgreSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.backend.codenexus.service" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.backend.codenexus.service" />
@@ -251,6 +319,22 @@
       <workItem from="1682199842375" duration="34000" />
       <workItem from="1682199890401" duration="701000" />
       <workItem from="1682200613319" duration="3901000" />
+      <workItem from="1682439035118" duration="183000" />
+      <workItem from="1682439264665" duration="1017000" />
+      <workItem from="1682444369913" duration="468000" />
+      <workItem from="1682521829154" duration="159000" />
+      <workItem from="1682557354901" duration="1853000" />
+      <workItem from="1682559236562" duration="1316000" />
+      <workItem from="1682560588316" duration="2448000" />
+      <workItem from="1682563075671" duration="3226000" />
+      <workItem from="1682566858417" duration="2892000" />
+      <workItem from="1682574053441" duration="541000" />
+      <workItem from="1682574864246" duration="7085000" />
+      <workItem from="1682604553364" duration="1127000" />
+      <workItem from="1682606359776" duration="161000" />
+      <workItem from="1682606864217" duration="1035000" />
+      <workItem from="1682608235631" duration="1568000" />
+      <workItem from="1682610071912" duration="8389000" />
     </task>
     <task id="LOCAL-00001" summary="added cohort and I">
       <created>1678330170701</created>
@@ -270,7 +354,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -280,6 +376,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added cohort and I" />
     <option name="LAST_COMMIT_MESSAGE" value="added cohort and I" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.backend.codenexus.entity.CourseEntity" memberName="modules" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

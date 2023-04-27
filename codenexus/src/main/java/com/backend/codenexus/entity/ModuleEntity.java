@@ -44,4 +44,11 @@ public class ModuleEntity {
 
     @Column(name = "module_complete")
     private boolean moduleComplete;
+
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "quiz")
+    QuizEntity quiz;
+
 }

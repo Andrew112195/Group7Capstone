@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Page</title>
+</head>
+<body>
+<h1>Quiz</h1>
+<form method="post" action="@{/submit-quiz}">
+  <div th:each="question : ${questions}">
+    <h3 th:text="${question.questionContent}"></h3>
+    <label>
+      <input type="radio" name="questionAnswer" th:value="1" />
+      <span th:text="${question.option1}"></span>
+    </label>
+    <br />
+    <label>
+      <input type="radio" name="questionAnswer" th:value="2" />
+      <span th:text="${question.option2}"></span>
+    </label>
+    <br />
+    <label>
+      <input type="radio" name="questionAnswer" th:value="3" />
+      <span th:text="${question.option3}"></span>
+    </label>
+    <br />
+    <input type="hidden" name="questionID" th:value="${question.questionID}" />
+  </div>
+  <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
