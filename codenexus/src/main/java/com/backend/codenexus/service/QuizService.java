@@ -22,9 +22,9 @@ public class QuizService implements QuizServiceInt{
     and returns a list of QuestionEntity objects from the database
     that are associated with the given quiz. */
     @Override
-    public List<QuestionEntity> getQuestionsForQuiz(QuizEntity quiz)
+    public List<QuestionEntity> getQuestionsForQuiz(Long quizID)
     {
-        return questionRepo.findByQuizID(quiz);
+        return questionRepo.findByQuizID(quizID);
     }
 
 }

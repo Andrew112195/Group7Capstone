@@ -21,9 +21,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/")
@@ -445,9 +447,28 @@ public class MainController {
         if (quiz == null) {
             return "redirect:/";
         }
-        List<QuestionEntity> questions = questionRepository.findByQuizID(quiz);
+        List<QuestionEntity> questions = questionRepository.findByQuizID(quizId);
         modelMap.addAttribute("questions", questions);
         return "quiz";
     }
 
+    @PostMapping("/submit-quiz")
+    public String submitQuiz(@RequestParam("questionID") long questionID,
+                             @RequestParam("questionAnswer") String questionAnswer)
+    {
+        QuestionEntity question = questionRepository.findByQuesID(questionID);
+        if(question == null)
+        {
+            return "no question found";
+        }
+        boolean goodAnswer = question.getAnswerNumber().equals(questionAnswer);
+
+        if(goodAnswer)
+        {
+            QuizEntity quiz = question.getQuizID();
+            quiz.setScore(quiz.getScore() + 1);
+            quizRepository.save(quiz);
+        }
+        return "redirect:/result";
+    }
 }

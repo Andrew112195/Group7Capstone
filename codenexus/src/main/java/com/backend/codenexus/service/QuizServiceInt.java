@@ -8,5 +8,5 @@ import java.util.List;
 
 @Service
 public interface QuizServiceInt {
-    List<QuestionEntity> getQuestionsForQuiz(QuizEntity quiz);
+    List<QuestionEntity> getQuestionsForQuiz(Long quiz);
 }

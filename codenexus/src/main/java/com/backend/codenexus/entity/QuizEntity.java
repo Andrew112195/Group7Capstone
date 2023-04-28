@@ -29,4 +29,6 @@ public class QuizEntity {
     @OneToOne(mappedBy = "quiz")
     private ModuleEntity module;
 
+    @Column(name = "score")
+    private int score;
 }

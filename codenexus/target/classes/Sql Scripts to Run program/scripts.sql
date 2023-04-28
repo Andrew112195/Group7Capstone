@@ -42,12 +42,23 @@ VALUES (1, 'What is the output of the following code? \n\n for(int i=0; i<5; i++
 INSERT INTO task (module_id, question, answer, difficulty_level, complete, is_correct)
 VALUES (1, 'What is the output of the following code? \n\n String s = "Hello"; \n System.out.println(s.charAt(1));', 'e', 3, false, false);
 
-INSERT INTO quiz(quiz_name, complete) VALUES ('Quiz #1 Learning is Fun', false);
-INSERT INTO quiz(quiz_name, complete) VALUES ('Quiz #2 Practicing the Basics', false);
-INSERT INTO quiz(quiz_name, complete) VALUES ('Quiz #3 Test Yourself', false);
+INSERT INTO quiz(quiz_name, complete, score) VALUES ('Quiz #1 Learning is Fun', false, 0);
+INSERT INTO quiz(quiz_name, complete, score) VALUES ('Quiz #2 Practicing the Basics', false, 0);
+INSERT INTO quiz(quiz_name, complete, score) VALUES ('Quiz #3 Test Yourself', false, 0);
 
 INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
-VALUES (1,'Which one of the following is a valid way to create a loop', 'i=0; i<10, i++', 'for i = 0, i<10; i++', 'for i = 0; i < 10; i++', 2);
+VALUES (1,'Which one of the following is a valid way to create a loop', 'i=0; i<10, i++', 'for i = 0, i<10; i++', 'for i = 0; i < 10; i++', '3');
+INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
+VALUES(1,'Which type of loop is used when the number of iterations is known?', 'For loop', 'While loop', 'Do-while loop','1');
+INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
+VALUES (1, 'What is the syntax for a while loop?', 'do { code block } while (condition)', 'while (condition) { code block }', 'None of the above','2');
+INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
+VALUES(1, 'What is an infinite loop?', 'A loop that executes a fixed number of times', 'A loop that executes until a certain condition is met', 'A loop that executes forever without stopping', '3');
 
-
+INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
+VALUES (2,'What is a variable in Java', 'A keyword used to define a data type', 'A block of code that performs a specific task', 'A value that can be changed or assigned a new value', '3');
+INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
+VALUES (2, 'What is the syntax for declaring a variable in Java?', 'var variableName = value;', 'data type variableName = value;', ' let variableName = value;', '2');
+INSERT INTO questions(quiz_id,question_content,option1, option2, option3,question_answer)
+VALUES (2, 'What is the default value of an int variable in Java?', 'null', '0', 'false', '2');
 SELECT * from user_entity;

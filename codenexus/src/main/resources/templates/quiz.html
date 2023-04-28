@@ -3,30 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Quiz Page</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    .question-container {
+      border: 1px solid gray;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
 <h1>Quiz</h1>
 <form method="post" action="@{/submit-quiz}">
-  <div th:each="question : ${questions}">
+  <div th:each="question : ${questions}" class="question-container">
     <h3 th:text="${question.questionContent}"></h3>
     <label>
-      <input type="radio" name="questionAnswer" th:value="1" />
+      <input type="radio" name="questionAnswer" th:value="1" required/>
       <span th:text="${question.option1}"></span>
     </label>
     <br />
     <label>
-      <input type="radio" name="questionAnswer" th:value="2" />
+      <input type="radio" name="questionAnswer" th:value="2" required/>
       <span th:text="${question.option2}"></span>
     </label>
     <br />
     <label>
-      <input type="radio" name="questionAnswer" th:value="3" />
+      <input type="radio" name="questionAnswer" th:value="3" required/>
       <span th:text="${question.option3}"></span>
     </label>
     <br />
     <input type="hidden" name="questionID" th:value="${question.questionID}" />
   </div>
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Submit" disabled="disabled" />
 </form>
 </body>
 </html>
