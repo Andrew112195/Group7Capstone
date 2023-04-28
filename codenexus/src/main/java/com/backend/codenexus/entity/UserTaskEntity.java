@@ -28,6 +28,8 @@ public class UserTaskEntity {
     private UserModuleEntity module;
 
     @OneToOne
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "user_task_id")
     private UserCourseEntity userCourse;
 

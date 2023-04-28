@@ -27,10 +27,14 @@ public class UserCourseEntity {
     private CourseEntity course;
 
     @OneToMany
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "user_module_id")
     private List<UserModuleEntity> userModule;
 
     @OneToMany
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     @JoinColumn(name = "user_task_id")
     private List<UserTaskEntity> userTask;
     
