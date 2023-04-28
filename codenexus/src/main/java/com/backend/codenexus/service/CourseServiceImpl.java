@@ -154,15 +154,6 @@ public class CourseServiceImpl implements CourseService {
         return taskQuestionBuilder;
     }
 
-    @Override
-    public void update(Long taskId, String answer){
-        TaskEntity task = getTask(taskId);
-        boolean isCorrect = answer.equals(task.getAnswer());
-        task.setCorrect(isCorrect);
-        task.setComplete(true);
-        taskDao.saveAndFlush(task);
-    }
-
     //Quiz Methods
 
     @Override

@@ -236,6 +236,8 @@ public class MainController {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             TaskEntity taskTest = courseService.getTask(id);
+            ModuleEntity currentModule = taskTest.getModule();
+            model.addAttribute("moduleDescription", currentModule.getDescription());
             TaskQuestionBuilder taskQuestionBuilder1 = courseService.buildTaskQuestion(taskTest.getModule(), taskTest);
 
             // create a file object and write the JSON string to it

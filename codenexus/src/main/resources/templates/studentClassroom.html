@@ -31,7 +31,7 @@
                     <h2 class="accordion-header" th:id="'module-' + ${courseModule.id}">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 th:data-bs-target="'#tasks-' + ${courseModule.id}" aria-expanded="false" aria-controls="'tasks-' + ${courseModule.id}">
-                            <span th:text="'Module ' + ${courseModule.name} + ' - ' + ${courseModule.description}"></span>
+                            <span th:text="'Module ' + ${courseModule.name} "></span>
                         </button>
                     </h2>
                     <div th:id="'tasks-' + ${courseModule.id}" class="accordion-collapse collapse" aria-labelledby="'module-' + ${courseModule.id}">

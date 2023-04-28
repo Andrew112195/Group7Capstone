@@ -38,8 +38,6 @@ public interface CourseService {
 
     TaskQuestionBuilder buildTaskQuestion(ModuleEntity module, TaskEntity task);
 
-    void update(Long taskId, String answer);
-
     //Quiz Methods
     QuizEntity getQuiz(Long quiz_id);
 

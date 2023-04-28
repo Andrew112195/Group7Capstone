@@ -45,9 +45,16 @@
     button[type="submit"]:hover {
       background-color: #0056b3;
     }
+    .header-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
+  <div class="header-container">
+    <p th:text="${moduleDescription}">text</p>
+  </div>
 <h1>Task Questions</h1>
 <form th:method="POST" th:object="${currentTask}" th:action="@{/taskCompleted}" class="next-task" onsubmit="location.reload()">
   <label class="question-text" th:field="${currentTask.question}" th:text="${currentTask.question}"></label>
