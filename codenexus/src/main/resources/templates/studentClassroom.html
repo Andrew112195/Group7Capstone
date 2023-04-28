@@ -28,17 +28,17 @@
         <div class="col-3 overflow-auto" style="max-height: 500px; height: 500px; background-color: #1002;">
             <div class="accordion" id="modules" th:each="courseModule : ${courseModules}">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" th:id="'module-' + ${courseModule.id}">
+                    <h2 class="accordion-header" th:id="'module-' + ${courseModule.moduleEntity.id}">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                th:data-bs-target="'#tasks-' + ${courseModule.id}" aria-expanded="false" aria-controls="'tasks-' + ${courseModule.id}">
-                            <span th:text="'Module ' + ${courseModule.name} + ' - ' + ${courseModule.description}"></span>
+                                th:data-bs-target="'#tasks-' + ${courseModule.moduleEntity.id}" aria-expanded="false" aria-controls="'tasks-' + ${courseModule.moduleEntity.id}">
+                            <span th:text="'Module ' + ${courseModule.moduleEntity.name} + ' - ' + ${courseModule.moduleEntity.description}"></span>
                         </button>
                     </h2>
-                    <div th:id="'tasks-' + ${courseModule.id}" class="accordion-collapse collapse" aria-labelledby="'module-' + ${courseModule.id}">
+                    <div th:id="'tasks-' + ${courseModule.moduleEntity.id}" class="accordion-collapse collapse" aria-labelledby="'module-' + ${courseModule.moduleEntity.id}">
                         <div class="accordion-body">
                             <ul>
-                                <li th:each="task : ${courseModule.tasks}">
-                                    <a class="nav-link" th:href="@{/task/{id}(id=${task.id})}" th:text="${task.taskName}"></a>
+                                <li th:each="task : ${courseModule.userTasks}">
+                                    <a class="nav-link" th:href="@{/task/{id}(id=${task.task.id})}" th:text="${task.task.taskName}"></a>
                                 </li>
                             </ul>
                         </div>

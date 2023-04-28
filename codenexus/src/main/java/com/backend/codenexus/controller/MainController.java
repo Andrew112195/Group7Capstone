@@ -24,7 +24,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/")
-@SessionAttributes({"user","courses","userCart","currentTask"})
+@SessionAttributes({"user","courses","userCart","currentTask","userCourse"})
 @CrossOrigin
 public class MainController {
 
@@ -177,16 +177,10 @@ public class MainController {
 
     @GetMapping("get-courseModules/{id}")
     public String getCourseModules(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.addAttribute("userCourse", id);
         modelMap.addAttribute("courseModules", courseService.getCourseModules(id));
 
         return "studentClassroom";
-    }
-
-    @GetMapping("get-moduleTasks/{id}")
-    public String getModuleTasks(@PathVariable Long id, ModelMap modelMap) {
-        modelMap.addAttribute("moduleTasks", courseService.findAllTasksByModuleId(id));
-
-        return "studentDashboard";
     }
 
     @GetMapping("inbox")
@@ -234,72 +228,53 @@ public class MainController {
     public String getTask(@PathVariable Long id, ModelMap model) {
 
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            TaskEntity taskTest = courseService.getTask(id);
-            TaskQuestionBuilder taskQuestionBuilder1 = courseService.buildTaskQuestion(taskTest.getModule(), taskTest);
+            UserEntity user = (UserEntity) model.get("user");
+            Long userCourseId = (Long) model.get("userCourse");
 
-            // create a file object and write the JSON string to it
-            File outputFile = new File("BuilderObject.json");
-            objectMapper.writeValue(outputFile,taskQuestionBuilder1 );
-
-            TaskEntity task = courseService.getTask(id);
-            if (!task.getModule().isModuleComplete()) {
-                if (!task.isComplete()) {
-                    TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(),task);
-                    model.addAttribute("currentTask", taskQuestionBuilder);
-                }else {
-                    TaskEntity nextTask = courseService.getTask(++id);
-                    if(nextTask != null) {
-                        TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getModule(), task);
+            UserTaskEntity userTask = courseService.getTask(id, userCourseId);
+            Long moduleId = userTask.getModule().getModuleEntity().getId();
+            
+            List<UserTaskEntity> moduleTasks = courseService.findAllTasksByModuleId(moduleId, userCourseId);
+            
+            for (UserTaskEntity task : moduleTasks) {
+                
+                if (!task.getModule().isModuleComplete() && !task.isComplete()) {
+                    
+                        TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(task.getTask().getModule(), task.getTask());
                         model.addAttribute("currentTask", taskQuestionBuilder);
-                    }else{
-                        return "redirect:studentClassroom";
-                    }
-
-                }
-            } else {
-
-                return "redirect:studentClassroom";
+                        return "task";
+                    
+                    
+                } 
+                
             }
+            return "redirect:/get-userCourses/" + user.getId();
         } catch (Exception e) {
             Log.debug("An error occurred while processing the /task/id endpoint: {}", e.getMessage());
             throw new RuntimeException(e);
         }
-        return "task";
+        
     }
 
     @PostMapping("/taskCompleted")
     public String taskCompleted(ModelMap modelMap, @ModelAttribute("currentTask") TaskQuestionBuilder task, @RequestParam("selectedAnswer") String selectedAnswer) {
         try {
-            UserEntity user = (UserEntity) modelMap.get("user");
+            Long userCourseId = (Long) modelMap.get("userCourse");
             String findByTaskQuestion = task.getQuestion();
-
             // Process the completed task here
-            courseService.completeTask(findByTaskQuestion, selectedAnswer);
-
-            // Reload next task in attribute
-            TaskEntity taskByQuestion = courseService.getTaskByQuestion(findByTaskQuestion);
-            Long id = taskByQuestion.getModule().getId();
-            List<TaskEntity> moduleTasks = courseService.findAllTasksByModuleId(id);
-            
-            for (int i = 0; i < moduleTasks.size();){
-                if (moduleTasks.get(i).isComplete() == false) {
-                    TaskEntity currentTask = moduleTasks.get(i);
-                    TaskQuestionBuilder taskQuestionBuilder = courseService.buildTaskQuestion(currentTask.getModule(), currentTask);
-                    modelMap.addAttribute("currentTask", taskQuestionBuilder);
-                    return "redirect:/task/" + currentTask.getId();
-                } else {
-                    return "redirect:/get-userCourses/" + user.getId();
-                }
-            }
+            courseService.completeTask(findByTaskQuestion, selectedAnswer, userCourseId);
+            TaskEntity taskEntity = courseService.getTaskByQuestion(findByTaskQuestion);
+            UserTaskEntity currentTask = courseService.getTask(taskEntity.getId(), userCourseId);
+            return "redirect:/task/" + currentTask.getId();
             
         } catch (Exception e) {
-            // Handle any exceptions that may occur during processing
-            Log.error("An error occurred while processing the completed task: {}", e.getMessage());
-            modelMap.addAttribute("errorMessage", "An error occurred while processing the completed task. Please try again later.");
-            return "redirect:/task";
+            // TODO: handle exception
+            e.printStackTrace();
         }
+
         return null;
+        
+        
     }
 
     @GetMapping("/profile")

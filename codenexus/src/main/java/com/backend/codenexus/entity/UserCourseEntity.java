@@ -2,6 +2,9 @@ package com.backend.codenexus.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+
 import org.hibernate.annotations.Cascade;
 
 @Data
@@ -23,6 +26,14 @@ public class UserCourseEntity {
     @JoinColumn(name = "course_id")
     private CourseEntity course;
 
+    @OneToMany
+    @JoinColumn(name = "user_module_id")
+    private List<UserModuleEntity> userModule;
+
+    @OneToMany
+    @JoinColumn(name = "user_task_id")
+    private List<UserTaskEntity> userTask;
+    
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @ManyToOne

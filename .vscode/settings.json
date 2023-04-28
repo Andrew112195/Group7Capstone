@@ -4,5 +4,7 @@
     "liveshare.allowGuestTaskControl": true,
     "liveshare.notebooks.allowGuestExecuteCells": true,
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "liveshare.focusBehavior": "prompt",
+    "liveshare.accessibility.accessibilityFeaturesEnabled": "off"
 }

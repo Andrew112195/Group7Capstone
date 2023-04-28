@@ -41,7 +41,4 @@ public class ModuleEntity {
 
     @Column(name = "difficulty")
     private Difficulty difficulty;
-
-    @Column(name = "module_complete")
-    private boolean moduleComplete;
 }

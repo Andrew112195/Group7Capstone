@@ -21,24 +21,22 @@ public interface CourseService {
     List<UserCourseEntity> getAllClassmates(Long user_id);
 
     //Module Methods
-    List <ModuleEntity> getCourseModules(Long course_id);
+    List <UserModuleEntity> getCourseModules(Long course_id);
 
     List<ModuleEntity> getAllModules();
 
     //Task Methods
-    void completeTask(String gettingTaskByQuestion,String answer);
+    void completeTask(String gettingTaskByQuestion,String answer,Long userCourseId);
 
-    List<TaskEntity> findAllTasksByModuleId(Long courseId);
+    List<UserTaskEntity> findAllTasksByModuleId(Long moduleId, Long userCourseId);
 
-    TaskEntity getTask(Long task_id);
+    UserTaskEntity getTask(Long taskId, Long userCourseId);
 
     TaskEntity getTaskByQuestion(String question);
 
     void saveTask(TaskEntity task);
 
     TaskQuestionBuilder buildTaskQuestion(ModuleEntity module, TaskEntity task);
-
-    void update(Long taskId, String answer);
 
     //Quiz Methods
     QuizEntity getQuiz(Long quiz_id);

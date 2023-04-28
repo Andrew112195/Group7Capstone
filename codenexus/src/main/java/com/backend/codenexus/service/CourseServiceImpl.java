@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -28,6 +29,10 @@ public class CourseServiceImpl implements CourseService {
     private TaskDao taskDao;
     @Autowired
     private QuizDao quizDao;
+    @Autowired
+    private UserModuleDao userModuleDao;
+    @Autowired
+    private UserTaskDao userTaskDao;
 
     //Course methods
 
@@ -36,10 +41,45 @@ public class CourseServiceImpl implements CourseService {
         try {
             UserEntity foundUser = userDao.findById(user_id);
             CourseEntity foundCourse = courseDao.findById(course_id).orElseThrow();
+            
+            // course(module(task, task, task), module(task, task, task), module(task, task, task))
+            List<ModuleEntity> courseModules = foundCourse.getModules();
+            List<UserModuleEntity> userModules = new ArrayList<>();
+            List<TaskEntity> taskEntities = new ArrayList<>();
+            List<UserTaskEntity> userTasks = new ArrayList<>();
+
             UserCourseEntity userCourseEntity = new UserCourseEntity();
+
+            courseModules.forEach(module -> {
+                //Create user module and perform the setters
+                UserModuleEntity userModuleEntity = new UserModuleEntity();
+                userModuleEntity.setModuleEntity(module);
+                userModuleEntity.setUserCourse(userCourseEntity);
+                //add the user module to the List
+                userModules.add(userModuleEntity);
+                userModuleDao.saveAndFlush(userModuleEntity);
+
+                taskEntities.addAll(module.getTasks());
+                taskEntities.forEach(task ->{
+                    //Create user task and perform the setters
+                    UserTaskEntity userTaskEntity = new UserTaskEntity();
+                    userTaskEntity.setTask(task);
+                    userTaskEntity.setModule(userModuleEntity);
+                    userTaskEntity.setUserCourse(userCourseEntity);
+                    //add the user task to the list
+                    userTasks.add(userTaskEntity);
+                    userTaskDao.saveAndFlush(userTaskEntity);
+                });
+                
+            });
+            //Set all the objects to the user course
             userCourseEntity.setUser(foundUser);
             userCourseEntity.setCourse(foundCourse);
+            userCourseEntity.setUserModule(userModules);
+            userCourseEntity.setUserTask(userTasks);
+            //save user course
             userCourseDao.saveAndFlush(userCourseEntity);
+
         } catch (Exception e) {
             e.getStackTrace();
         }
@@ -81,9 +121,10 @@ public class CourseServiceImpl implements CourseService {
     //Module Methods
 
     @Override
-    public List<ModuleEntity> getCourseModules(Long course_id){
+    public List<UserModuleEntity> getCourseModules(Long course_id){
+        UserCourseEntity userCourse = userCourseDao.getReferenceById(course_id);
 
-        return courseDao.findAllModulesByCourseId(course_id);
+        return userCourse.getUserModule();
     }
 
     @Override
@@ -94,24 +135,48 @@ public class CourseServiceImpl implements CourseService {
     //Task Methods
 
     @Override
-    public void completeTask(String findByTaskQuestion,String answer) {
+    public void completeTask(String findByTaskQuestion,String answer, Long userCourseId) {
         TaskEntity taskEntity = getTaskByQuestion(findByTaskQuestion);
-        taskEntity.setCorrect(taskEntity.getAnswer().equals(answer));
-        taskEntity.setComplete(true);
-        taskDao.saveAndFlush(taskEntity);
-    }
-
-    @Override
-    public List<TaskEntity> findAllTasksByModuleId(Long moduleId) {
-        List<TaskEntity> taskEntityList = taskDao.findAllByModuleId(moduleId);
+        UserCourseEntity userCourse = userCourseDao.getReferenceById(userCourseId);
+       
+        UserTaskEntity userTask = getTask(taskEntity.getId(), userCourseId);
         
-        return taskEntityList;
+        userTask.setCorrect(taskEntity.getAnswer().equals(answer));
+        userTask.setComplete(true);
+
+        userTaskDao.saveAndFlush(userTask);
+        userCourseDao.saveAndFlush(userCourse);
     }
 
     @Override
-    public TaskEntity getTask(Long task_id) {
-        TaskEntity taskEntity = moduleDao.findTaskById(task_id);
-        return taskEntity;
+    public List<UserTaskEntity> findAllTasksByModuleId(Long moduleId, Long userCourseId) {
+        UserCourseEntity userCourse = userCourseDao.getReferenceById(userCourseId);
+        List<UserTaskEntity> taskEntityList = userCourse.getUserTask();
+        List<UserTaskEntity> newTaskList = new ArrayList<>();
+
+        taskEntityList.forEach(task -> {
+            if(task.getTask().getModule().getId().equals(moduleId)){
+                newTaskList.add(task);
+            }
+        });
+        
+        return newTaskList;
+    }
+
+    @Override
+    public UserTaskEntity getTask(Long taskId, Long userCourseId) {
+        UserCourseEntity userCourse = userCourseDao.getReferenceById(userCourseId);
+        
+        List<UserTaskEntity> userTaskList = userCourse.getUserTask();
+        UserTaskEntity userTask = new UserTaskEntity();
+        
+        for(int x = 0; x < userTaskList.size(); x++){
+            if(taskId.equals(userTaskList.get(x).getTask().getId())){
+                userTask = userTaskList.get(x);
+            }
+        }
+        
+        return userTask;
     }
 
     @Override
@@ -152,15 +217,6 @@ public class CourseServiceImpl implements CourseService {
         taskQuestionBuilder.setOptionC(theAnswer);
 
         return taskQuestionBuilder;
-    }
-
-    @Override
-    public void update(Long taskId, String answer){
-        TaskEntity task = getTask(taskId);
-        boolean isCorrect = answer.equals(task.getAnswer());
-        task.setCorrect(isCorrect);
-        task.setComplete(true);
-        taskDao.saveAndFlush(task);
     }
 
     //Quiz Methods

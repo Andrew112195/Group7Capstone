@@ -34,11 +34,6 @@ public class TaskEntity {
     @Column(name = "difficulty_level")
     private int difficultyLevel;
 
-    @Column(name = "complete")
-    private boolean complete;
-
-    private boolean isCorrect;
-
     public enums.Difficulty getDifficulty() {
         switch (difficultyLevel) {
             case 1:
